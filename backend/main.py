@@ -2,10 +2,25 @@ from fastapi import FastAPI
 import joblib
 import numpy as np
 import random
+import pandas as pd
+
 
 
 app = FastAPI()
+
+track_df = pd.read_csv("../data/tracks/monaco_track.csv")
+track_points = track_df.values.tolist()
+
 lap_progress = 0.0
+    # get track position data
+track_length = len(track_points)
+index = int(lap_progress * track_length)
+
+if index >= track_length:
+    index = track_length - 1
+
+x, y = track_points[index]
+
 
 
 
@@ -35,40 +50,63 @@ def predict(speed: float, wing_angle: float, drs: int):
     }
 
 @app.get("/telemetry")
-def telementry():
+def telemetry():
     global lap_progress
 
-#laps
-    lap_progress +- 0.02
-    if lap_progress > 1:
+    # Move lap forward
+    lap_progress += 0.01  
+
+    if lap_progress >= 1:
         lap_progress = 0.0
 
+
+    track_length = len(track_points)
+
+    position = lap_progress * track_length
+    index = int(position)
+    next_index = (index + 1) % track_length
+
+    fraction = position - index
+
+    x1, y1 = track_points[index]
+    x2, y2 = track_points[next_index]
+
+    x = x1 + (x2 - x1) * fraction
+    y = y1 + (y2 - y1) * fraction
+
+
+    # SPEED ZONES
+
     if 0.2 < lap_progress < 0.4:
-        speed = random.uniform(60, 70)#coner
+        speed = random.uniform(60, 70)  # corner
     elif 0.6 < lap_progress < 0.8:
-        speed = random.uniform(85, 95)#straight
+        speed = random.uniform(85, 95)  # straight
     else:
-        speed = random.uniform(70, 80)#medium
+        speed = random.uniform(70, 80)  # medium
 
-#DRS
-
+    # DRS logic
+    
     if 0.6 < lap_progress < 0.8:
         drs = 1
     else:
         drs = 0
 
-        wing_angle = 10
+    wing_angle = 10
 
+    
     input_data = np.array([[speed, wing_angle, drs]])
     prediction = model.predict(input_data)
 
     drag = float(prediction[0][0])
     downforce = float(prediction[0][1])
 
-    return{
+    return {
         "lap_progress": lap_progress,
+        "x": x,
+        "y": y,
         "speed": speed,
         "drs": drs,
         "predicted_drag": drag,
         "predicted_downforce": downforce
     }
+
