@@ -3,6 +3,8 @@ import joblib
 import numpy as np
 import random
 import pandas as pd
+from fastapi.responses import HTMLResponse
+
 
 
 
@@ -109,4 +111,42 @@ def telemetry():
         "predicted_drag": drag,
         "predicted_downforce": downforce
     }
+
+@app.get("/live", response_class=HTMLResponse)
+def live_dashboard():
+    return """
+    <html>
+        <head>
+            <title>F1 Live Telemetry</title>
+        </head>
+        <body>
+            <h1>Monaco Live Telemetry Simulation</h1>
+            <div id="data"></div>
+
+            <script>
+                function fetchData() {
+                    fetch('/telemetry')
+                        .then(response => response.json())
+                        .then(data => {
+                            document.getElementById('data').innerHTML = `
+                                <p><strong>Lap Progress:</strong> ${data.lap_progress.toFixed(3)}</p>
+                                <p><strong>X:</strong> ${data.x.toFixed(2)}</p>
+                                <p><strong>Y:</strong> ${data.y.toFixed(2)}</p>
+                                <p><strong>Speed:</strong> ${data.speed.toFixed(2)} m/s</p>
+                                <p><strong>DRS:</strong> ${data.drs}</p>
+                                <p><strong>Drag:</strong> ${data.predicted_drag.toFixed(2)} N</p>
+                                <p><strong>Downforce:</strong> ${data.predicted_downforce.toFixed(2)} N</p>
+                            `;
+                        });
+                }
+
+                // Update every 200 milliseconds
+                setInterval(fetchData, 200);
+
+                // Call once immediately
+                fetchData();
+            </script>
+        </body>
+    </html>
+    """
 
