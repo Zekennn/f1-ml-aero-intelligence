@@ -6,8 +6,13 @@ import numpy as np
 import os
 
 # Internal Modules
-from data_manager import load_track_data, load_team_data, load_race_lap_data, load_circuit_info, TEAM_COLORS
-from physics import interpolate_telemetry, update_tire_temperatures, predict_lap_time
+# Internal Modules
+try:
+    from .data_manager import load_track_data, load_team_data, load_race_lap_data, load_circuit_info, TEAM_COLORS
+    from .physics import interpolate_telemetry, update_tire_temperatures, predict_lap_time
+except ImportError:
+    from data_manager import load_track_data, load_team_data, load_race_lap_data, load_circuit_info, TEAM_COLORS
+    from physics import interpolate_telemetry, update_tire_temperatures, predict_lap_time
 
 app = FastAPI(title="F1 2025 Monaco Intelligence")
 
@@ -16,11 +21,14 @@ app = FastAPI(title="F1 2025 Monaco Intelligence")
 frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
 app.mount("/static", StaticFiles(directory=frontend_path), name="static")
 
+# State for Current Track
+current_track_name = "Monaco" 
+
 # Load Initial Data
-track_points = load_track_data()
+track_points = load_track_data(current_track_name)
 team_data = load_team_data()
-avg_lap_time = load_race_lap_data()
-circuit_info = load_circuit_info()
+avg_lap_time = load_race_lap_data(current_track_name)
+circuit_info = load_circuit_info(current_track_name)
 track_length = len(track_points)
 
 # Global Simulation State
@@ -43,6 +51,27 @@ def live_dashboard():
     """Serve the modular index.html"""
     html_file = os.path.join(frontend_path, "index.html")
     return FileResponse(html_file)
+
+@app.post("/set_track")
+def set_track(track_name: str):
+    global current_track_name, track_points, avg_lap_time, circuit_info, track_length, lap_progress, current_lap
+    
+    if track_name not in ["Monaco", "Australia", "China"]:
+        return {"error": "Invalid track name"}
+        
+    current_track_name = track_name
+    
+    # Reload Data
+    track_points = load_track_data(track_name)
+    avg_lap_time = load_race_lap_data(track_name)
+    circuit_info = load_circuit_info(track_name)
+    track_length = len(track_points)
+    
+    # Reset Simulation
+    lap_progress = 0.0
+    current_lap = 1
+    
+    return {"message": f"Track switched to {track_name}", "circuit_info": circuit_info}
 
 
 @app.get("/telemetry")

@@ -11,6 +11,11 @@
     <div class="navbar">
         <div class="logo">MONACO INTELLIGENCE DASHBOARD</div>
         <div style="display:flex; gap:10px;">
+            <select id="trackSelector" class="team-select" style="border-color:#FF8700" onchange="updateTrack()">
+                <option value="Monaco">Monaco</option>
+                <option value="Australia">Australia</option>
+                <option value="China">China</option>
+            </select>
             <select id="compoundSelector" class="team-select" style="border-color:#52E252" onchange="updateCompound()">
                 <option value="SOFT">SOFT (C5)</option>
                 <option value="MEDIUM">MEDIUM (C4)</option>
@@ -24,7 +29,7 @@
     <div class="dashboard-grid">
         <!-- Track Section -->
         <div class="panel track-panel">
-            <div class="panel-title">MONACO GP LIVE CIRCUIT <span class="lap-badge" id="lapNum">LAP 1 / 78</span></div>
+            <div class="panel-title"><span id="trackNameDisplay">MONACO</span> GP LIVE CIRCUIT <span class="lap-badge" id="lapNum">LAP 1 / 78</span></div>
             <canvas id="trackCanvas"></canvas>
         </div>
 
@@ -99,5 +104,26 @@
         </div>
     </div>
     <script src="app.js"></script>
+    <script>
+        async function updateTrack() {
+            const track = document.getElementById("trackSelector").value;
+            try {
+                const response = await fetch(`/set_track?track_name=${track}`, { method: 'POST' });
+                const data = await response.json();
+                console.log(data.message);
+                
+                // Update Display Name
+                document.getElementById("trackNameDisplay").innerText = track.toUpperCase();
+                
+                // Reload page or re-initialize dashboard (simple reload for now to catch fresh data)
+                // In a full SPA we would just re-fetch /track and /circuit
+                location.reload(); 
+            } catch (error) {
+                console.error("Error switching track:", error);
+            }
+        }
+        
+        // sync selector on load if needed (optional, logic usually in app.js)
+    </script>
 </body>
 </html>
