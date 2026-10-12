@@ -4,16 +4,18 @@ import { useState } from "react";
 import RaceCard from "./RaceCard";
 import RaceDetail from "./RaceDetail";
 import { formatUpdated } from "@/lib/calendar-format";
-import type { Calendar, Race } from "@/lib/calendar";
+import type { Calendar } from "@/lib/calendar";
 
 type Filter = "all" | "upcoming" | "completed";
 
 /** Filter bar, grid of race cards and the track detail dialog. */
 export default function CalendarView({ calendar }: { calendar: Calendar }) {
   const [filter, setFilter] = useState<Filter>("all");
-  const [open, setOpen] = useState<Race | null>(null);
+  // Keep the round, not the race object, so the open panel shows fresh data after a live refresh
+  const [openRound, setOpenRound] = useState<number | null>(null);
 
   const races = calendar.races.filter((race) => filter === "all" || race.status === filter);
+  const open = calendar.races.find((race) => race.round === openRound) ?? null;
 
   return (
     <>
@@ -31,19 +33,19 @@ export default function CalendarView({ calendar }: { calendar: Calendar }) {
 
       {calendar.races.length === 0 ? (
         <p className="cal-empty">
-          No calendar data yet. From the project folder run <code>.\venv\Scripts\python.exe backend\update_calendar.py</code>
+          No calendar data yet. Start the backend, or run <code>.\venv\Scripts\python.exe backend\update_data.py</code>
         </p>
       ) : races.length === 0 ? (
         <p className="cal-empty">No {filter} races.</p>
       ) : (
         <div className="cal-grid">
           {races.map((race) => (
-            <RaceCard key={race.round} race={race} onOpen={setOpen} />
+            <RaceCard key={race.round} race={race} onOpen={(r) => setOpenRound(r.round)} />
           ))}
         </div>
       )}
 
-      <RaceDetail race={open} season={calendar.season} onClose={() => setOpen(null)} />
+      <RaceDetail race={open} season={calendar.season} onClose={() => setOpenRound(null)} />
     </>
   );
 }

@@ -329,6 +329,63 @@ button { font: inherit; cursor: pointer; }
   justify-content: space-between;
   gap: 0.75rem;
 }
+.driver-card { position: relative; }
+.driver-card__photo { position: relative; }
+/* Championship position, top-left of the photo */
+.driver-card__position {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  background: var(--white);
+  color: var(--dark-blue);
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 1px 2px rgba(11, 31, 58, 0.12);
+}
+.driver-card__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: auto 0 0;
+  border-top: 1px solid var(--ash);
+}
+.driver-card__stats > div { padding: 0.7rem 0.5rem; text-align: center; }
+.driver-card__stats > div + div { border-left: 1px solid var(--ash); }
+.driver-card__stats dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ash-text);
+}
+.driver-card__stats dd {
+  margin: 2px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  font-variant-numeric: tabular-nums;
+}
+.driver-card__note {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  border-top: 1px solid var(--ash);
+  background: var(--ash-light);
+  font-size: 0.78rem;
+  color: var(--ash-text);
+  text-align: center;
+}
+/* Driver who didn't start the latest race (replaced, reserve...) */
+.driver-card--inactive .card__media img { filter: grayscale(1); opacity: 0.7; }
+
+/* "Data last updated" line under a section title */
+.data-updated {
+  margin: -1.75rem 0 1.75rem;
+  font-size: 0.875rem;
+  color: var(--ash-text);
+}
+
 .driver-card__team {
   display: flex;
   align-items: center;
@@ -474,6 +531,8 @@ button { font: inherit; cursor: pointer; }
   .stat__value { font-size: 2rem; }
   .card-grid--drivers { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .driver-card .card__body { flex-direction: column; padding: 1rem; }
+  .driver-card__stats > div { padding: 0.6rem 0.2rem; }
+  .driver-card__stats dt { font-size: 0.6rem; letter-spacing: 0.02em; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .newsletter__row { flex-direction: column; }
   .lightbox { padding: 56px 12px; }

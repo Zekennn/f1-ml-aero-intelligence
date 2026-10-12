@@ -1,10 +1,11 @@
 """
 Refresh the race calendar shown on the website.
 
-Run from the project folder after each race weekend:
+The FastAPI backend runs this automatically (see live_data.py). To run it by
+hand from the project folder (update_data.py also refreshes the drivers):
 
-    .\\venv\\Scripts\\python.exe backend\\update_calendar.py          (quick: only fetches what's new)
-    .\\venv\\Scripts\\python.exe backend\\update_calendar.py --full   (re-fetch everything)
+    .\\venv\\Scripts\\python.exe backend\\update_data.py          (quick: only fetches what's new)
+    .\\venv\\Scripts\\python.exe backend\\update_data.py --full   (re-fetch everything)
 
 What it does
 - Gets the season schedule from FastF1 (races only, no testing).
@@ -41,6 +42,9 @@ CACHE_DIR = ROOT / "data" / "cache"
 
 # A race counts as completed this long after lights out
 RACE_LENGTH = timedelta(hours=3)
+
+# Results keep being re-checked this long after a race, to pick up penalties
+RECHECK_FOR = timedelta(days=2)
 
 # Grands Prix that have been renamed. Track history includes the old names too.
 GP_ALIASES = {
@@ -275,8 +279,8 @@ def race_start_utc(event) -> pd.Timestamp:
     return start.tz_localize("UTC") if start.tzinfo is None else start
 
 
-def main() -> int:
-    full = "--full" in sys.argv
+def refresh(full: bool = False, verbose: bool = True) -> dict:
+    """Update calendar.json. Returns a short summary (also used by the backend's auto-refresh)."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
     fastf1.Cache.enable_cache(str(CACHE_DIR))
     now = datetime.now(timezone.utc)
@@ -286,7 +290,7 @@ def main() -> int:
     schedule = attempt("schedule", load_schedule)
     if schedule is None or schedule.empty:
         log("No schedule - nothing written, the website keeps its current data.")
-        return 1
+        return {"ok": False, "error": "schedule unavailable"}
 
     ergast = Ergast(result_type="pandas", auto_cast=True)
 
@@ -310,7 +314,8 @@ def main() -> int:
         circuit_id = None if info is None else info.circuitId
         prev = previous.get(slug, {})
         prev_history = prev.get("history") or {}
-        log(f"Round {rnd:>2}: {event.EventName}")
+        if verbose:
+            log(f"Round {rnd:>2}: {event.EventName}")
 
         start = race_start_utc(event)
         completed = start + RACE_LENGTH < now
@@ -324,7 +329,8 @@ def main() -> int:
         # 2026 result: reuse the saved one once it's complete, otherwise download it
         result, result_laps = None, None
         if completed:
-            if result_is_complete(prev.get("result")) and prev.get("lapsFrom") == SEASON:
+            recent = now - start < RECHECK_FOR  # keep checking for penalties/corrections
+            if result_is_complete(prev.get("result")) and prev.get("lapsFrom") == SEASON and not recent:
                 result, result_laps = prev["result"], prev.get("laps")
             else:
                 with fastf1.Cache.disabled():
@@ -385,11 +391,11 @@ def main() -> int:
 
     done = sum(r["status"] == "completed" for r in races)
     missing = [r["round"] for r in races if r["status"] == "completed" and not result_is_complete(r["result"])]
-    log(f"\nSaved {len(races)} races ({done} completed) to {CALENDAR_FILE.relative_to(ROOT)}")
+    log(f"Saved {len(races)} races ({done} completed) to {CALENDAR_FILE.relative_to(ROOT)}")
     if missing:
-        log(f"Results still missing for round(s) {missing} - run this again later to fill them in.")
-    return 0
+        log(f"Results still missing for round(s) {missing} - they'll be filled in on a later refresh.")
+    return {"ok": True, "races": len(races), "completed": done, "missingResults": missing}
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(0 if refresh(full="--full" in sys.argv)["ok"] else 1)

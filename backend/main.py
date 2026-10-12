@@ -14,6 +14,16 @@ except ImportError:
     from data_manager import load_track_data, load_team_data, load_race_lap_data, load_circuit_info, TEAM_COLORS
     from physics import interpolate_telemetry, update_tire_temperatures, predict_lap_time
 
+# FastF1 calendar + driver data, refreshed in the background (see live_data.py)
+try:
+    from . import live_data
+    from .update_calendar import CALENDAR_FILE
+    from .update_drivers import DRIVERS_FILE
+except ImportError:
+    import live_data
+    from update_calendar import CALENDAR_FILE
+    from update_drivers import DRIVERS_FILE
+
 app = FastAPI(title="F1 2025 Monaco Intelligence")
 
 # This app is a JSON API only. The website lives in /web (Next.js) and
@@ -82,6 +92,37 @@ def drivers_champ_data():
             return json.load(f)
     except Exception as e:
         return {"error": f"Could not load predictor data: {e}"}
+
+@app.on_event("startup")
+def start_live_data():
+    live_data.start()
+
+def _read_json(path):
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {"error": f"{path.name} not available yet"}
+
+@app.get("/api/calendar")
+def calendar_data():
+    """2026 race calendar built from FastF1 (auto-refreshed)."""
+    return _read_json(CALENDAR_FILE)
+
+@app.get("/api/drivers")
+def drivers_data():
+    """2026 driver standings from FastF1 (auto-refreshed)."""
+    return _read_json(DRIVERS_FILE)
+
+@app.get("/api/live-data")
+def live_data_status():
+    """When the FastF1 data was last refreshed and when the next refresh is due."""
+    return live_data.status()
+
+@app.post("/api/live-data/refresh")
+def live_data_refresh():
+    """Refresh the FastF1 data now instead of waiting for the next scheduled run."""
+    live_data.request_refresh()
+    return {"requested": True}
 
 @app.post("/set_track")
 def set_track(track_name: str):

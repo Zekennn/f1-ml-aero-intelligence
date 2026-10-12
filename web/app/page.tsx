@@ -7,6 +7,7 @@ import Calendar from "@/components/home/Calendar";
 import Gallery from "@/components/home/Gallery";
 import Insights from "@/components/home/Insights";
 import Newsletter from "@/components/home/Newsletter";
+import LiveRefresh from "@/components/LiveRefresh";
 
 // Render on every request so the calendar always reflects today's date and the latest data
 export const dynamic = "force-dynamic";
@@ -15,6 +16,7 @@ export const dynamic = "force-dynamic";
 export default function HomePage() {
   return (
     <>
+      <LiveRefresh />
       <Hero />
       <Stats />
       <About />
