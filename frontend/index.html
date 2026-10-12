@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 2025 | Monaco Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">MONACO INTELLIGENCE DASHBOARD</div>
+        <div style="display:flex; gap:10px;">
+            <select id="trackSelector" class="team-select" style="border-color:#FF8700" onchange="updateTrack()">
+                <option value="Monaco">Monaco</option>
+                <option value="Australia">Australia</option>
+                <option value="China">China</option>
+            </select>
+            <select id="compoundSelector" class="team-select" style="border-color:#52E252" onchange="updateCompound()">
+                <option value="SOFT">SOFT (C5)</option>
+                <option value="MEDIUM">MEDIUM (C4)</option>
+                <option value="HARD">HARD (C3)</option>
+            </select>
+            <select id="teamSelector" class="team-select" onchange="updateTeam()">
+                <option value="">Select Team</option>
+            </select>
+        </div>
+    </div>
+    <div class="dashboard-grid">
+        <!-- Track Section -->
+        <div class="panel track-panel">
+            <div class="panel-title"><span id="trackNameDisplay">MONACO</span> GP LIVE CIRCUIT <span class="lap-badge" id="lapNum">LAP 1 / 78</span></div>
+            <canvas id="trackCanvas"></canvas>
+        </div>
+
+        <!-- Car Status Panel -->
+        <div class="panel">
+            <div class="panel-title">LIVE TELEMETRY</div>
+            <div style="display:flex; align-items:center; justify-content:space-around; flex:1;">
+                <div style="text-align:center">
+                    <div class="gear-display" id="gearNum">N</div>
+                    <div class="label" style="margin-top:5px">GEAR</div>
+                </div>
+                <div>
+                    <div class="stat-box">
+                        <div class="label">SPEED</div>
+                        <div id="speed" class="value" style="font-size:2rem">0 <span class="unit">KM/H</span></div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="label">DRS STATUS</div>
+                        <div id="drs" class="drs-status drs-disabled">DRS DISABLED</div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:15px">
+                <div class="label">Throttle</div>
+                <div class="pedal-bar-container"><div id="throttleBar" class="throttle-bar"></div></div>
+                <div class="label" style="margin-top:8px">Brake</div>
+                <div class="pedal-bar-container"><div id="brakeBar" class="brake-bar"></div></div>
+            </div>
+        </div>
+
+        <!-- Aero Panel -->
+        <div class="panel">
+            <div class="panel-title">AERO PERFORMANCE</div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; flex:1; align-items:center;">
+                <div class="stat-box">
+                    <div class="label">PRED. DRAG</div>
+                    <div id="drag" class="value" style="font-size:1.1rem">0 <span class="unit">N</span></div>
+                </div>
+                <div class="stat-box">
+                    <div class="label">PRED. DOWNFORCE</div>
+                    <div id="downforce" class="value" style="font-size:1.1rem">0 <span class="unit">N</span></div>
+                </div>
+            </div>
+            <div class="stat-box" style="margin-top:10px; border-top: 1px solid #222; padding-top:10px;">
+                <div class="label">PREDICTED LAP TIME</div>
+                <div id="predLap" class="value" style="color:var(--f1-red)">01:10.270</div>
+            </div>
+        </div>
+
+        <!-- Engine Panel -->
+        <div class="panel">
+            <div class="panel-title">ENGINE PERFORMANCE <small id="teamNameInfo" style="color:#666"></small></div>
+            <div class="stat-box">
+                <div class="label">REAL-TIME RPM: <span id="realRpm" style="color:#fff">0</span></div>
+                <div class="rpm-rev-container"><div id="realRpmBar" class="rpm-rev-bar"></div></div>
+            </div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:10px; margin-top:5px;">
+                <div><div class="label">TOP SPEED</div><div id="topSpeed" class="value" style="font-size:1rem">0</div></div>
+                <div><div class="label">AVG THROT.</div><div id="avgThrottle" class="value" style="font-size:1rem">0%</div></div>
+            </div>
+        </div>
+
+        <!-- Tires Panel -->
+        <div class="panel" style="border-right-color: var(--accent);">
+            <div class="panel-title">TYRE THERMODYNAMICS <small id="tireAge" style="color:#666">AGE: 0</small></div>
+            <div class="tire-grid">
+                <div class="tire-card"><div class="label">FL</div><div id="tempFL" class="tire-temp-value">90°C</div></div>
+                <div class="tire-card"><div class="label">FR</div><div id="tempFR" class="tire-temp-value">90°C</div></div>
+                <div class="tire-card"><div class="label">RL</div><div id="tempRL" class="tire-temp-value">90°C</div></div>
+                <div class="tire-card"><div class="label">RR</div><div id="tempRR" class="tire-temp-value">90°C</div></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+    <script>
+        async function updateTrack() {
+            const track = document.getElementById("trackSelector").value;
+            try {
+                const response = await fetch(`/set_track?track_name=${track}`, { method: 'POST' });
+                const data = await response.json();
+                console.log(data.message);
+                
+                // Update Display Name
+                document.getElementById("trackNameDisplay").innerText = track.toUpperCase();
+                
+                // Reload page or re-initialize dashboard (simple reload for now to catch fresh data)
+                // In a full SPA we would just re-fetch /track and /circuit
+                location.reload(); 
+            } catch (error) {
+                console.error("Error switching track:", error);
+            }
+        }
+        
+        // sync selector on load if needed (optional, logic usually in app.js)
+    </script>
+</body>
+</html>

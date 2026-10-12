@@ -3,3 +3,6 @@ pandas
 scikit-learn
 joblib
 fastf1
+fastapi
+uvicorn[standard]
+python-multipart

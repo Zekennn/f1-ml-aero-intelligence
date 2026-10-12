@@ -33,6 +33,12 @@ print(f"R2 Score: {r2}")
 
 ##saving Model
 
-joblib.dump(model, "../models/aero_model.pkl")
+import os
+
+# Create directory if it doesn't exist
+model_path = "../models/aero_model.pkl"
+os.makedirs(os.path.dirname(model_path), exist_ok=True)
+
+joblib.dump(model, model_path)
 
 print("Model saved to ../models/aero_model.pkl")

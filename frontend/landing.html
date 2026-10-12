@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>F1 ML Aero Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { overflow: auto; justify-content: center; align-items: center; display: flex; flex-direction: column; }
+        .hero { text-align: center; padding: 60px 20px 40px; }
+        .hero h1 { font-family: 'Orbitron', sans-serif; font-size: 2.4rem; color: var(--f1-red); margin: 0 0 12px; }
+        .hero p { color: #aaa; font-size: 1rem; max-width: 500px; margin: 0 auto 40px; }
+        .nav-cards { display: flex; gap: 24px; flex-wrap: wrap; justify-content: center; padding: 0 20px 60px; }
+        .nav-card { background: var(--card-bg); border: 1px solid #2a2a2a; border-radius: 10px; padding: 32px 28px; width: 220px; text-align: center; text-decoration: none; color: var(--text); transition: border-color 0.2s, transform 0.2s; }
+        .nav-card:hover { border-color: var(--f1-red); transform: translateY(-4px); }
+        .nav-card .icon { font-size: 2.2rem; margin-bottom: 14px; }
+        .nav-card h2 { font-family: 'Orbitron', sans-serif; font-size: 0.85rem; color: var(--accent); margin: 0 0 8px; }
+        .nav-card p { font-size: 0.78rem; color: #888; margin: 0; }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">F1 ML AERO INTELLIGENCE</div>
+    </div>
+    <div class="hero">
+        <h1>F1 AERO INTELLIGENCE</h1>
+        <p>Real-time aerodynamic simulation, live telemetry, and 2026 championship prediction powered by machine learning.</p>
+    </div>
+    <div class="nav-cards">
+        <a href="/live" class="nav-card">
+            <div class="icon">&#127937;</div>
+            <h2>LIVE DASHBOARD</h2>
+            <p>Real-time telemetry simulation with aero ML predictions and track visualisation</p>
+        </a>
+        <a href="/drivers-champ" class="nav-card">
+            <div class="icon">&#127942;</div>
+            <h2>2026 PREDICTOR</h2>
+            <p>ML-powered 2026 drivers championship win probability predictions</p>
+        </a>
+    </div>
+</body>
+</html>
