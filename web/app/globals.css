@@ -23,7 +23,7 @@
   --shadow: 0 1px 2px rgba(11, 31, 58, 0.06), 0 4px 12px rgba(11, 31, 58, 0.06);
   --shadow-hover: 0 2px 4px rgba(11, 31, 58, 0.08), 0 12px 28px rgba(11, 31, 58, 0.12);
   --container: 1200px;
-  --nav-height: 72px;
+  --nav-height: 96px; /* floating nav: 20px offset + bar + breathing room */
   --transition: 0.2s ease;
 }
 
@@ -34,7 +34,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--nav-height); /* keeps headings clear of the sticky nav */
+  scroll-padding-top: var(--nav-height); /* keeps headings clear of the floating nav */
 }
 
 body {
@@ -139,22 +139,7 @@ button { font: inherit; cursor: pointer; }
   text-transform: capitalize;
 }
 
-/* ---------- 6. Navbar ---------- */
-.navbar {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--dark-blue);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.navbar__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: var(--nav-height);
-}
-
+/* ---------- 6. Brand (footer logo + name) ---------- */
 .brand {
   display: inline-flex;
   align-items: center;
@@ -175,54 +160,15 @@ button { font: inherit; cursor: pointer; }
   letter-spacing: -0.01em;
 }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-.nav__list {
-  display: flex;
-  gap: 1.4rem;
-}
-.nav__list a.is-active { color: var(--white); }
-.nav__list a {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color var(--transition);
-}
-.nav__list a:hover { color: var(--white); }
-
-/* Hamburger button – hidden on desktop */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  padding: 8px;
-  background: none;
-  border: 0;
-}
-.nav-toggle span {
-  display: block;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-  transition: transform var(--transition), opacity var(--transition);
-}
-.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+/* Navbar styles live in app/navbar.css */
 
 /* ---------- 7. Hero ---------- */
 .hero {
   position: relative;
   display: flex;
   align-items: center;
-  min-height: min(88vh, 760px);
-  padding: 96px 0;
+  min-height: min(92vh, 800px);
+  padding: 140px 0 96px;
   color: var(--white);
   overflow: hidden;
 }
@@ -602,41 +548,11 @@ button { font: inherit; cursor: pointer; }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .nav__list { gap: 1.25rem; }
-  .nav { gap: 1.25rem; }
   .card-grid--races { grid-template-columns: repeat(2, 1fr); }
   .about { gap: 40px; }
 }
 
-/* Switch to the hamburger menu */
-@media (max-width: 1100px) {
-  .nav-toggle { display: flex; }
-
-  .nav {
-    position: absolute;
-    top: var(--nav-height);
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    padding: 0.5rem 24px 1.5rem;
-    background: var(--dark-blue);
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    display: none;
-  }
-  .nav.is-open { display: flex; }
-  .nav__list { flex-direction: column; gap: 0; }
-  .nav__list a {
-    display: block;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-  .nav .btn { margin-top: 1.25rem; }
-}
-
 @media (max-width: 900px) {
-
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(3) { border-left: 0; }
   .stat:nth-child(n + 3) { border-top: 1px solid var(--ash); }
@@ -652,7 +568,7 @@ button { font: inherit; cursor: pointer; }
 @media (max-width: 600px) {
   .container { padding: 0 16px; }
   .section { padding: 64px 0; }
-  .hero { padding: 72px 0; min-height: 80vh; }
+  .hero { padding: 112px 0 72px; min-height: 80vh; }
   .hero__overlay { background: rgba(11, 31, 58, 0.78); }
   .hero__actions .btn { flex: 1; }
   .stat { padding: 1.75rem 0.5rem; }
@@ -664,6 +580,7 @@ button { font: inherit; cursor: pointer; }
   .newsletter__row { flex-direction: column; }
   .footer__bottom { flex-direction: column; align-items: flex-start; }
   .lightbox { padding: 56px 12px; }
+  .page-head { padding-top: 104px; }
   .lightbox__nav { top: auto; bottom: 12px; transform: none; }
 }
 
@@ -703,7 +620,7 @@ button { font: inherit; cursor: pointer; }
    19. Data pages – shared header band
    ========================================================= */
 .page-head {
-  padding: 56px 0 40px;
+  padding: 128px 0 40px;
   background: var(--dark-blue);
   color: rgba(255, 255, 255, 0.75);
 }

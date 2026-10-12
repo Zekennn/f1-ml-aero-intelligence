@@ -6,22 +6,41 @@
    ========================================================= */
 
 export const SITE_NAME = "Fan Hub";
-export const LOGO = "/images/logo.png";
+export const LOGO = "/images/logo.png";          // white logo, for dark backgrounds (footer)
+export const LOGO_DARK = "/images/logo-red.png"; // red logo, for the light floating navbar
 
+export type NavIcon = "teams" | "drivers" | "calendar" | "gallery" | "live" | "trophy" | "wind";
+export type NavItem = { label: string; href: string; description: string; icon: NavIcon; featured?: boolean };
+export type NavMenu = { label: string; items: NavItem[] };
 export type NavLink = { label: string; href: string };
 
-/** Links in the top navbar (anchors point to sections on the home page). */
-export const NAV_LINKS: NavLink[] = [
-  { label: "Home", href: "/#home" },
-  { label: "About", href: "/#about" },
-  { label: "Teams", href: "/#teams" },
-  { label: "Drivers", href: "/#drivers" },
-  { label: "Calendar", href: "/#calendar" },
-  { label: "Gallery", href: "/#gallery" },
-  { label: "Live Data", href: "/live" },
-  { label: "Predictor", href: "/predictor" },
-  { label: "Contact", href: "/#contact" },
+/** Dropdown menus in the navbar. A "featured" item shows as a tall tile. */
+export const NAV_MENUS: NavMenu[] = [
+  {
+    label: "Season",
+    items: [
+      { label: "Teams", href: "/#teams", icon: "teams", description: "All eleven constructors and their 2026 cars" },
+      { label: "Drivers", href: "/#drivers", icon: "drivers", description: "The full grid with numbers and teams" },
+      { label: "Calendar", href: "/#calendar", icon: "calendar", description: "Upcoming rounds, venues and dates" },
+      { label: "Gallery", href: "/#gallery", icon: "gallery", description: "Moments from around the paddock" },
+    ],
+  },
+  {
+    label: "Data",
+    items: [
+      { label: "Live telemetry", href: "/live", icon: "live", featured: true, description: "Simulated lap with speed, gear, DRS, tyre temps and ML aero predictions" },
+      { label: "2026 predictor", href: "/predictor", icon: "trophy", description: "Championship win probability for every driver" },
+      { label: "Aero calculator", href: "/aero", icon: "wind", description: "Drag and downforce from speed, wing angle and DRS" },
+    ],
+  },
 ];
+
+/** Plain links shown after the dropdowns. */
+export const NAV_LINKS: NavLink[] = [{ label: "About", href: "/#about" }];
+
+/** Right-hand side of the navbar. */
+export const NAV_SECONDARY: NavLink = { label: "Contact", href: "/#contact" };
+export const NAV_CTA: NavLink = { label: "Get Updates", href: "/#contact" };
 
 export const STATS = [
   { value: "24", label: "Races per season" },
