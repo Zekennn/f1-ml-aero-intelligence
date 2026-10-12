@@ -1,6 +1,4 @@
 from fastapi import FastAPI
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import HTMLResponse, FileResponse
 import joblib
 import numpy as np
 import pandas as pd
@@ -18,10 +16,8 @@ except ImportError:
 
 app = FastAPI(title="F1 2025 Monaco Intelligence")
 
-# Serve the frontend directory
-# Assuming main.py is in /backend and index.html is in /frontend
-frontend_path = os.path.join(os.path.dirname(__file__), "..", "frontend")
-app.mount("/static", StaticFiles(directory=frontend_path), name="static")
+# This app is a JSON API only. The website lives in /web (Next.js) and
+# reaches these endpoints through its /backend/* proxy.
 
 # State for Current Track
 # Simulation State
@@ -72,23 +68,10 @@ team_data = load_team_data()
 model_path = os.path.join(os.path.dirname(__file__), "..", "models", "aero_model.pkl")
 model = joblib.load(model_path)
 
-@app.get("/", response_class=HTMLResponse)
-def home():
-    """Serve the landing page"""
-    html_file = os.path.join(frontend_path, "landing.html")
-    return FileResponse(html_file)
-
-@app.get("/live", response_class=HTMLResponse)
-def live_dashboard():
-    """Serve the modular index.html"""
-    html_file = os.path.join(frontend_path, "index.html")
-    return FileResponse(html_file)
-
-@app.get("/drivers-champ", response_class=HTMLResponse)
-def drivers_champ_dashboard():
-    """Serve the dedicated 2026 Predictor UI"""
-    html_file = os.path.join(frontend_path, "predictor.html")
-    return FileResponse(html_file)
+@app.get("/")
+def root():
+    """Health check. The website itself runs from /web on port 3000."""
+    return {"status": "ok", "website": "http://localhost:3000"}
 
 @app.get("/api/drivers-champ")
 def drivers_champ_data():
@@ -210,11 +193,3 @@ def predict(speed: float, wing_angle: float, drs: int):
         "predicted_drag": float(prediction[0][0]),
         "predicted_downforce": float(prediction[0][1])
     }
-
-# Static Asset Catch-All (Must be last)
-@app.get("/{path:path}")
-async def serve_frontend(path: str):
-    file_path = os.path.join(frontend_path, path)
-    if os.path.isfile(file_path):
-        return FileResponse(file_path)
-    return HTMLResponse(status_code=404)
