@@ -139,27 +139,7 @@ button { font: inherit; cursor: pointer; }
   text-transform: capitalize;
 }
 
-/* ---------- 6. Brand (footer logo + name) ---------- */
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  color: var(--white);
-}
-.brand__logo {
-  width: 72px;
-  height: 20px;
-  background: transparent;
-}
-.brand__logo img { object-fit: contain; }
-.brand__logo.is-missing { background: rgba(255, 255, 255, 0.15); border-radius: 4px; }
-.brand__logo.is-missing::after { color: rgba(255, 255, 255, 0.7); font-size: 0.65rem; }
-.brand__name {
-  font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: -0.01em;
-}
-
+/* ---------- 6. Navbar ---------- */
 /* Navbar styles live in app/navbar.css */
 
 /* ---------- 7. Hero ---------- */
@@ -479,70 +459,7 @@ button { font: inherit; cursor: pointer; }
 .form-message.is-success { color: #15803D; }
 
 /* ---------- 15. Footer ---------- */
-.footer {
-  padding-top: 64px;
-  background: var(--dark-blue);
-  color: rgba(255, 255, 255, 0.7);
-}
-.footer__grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  padding-bottom: 48px;
-}
-.footer__tagline { max-width: 36ch; margin-top: 1rem; font-size: 0.9rem; }
-.footer__heading {
-  margin-bottom: 1rem;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--white);
-}
-.footer__links li + li { margin-top: 0.5rem; }
-.footer__links a,
-.footer__top {
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.95rem;
-  transition: color var(--transition);
-}
-.footer__links a:hover,
-.footer__top:hover { color: var(--white); }
-
-.social { display: flex; gap: 12px; margin-top: 1.5rem; }
-.social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  color: rgba(255, 255, 255, 0.8);
-  transition: background-color var(--transition), border-color var(--transition), color var(--transition);
-}
-.social a:hover { background: var(--blue); border-color: var(--blue); color: var(--white); }
-.social svg {
-  width: 18px;
-  height: 18px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.footer__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.85rem;
-}
-.footer__bottom p { margin: 0; }
+/* Footer styles live in app/footer.css */
 
 /* ---------- 16. Responsive ---------- */
 
@@ -560,8 +477,6 @@ button { font: inherit; cursor: pointer; }
   .about,
   .newsletter__inner { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: repeat(2, 1fr); }
-  .footer__grid { grid-template-columns: 1fr 1fr; }
-  .footer__brand { grid-column: 1 / -1; }
 }
 
 /* Mobile */
@@ -578,7 +493,6 @@ button { font: inherit; cursor: pointer; }
   .driver-card .card__body { flex-direction: column; padding: 1rem; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .newsletter__row { flex-direction: column; }
-  .footer__bottom { flex-direction: column; align-items: flex-start; }
   .lightbox { padding: 56px 12px; }
   .page-head { padding-top: 104px; }
   .lightbox__nav { top: auto; bottom: 12px; transform: none; }

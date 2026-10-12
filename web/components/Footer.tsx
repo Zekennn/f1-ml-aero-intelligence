@@ -1,63 +1,66 @@
+import Image from "next/image";
 import Link from "next/link";
-import Brand from "./Brand";
-import { SITE_NAME } from "@/data/site";
+import { FOOTER, LOGO_DARK, NAV_CTA, NAV_MENUS, SITE_NAME } from "@/data/site";
 
-const QUICK_LINKS = [
-  { label: "About", href: "/#about" },
-  { label: "Teams", href: "/#teams" },
-  { label: "Drivers", href: "/#drivers" },
-  { label: "Calendar", href: "/#calendar" },
-  { label: "Gallery", href: "/#gallery" },
-];
-
-const DATA_LINKS = [
-  { label: "Live Telemetry", href: "/live" },
-  { label: "2026 Predictor", href: "/predictor" },
-  { label: "Aero Calculator", href: "/aero" },
-];
-
-/** Replace "#" with your own profile links. */
-const SOCIAL = [
-  { label: "X / Twitter", href: "#", icon: <path d="M4 4l16 16M20 4L4 20" /> },
-  { label: "Instagram", href: "#", icon: <><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" /></> },
-  { label: "YouTube", href: "#", icon: <><rect x="2" y="5" width="20" height="14" rx="4" /><path d="M10 9l5 3-5 3z" /></> },
-  { label: "Facebook", href: "#", icon: <path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8z" /> },
-];
-
+/**
+ * Site footer.
+ * Top: brand column + link columns on a light background.
+ * Bottom: a full-width photo that fades in from the background,
+ * with a giant wordmark sitting across it.
+ */
 export default function Footer() {
+  // Season + Data columns reuse the navbar menus so the two always match
+  const columns = [
+    ...NAV_MENUS.map((menu) => ({ title: menu.label, links: menu.items.map(({ label, href }) => ({ label, href })) })),
+    ...FOOTER.columns,
+  ];
+
   return (
-    <footer className="footer">
-      <div className="container footer__grid">
-        <div className="footer__brand">
-          <Brand />
-          <p className="footer__tagline">An unofficial fan site. Not affiliated with any racing series, team or driver.</p>
-          <div className="social">
-            {SOCIAL.map((s) => (
-              <a key={s.label} href={s.href} aria-label={s.label}>
-                <svg viewBox="0 0 24 24" aria-hidden="true">{s.icon}</svg>
-              </a>
-            ))}
-          </div>
-        </div>
+    <footer className="site-footer">
+      <div className="container site-footer__content">
+        {/* Brand column */}
+        <section className="site-footer__brand" aria-labelledby="footer-brand-heading">
+          <Link href="/#home" className="site-footer__logo" aria-label={`${SITE_NAME} home`}>
+            <span className="site-footer__logo-mark"><Image src={LOGO_DARK} alt="" fill sizes="44px" /></span>
+            {SITE_NAME}
+          </Link>
+          <h2 id="footer-brand-heading" className="site-footer__heading">{FOOTER.heading}</h2>
+          <p className="site-footer__summary">{FOOTER.summary}</p>
+          <Link href={NAV_CTA.href} className="site-footer__cta">{NAV_CTA.label}</Link>
+          <p className="site-footer__copyright">&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
+          <p className="site-footer__note">{FOOTER.note}</p>
+        </section>
 
-        <div className="footer__links">
-          <h3 className="footer__heading">Quick links</h3>
-          <ul>
-            {QUICK_LINKS.map((l) => <li key={l.href}><Link href={l.href}>{l.label}</Link></li>)}
-          </ul>
-        </div>
-
-        <div className="footer__links">
-          <h3 className="footer__heading">Data &amp; insights</h3>
-          <ul>
-            {DATA_LINKS.map((l) => <li key={l.href}><Link href={l.href}>{l.label}</Link></li>)}
-          </ul>
-        </div>
+        {/* Link columns */}
+        {columns.map((col) => (
+          <section key={col.title} className="site-footer__col" aria-label={col.title}>
+            <h2 className="site-footer__col-title">{col.title}</h2>
+            <ul>
+              {col.links.map((link) => (
+                <li key={link.label}>
+                  {link.href.startsWith("http") || link.href === "#" ? (
+                    <a href={link.href}>{link.label}</a>
+                  ) : (
+                    <Link href={link.href}>{link.label}</Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
       </div>
 
-      <div className="container footer__bottom">
-        <p>&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
-        <a href="#top" className="footer__top">Back to top &uarr;</a>
+      {/* Decorative scene: photo + fades + giant wordmark */}
+      <div className="site-footer__scene" aria-hidden="true">
+        <Image src={FOOTER.image} alt="" fill sizes="100vw" className="site-footer__photo" />
+        <span className="site-footer__fade site-footer__fade--top" />
+        <span className="site-footer__fade site-footer__fade--bottom" />
+        {/* SVG text stretches to exactly fill the width at any screen size */}
+        <svg className="site-footer__wordmark" viewBox="0 0 1000 190" preserveAspectRatio="xMidYMax meet">
+          <text x="500" y="182" textAnchor="middle" textLength="980" lengthAdjust="spacingAndGlyphs">
+            {SITE_NAME}
+          </text>
+        </svg>
       </div>
     </footer>
   );

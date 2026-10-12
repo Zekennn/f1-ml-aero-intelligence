@@ -1,0 +1,157 @@
+/* =========================================================
+   Footer
+   Light background with a brand column and link columns,
+   then a full-width photo that fades in from the background
+   and a giant wordmark across the bottom.
+   Edit the text and photo in data/site.ts (FOOTER).
+   ========================================================= */
+:root {
+  --footer-bg: #EEF0F3;
+  --footer-text: #374151;
+}
+
+.site-footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+}
+
+/* ---------- Content ---------- */
+.site-footer__content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(260px, 1.7fr) repeat(4, minmax(0, 1fr));
+  gap: 40px;
+  padding-top: 96px;
+  padding-bottom: 24px;
+}
+
+.site-footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--dark-blue);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.site-footer__logo-mark {
+  position: relative;
+  width: 44px;
+  height: 22px;
+}
+.site-footer__logo-mark img { object-fit: contain; }
+
+.site-footer__heading {
+  margin-top: 24px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--dark-blue);
+}
+.site-footer__summary {
+  max-width: 34ch;
+  margin: 14px 0 22px;
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+.site-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 16px;
+  border-radius: 8px;
+  background: var(--dark-blue);
+  color: var(--white);
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: background-color 0.15s ease;
+}
+.site-footer__cta:hover { background: var(--blue); }
+.site-footer__copyright {
+  margin: 26px 0 8px;
+  font-size: 13px;
+}
+.site-footer__note {
+  max-width: 34ch;
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ash-text);
+}
+
+.site-footer__col-title {
+  margin: 4px 0 18px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  color: var(--dark-blue);
+}
+.site-footer__col li + li { margin-top: 14px; }
+.site-footer__col a {
+  color: var(--footer-text);
+  font-size: 14.5px;
+  transition: color 0.15s ease;
+}
+.site-footer__col a:hover { color: var(--blue); }
+
+/* ---------- Photo scene ---------- */
+.site-footer__scene {
+  position: relative;
+  height: clamp(280px, 36vw, 540px);
+  margin-top: -40px;   /* tuck the top of the fade under the content */
+}
+.site-footer__photo {
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+/* Gradients blend the photo into the background colour */
+.site-footer__fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+.site-footer__fade--top {
+  top: 0;
+  height: 55%;
+  background: linear-gradient(to bottom, var(--footer-bg) 0%, rgba(238, 240, 243, 0.85) 30%, rgba(238, 240, 243, 0) 100%);
+}
+.site-footer__fade--bottom {
+  bottom: 0;
+  height: 30%;
+  background: linear-gradient(to top, rgba(238, 240, 243, 0.35), rgba(238, 240, 243, 0));
+}
+
+.site-footer__wordmark {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(100% - 32px, 1320px);
+  height: auto;
+  transform: translate(-50%, 12%);  /* crop the bottom slightly, like a stamp */
+  overflow: visible;
+}
+.site-footer__wordmark text {
+  font-family: var(--font);
+  font-size: 200px;
+  font-weight: 700;
+  fill: var(--footer-bg);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  .site-footer__content { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .site-footer__brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 600px) {
+  .site-footer__content {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 24px;
+    padding-top: 72px;
+  }
+  .site-footer__scene { height: 240px; margin-top: 0; }
+  .site-footer__photo { object-position: 45% 45%; }
+}

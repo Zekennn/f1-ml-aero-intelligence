@@ -67,3 +67,41 @@ export const GALLERY = [
   { src: "/images/5.png", alt: "Driver spraying champagne on the podium" },
   { src: "/images/6.png", alt: "Gallery image 6" },
 ];
+
+/* ---------- Footer ---------- */
+type FooterColumn = { title: string; links: NavLink[] };
+
+/** Footer text, photo and extra link columns (Season + Data columns come from NAV_MENUS). */
+export const FOOTER: {
+  heading: string;
+  summary: string;
+  note: string;
+  image: string;
+  columns: FooterColumn[];
+} = {
+  heading: "Every lap, one place",
+  summary:
+    "Placeholder text: team profiles, the driver line-up, the race calendar and machine-learning tools for fans who want to go deeper.",
+  note: "Unofficial fan site. Not affiliated with any racing series, team or driver.",
+  image: "/images/footer.jpg",
+  columns: [
+    {
+      title: "Site",
+      links: [
+        { label: "About", href: "/#about" },
+        { label: "Contact", href: "/#contact" },
+        { label: "Back to top", href: "#top" },
+      ],
+    },
+    {
+      // Replace "#" with your own profile links
+      title: "Follow",
+      links: [
+        { label: "X / Twitter", href: "#" },
+        { label: "Instagram", href: "#" },
+        { label: "YouTube", href: "#" },
+        { label: "Facebook", href: "#" },
+      ],
+    },
+  ],
+};
