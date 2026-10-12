@@ -1,27 +1,22 @@
-import Media from "../Media";
+import Link from "next/link";
+import RaceCard from "../RaceCard";
 import SectionHeader from "./SectionHeader";
-import { UPCOMING_RACES } from "@/data/site";
+import { upcomingRaces } from "@/data/calendar";
 
 export default function Calendar() {
+  const races = upcomingRaces(3);
+
   return (
     <section className="section section--tinted" id="calendar">
       <div className="container">
-        <SectionHeader eyebrow="Calendar" title="Upcoming races" subtitle="The next three rounds. Dates are placeholders, so confirm before you travel." />
+        <SectionHeader eyebrow="Calendar" title="Upcoming races" subtitle="The next three rounds of the 2026 season. Confirm dates before you travel." />
         <div className="card-grid card-grid--races">
-          {UPCOMING_RACES.map((race) => (
-            <article key={race.round} className="card race-card">
-              <Media src={race.image} alt={`Circuit for the ${race.name}`} label="circuit image" className="card__media" sizes="(max-width: 600px) 100vw, 400px" />
-              <div className="card__body">
-                <p className="race-card__round">Round {race.round}</p>
-                <h3 className="card__title">{race.name}</h3>
-                <p className="card__meta">{race.location}</p>
-                <p className="race-card__date">{race.date}</p>
-              </div>
-            </article>
+          {races.map((race, i) => (
+            <RaceCard key={race.round} race={race} isNext={i === 0} />
           ))}
         </div>
         <div className="section-cta">
-          <a href="#" className="btn btn--primary">Full Calendar</a>
+          <Link href="/calendar" className="btn btn--primary">Full Calendar</Link>
         </div>
       </div>
     </section>

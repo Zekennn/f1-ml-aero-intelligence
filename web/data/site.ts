@@ -21,7 +21,7 @@ export const NAV_MENUS: NavMenu[] = [
     items: [
       { label: "Teams", href: "/#teams", icon: "teams", description: "All eleven constructors and their 2026 cars" },
       { label: "Drivers", href: "/#drivers", icon: "drivers", description: "The full grid with numbers and teams" },
-      { label: "Calendar", href: "/#calendar", icon: "calendar", description: "Upcoming rounds, venues and dates" },
+      { label: "Calendar", href: "/calendar", icon: "calendar", description: "All 24 rounds, venues and dates" },
       { label: "Gallery", href: "/#gallery", icon: "gallery", description: "Moments from around the paddock" },
     ],
   },
@@ -47,15 +47,6 @@ export const STATS = [
   { value: "11", label: "Teams" },
   { value: "22", label: "Drivers" },
   { value: "21", label: "Countries" },
-];
-
-export type Race = { round: number; name: string; location: string; date: string; image: string };
-
-/** Next three races shown on the home page. Dates are placeholders. */
-export const UPCOMING_RACES: Race[] = [
-  { round: 19, name: "United States Grand Prix", location: "Austin, USA", date: "23 – 25 Oct 2026", image: "/images/circuits/austin.jpg" },
-  { round: 20, name: "Mexico City Grand Prix", location: "Mexico City, Mexico", date: "30 Oct – 1 Nov 2026", image: "/images/circuits/mexico.jpg" },
-  { round: 21, name: "São Paulo Grand Prix", location: "São Paulo, Brazil", date: "6 – 8 Nov 2026", image: "/images/circuits/brazil.jpg" },
 ];
 
 /** Gallery photos. Add a file named 6.png to /public/images to fill the last slot. */
