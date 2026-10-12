@@ -348,47 +348,7 @@ button { font: inherit; cursor: pointer; }
 }
 
 /* ---------- 12. Calendar ---------- */
-.card-grid--races { grid-template-columns: repeat(3, 1fr); }
-.race-card__round {
-  margin-bottom: 0.35rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ash-text);
-}
-.race-card__date {
-  margin: 1rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid var(--ash);
-  font-weight: 600;
-  color: var(--blue);
-}
-.race-card__media { position: relative; }
-.race-card__media img { transition: transform 0.4s ease; }
-.race-card:hover .race-card__media img { transform: scale(1.03); }
-.race-card__badge,
-.race-card__status {
-  position: absolute;
-  top: 12px;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-.race-card__badge {
-  left: 12px;
-  background: var(--dark-blue);
-  color: var(--white);
-  font-variant-numeric: tabular-nums;
-}
-.race-card__status { right: 12px; text-transform: uppercase; }
-.race-card__status--live { background: var(--blue); color: var(--white); }
-.race-card__status--done { background: rgba(255, 255, 255, 0.92); color: var(--ash-text); }
-/* Past rounds are toned down so the rest of the season stands out */
-.race-card--finished .race-card__media img { filter: grayscale(0.85); opacity: 0.85; }
-.race-card--finished .race-card__date { color: var(--ash-text); }
+/* In calendar.css */
 
 /* ---------- 13. Gallery & lightbox ---------- */
 .gallery {
@@ -490,7 +450,6 @@ button { font: inherit; cursor: pointer; }
 
 /* Tablet */
 @media (max-width: 1024px) {
-  .card-grid--races { grid-template-columns: repeat(2, 1fr); }
   .about { gap: 40px; }
 }
 
@@ -513,7 +472,6 @@ button { font: inherit; cursor: pointer; }
   .hero__actions .btn { flex: 1; }
   .stat { padding: 1.75rem 0.5rem; }
   .stat__value { font-size: 2rem; }
-  .card-grid--races { grid-template-columns: 1fr; }
   .card-grid--drivers { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .driver-card .card__body { flex-direction: column; padding: 1rem; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }

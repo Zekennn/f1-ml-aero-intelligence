@@ -1,23 +1,19 @@
-import Link from "next/link";
-import RaceCard from "../RaceCard";
 import SectionHeader from "./SectionHeader";
-import { upcomingRaces } from "@/data/calendar";
+import CalendarView from "../calendar/CalendarView";
+import { getCalendar } from "@/lib/calendar";
 
-export default function Calendar() {
-  const races = upcomingRaces(3);
+export default async function Calendar() {
+  const calendar = await getCalendar();
 
   return (
     <section className="section section--tinted" id="calendar">
       <div className="container">
-        <SectionHeader eyebrow="Calendar" title="Upcoming races" subtitle="The next three rounds of the 2026 season. Confirm dates before you travel." />
-        <div className="card-grid card-grid--races">
-          {races.map((race, i) => (
-            <RaceCard key={race.round} race={race} isNext={i === 0} />
-          ))}
-        </div>
-        <div className="section-cta">
-          <Link href="/calendar" className="btn btn--primary">Full Calendar</Link>
-        </div>
+        <SectionHeader
+          eyebrow="Calendar"
+          title={`${calendar.season ?? ""} race calendar`.trim()}
+          subtitle="Every round of the season. Select a race for results, track history and active aero details."
+        />
+        <CalendarView calendar={calendar} />
       </div>
     </section>
   );

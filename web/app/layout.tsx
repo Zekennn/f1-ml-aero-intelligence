@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import "./navbar.css";
 import "./footer.css";
+import "./calendar.css";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-inter" });
 

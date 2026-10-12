@@ -1,0 +1,1307 @@
+{
+  "season": 2026,
+  "updated": "2026-10-12T09:34:48Z",
+  "races": [
+    {
+      "round": 1,
+      "slug": "australian",
+      "name": "Australian Grand Prix",
+      "country": "Australia",
+      "location": "Melbourne",
+      "circuit": "Albert Park Grand Prix Circuit",
+      "date": "2026-03-08",
+      "raceStartUtc": "2026-03-08T04:00:00Z",
+      "status": "completed",
+      "laps": 58,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Max Verstappen",
+          "time": "1:22.091"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Keke Rosberg",
+          "year": 1985
+        },
+        "pastRaces": 39,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 57,
+        "lastLapsYear": 2025,
+        "timesHeld": 40,
+        "lapRecord": {
+          "driver": "Charles Leclerc",
+          "time": "1:19.813",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "round": 2,
+      "slug": "chinese",
+      "name": "Chinese Grand Prix",
+      "country": "China",
+      "location": "Shanghai",
+      "circuit": "Shanghai International Circuit",
+      "date": "2026-03-15",
+      "raceStartUtc": "2026-03-15T07:00:00Z",
+      "status": "completed",
+      "laps": 56,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:35.275"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Rubens Barrichello",
+          "year": 2004
+        },
+        "pastRaces": 18,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 56,
+        "lastLapsYear": 2025,
+        "timesHeld": 19,
+        "lapRecord": {
+          "driver": "Michael Schumacher",
+          "time": "1:32.238",
+          "year": 2004
+        }
+      }
+    },
+    {
+      "round": 3,
+      "slug": "japanese",
+      "name": "Japanese Grand Prix",
+      "country": "Japan",
+      "location": "Suzuka",
+      "circuit": "Suzuka Circuit",
+      "date": "2026-03-29",
+      "raceStartUtc": "2026-03-29T05:00:00Z",
+      "status": "completed",
+      "laps": 53,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:32.432"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Oscar Piastri",
+            "team": "McLaren"
+          },
+          {
+            "position": 3,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Mario Andretti",
+          "year": 1976
+        },
+        "pastRaces": 39,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 53,
+        "lastLapsYear": 2025,
+        "timesHeld": 40,
+        "lapRecord": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:30.965",
+          "year": 2025
+        }
+      }
+    },
+    {
+      "round": 4,
+      "slug": "miami",
+      "name": "Miami Grand Prix",
+      "country": "United States",
+      "location": "Miami",
+      "circuit": "Miami International Autodrome",
+      "date": "2026-05-03",
+      "raceStartUtc": "2026-05-03T17:00:00Z",
+      "status": "completed",
+      "laps": 57,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Lando Norris",
+          "time": "1:31.869"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          {
+            "position": 3,
+            "driver": "Oscar Piastri",
+            "team": "McLaren"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Max Verstappen",
+          "year": 2022
+        },
+        "pastRaces": 4,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 57,
+        "lastLapsYear": 2025,
+        "timesHeld": 5,
+        "lapRecord": {
+          "driver": "Max Verstappen",
+          "time": "1:29.708",
+          "year": 2023
+        }
+      }
+    },
+    {
+      "round": 5,
+      "slug": "canadian",
+      "name": "Canadian Grand Prix",
+      "country": "Canada",
+      "location": "Montreal",
+      "circuit": "Circuit Gilles Villeneuve",
+      "date": "2026-05-24",
+      "raceStartUtc": "2026-05-24T20:00:00Z",
+      "status": "completed",
+      "laps": 68,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:14.210"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          },
+          {
+            "position": 3,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Jack Brabham",
+          "year": 1967
+        },
+        "pastRaces": 54,
+        "previousWinner": {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "year": 2025
+        },
+        "lastLaps": 70,
+        "lastLapsYear": 2025,
+        "timesHeld": 55,
+        "lapRecord": {
+          "driver": "Valtteri Bottas",
+          "time": "1:13.078",
+          "year": 2019
+        }
+      }
+    },
+    {
+      "round": 6,
+      "slug": "monaco",
+      "name": "Monaco Grand Prix",
+      "country": "Monaco",
+      "location": "Monte Carlo",
+      "circuit": "Circuit de Monaco",
+      "date": "2026-06-07",
+      "raceStartUtc": "2026-06-07T13:00:00Z",
+      "status": "completed",
+      "laps": 78,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:13.481"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          },
+          {
+            "position": 3,
+            "driver": "Isack Hadjar",
+            "team": "Red Bull"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "year": 1950
+        },
+        "pastRaces": 71,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 78,
+        "lastLapsYear": 2025,
+        "timesHeld": 72,
+        "lapRecord": {
+          "driver": "Lewis Hamilton",
+          "time": "1:12.909",
+          "year": 2021
+        }
+      }
+    },
+    {
+      "round": 7,
+      "slug": "barcelona",
+      "name": "Barcelona Grand Prix",
+      "country": "Spain",
+      "location": "Barcelona",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "date": "2026-06-14",
+      "raceStartUtc": "2026-06-14T13:00:00Z",
+      "status": "completed",
+      "laps": 66,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari"
+        },
+        "pole": {
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Lewis Hamilton",
+          "time": "1:20.122"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          },
+          {
+            "position": 2,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Lewis Hamilton",
+          "year": 2026
+        },
+        "pastRaces": 0,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 66,
+        "lastLapsYear": 2025,
+        "timesHeld": 1,
+        "lapRecord": {
+          "driver": "Giancarlo Fisichella",
+          "time": "1:15.641",
+          "year": 2005
+        }
+      }
+    },
+    {
+      "round": 8,
+      "slug": "austrian",
+      "name": "Austrian Grand Prix",
+      "country": "Austria",
+      "location": "Spielberg",
+      "circuit": "Red Bull Ring",
+      "date": "2026-06-28",
+      "raceStartUtc": "2026-06-28T13:00:00Z",
+      "status": "completed",
+      "laps": 71,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:10.374"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 3,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Lorenzo Bandini",
+          "year": 1964
+        },
+        "pastRaces": 38,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 70,
+        "lastLapsYear": 2025,
+        "timesHeld": 39,
+        "lapRecord": {
+          "driver": "Carlos Sainz",
+          "time": "1:05.619",
+          "year": 2020
+        }
+      }
+    },
+    {
+      "round": 9,
+      "slug": "british",
+      "name": "British Grand Prix",
+      "country": "United Kingdom",
+      "location": "Silverstone",
+      "circuit": "Silverstone Circuit",
+      "date": "2026-07-05",
+      "raceStartUtc": "2026-07-05T14:00:00Z",
+      "status": "completed",
+      "laps": 52,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Charles Leclerc",
+          "team": "Ferrari"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:31.777"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          },
+          {
+            "position": 2,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Nino Farina",
+          "year": 1950
+        },
+        "pastRaces": 76,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 52,
+        "lastLapsYear": 2025,
+        "timesHeld": 77,
+        "lapRecord": {
+          "driver": "Michael Schumacher",
+          "time": "1:18.739",
+          "year": 2004
+        }
+      }
+    },
+    {
+      "round": 10,
+      "slug": "belgian",
+      "name": "Belgian Grand Prix",
+      "country": "Belgium",
+      "location": "Spa",
+      "circuit": "Circuit de Spa-Francorchamps",
+      "date": "2026-07-19",
+      "raceStartUtc": "2026-07-19T13:00:00Z",
+      "status": "completed",
+      "laps": 44,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Lando Norris",
+          "time": "1:48.890"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          },
+          {
+            "position": 3,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "year": 1950
+        },
+        "pastRaces": 70,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 44,
+        "lastLapsYear": 2025,
+        "timesHeld": 71,
+        "lapRecord": {
+          "driver": "Sergio Pérez",
+          "time": "1:44.701",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "round": 11,
+      "slug": "hungarian",
+      "name": "Hungarian Grand Prix",
+      "country": "Hungary",
+      "location": "Budapest",
+      "circuit": "Hungaroring",
+      "date": "2026-07-26",
+      "raceStartUtc": "2026-07-26T13:00:00Z",
+      "status": "completed",
+      "laps": 70,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Lando Norris",
+          "team": "McLaren"
+        },
+        "pole": {
+          "driver": "Lando Norris",
+          "team": "McLaren"
+        },
+        "fastestLap": {
+          "driver": "Charles Leclerc",
+          "time": "1:22.000"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          {
+            "position": 2,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 3,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Nelson Piquet",
+          "year": 1986
+        },
+        "pastRaces": 40,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 70,
+        "lastLapsYear": 2025,
+        "timesHeld": 41,
+        "lapRecord": {
+          "driver": "Lewis Hamilton",
+          "time": "1:16.627",
+          "year": 2020
+        }
+      }
+    },
+    {
+      "round": 12,
+      "slug": "dutch",
+      "name": "Dutch Grand Prix",
+      "country": "Netherlands",
+      "location": "Zandvoort",
+      "circuit": "Circuit Park Zandvoort",
+      "date": "2026-08-23",
+      "raceStartUtc": "2026-08-23T13:00:00Z",
+      "status": "completed",
+      "laps": 72,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Lando Norris",
+          "team": "McLaren"
+        },
+        "pole": {
+          "driver": "Lando Norris",
+          "team": "McLaren"
+        },
+        "fastestLap": {
+          "driver": "Charles Leclerc",
+          "time": "1:14.230"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          {
+            "position": 2,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Alberto Ascari",
+          "year": 1952
+        },
+        "pastRaces": 35,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 72,
+        "lastLapsYear": 2025,
+        "timesHeld": 36,
+        "lapRecord": {
+          "driver": "Lewis Hamilton",
+          "time": "1:11.097",
+          "year": 2021
+        }
+      }
+    },
+    {
+      "round": 13,
+      "slug": "italian",
+      "name": "Italian Grand Prix",
+      "country": "Italy",
+      "location": "Monza",
+      "circuit": "Autodromo Nazionale di Monza",
+      "date": "2026-09-06",
+      "raceStartUtc": "2026-09-06T13:00:00Z",
+      "status": "completed",
+      "laps": 53,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Pierre Gasly",
+          "team": "Alpine F1 Team"
+        },
+        "fastestLap": {
+          "driver": "Andrea Kimi Antonelli",
+          "time": "1:23.504"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Nino Farina",
+          "year": 1950
+        },
+        "pastRaces": 76,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 53,
+        "lastLapsYear": 2025,
+        "timesHeld": 77,
+        "lapRecord": {
+          "driver": "Lando Norris",
+          "time": "1:20.901",
+          "year": 2025
+        }
+      }
+    },
+    {
+      "round": 14,
+      "slug": "spanish",
+      "name": "Spanish Grand Prix",
+      "country": "Spain",
+      "location": "Madrid",
+      "circuit": "Madring",
+      "date": "2026-09-13",
+      "raceStartUtc": "2026-09-13T13:00:00Z",
+      "status": "completed",
+      "laps": 57,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Lando Norris",
+          "team": "McLaren"
+        },
+        "fastestLap": {
+          "driver": "George Russell",
+          "time": "1:35.587"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 3,
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "year": 1951
+        },
+        "pastRaces": 55,
+        "previousWinner": null,
+        "lastLaps": null,
+        "lastLapsYear": null,
+        "timesHeld": 56,
+        "lapRecord": {
+          "driver": "George Russell",
+          "time": "1:35.587",
+          "year": 2026
+        }
+      }
+    },
+    {
+      "round": 15,
+      "slug": "azerbaijan",
+      "name": "Azerbaijan Grand Prix",
+      "country": "Azerbaijan",
+      "location": "Baku",
+      "circuit": "Baku City Circuit",
+      "date": "2026-09-26",
+      "raceStartUtc": "2026-09-26T11:00:00Z",
+      "status": "completed",
+      "laps": 51,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "George Russell",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "George Russell",
+          "time": "1:44.916"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 3,
+            "driver": "Isack Hadjar",
+            "team": "Red Bull"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Daniel Ricciardo",
+          "year": 2017
+        },
+        "pastRaces": 8,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 51,
+        "lastLapsYear": 2025,
+        "timesHeld": 9,
+        "lapRecord": {
+          "driver": "Charles Leclerc",
+          "time": "1:43.009",
+          "year": 2019
+        }
+      }
+    },
+    {
+      "round": 16,
+      "slug": "bahrain",
+      "name": "Bahrain Grand Prix",
+      "country": "Malaysia",
+      "location": "Kuala Lumpur",
+      "circuit": "Sepang International Circuit",
+      "date": "2026-10-04",
+      "raceStartUtc": "2026-10-04T07:00:00Z",
+      "status": "completed",
+      "laps": 55,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Max Verstappen",
+          "team": "Red Bull"
+        },
+        "pole": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull"
+        },
+        "fastestLap": {
+          "driver": "Max Verstappen",
+          "time": "1:38.220"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 2,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 3,
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Michael Schumacher",
+          "year": 2004
+        },
+        "pastRaces": 21,
+        "previousWinner": null,
+        "lastLaps": 56,
+        "lastLapsYear": 2017,
+        "timesHeld": 22,
+        "lapRecord": {
+          "driver": "Sebastian Vettel",
+          "time": "1:34.080",
+          "year": 2017
+        }
+      }
+    },
+    {
+      "round": 17,
+      "slug": "singapore",
+      "name": "Singapore Grand Prix",
+      "country": "Singapore",
+      "location": "Marina Bay",
+      "circuit": "Marina Bay Street Circuit",
+      "date": "2026-10-11",
+      "raceStartUtc": "2026-10-11T12:00:00Z",
+      "status": "completed",
+      "laps": 62,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Max Verstappen",
+          "team": "Red Bull"
+        },
+        "pole": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull"
+        },
+        "fastestLap": {
+          "driver": "Charles Leclerc",
+          "time": "1:35.202"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          {
+            "position": 2,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          },
+          {
+            "position": 3,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          }
+        ]
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Fernando Alonso",
+          "year": 2008
+        },
+        "pastRaces": 16,
+        "previousWinner": {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "year": 2025
+        },
+        "lastLaps": 62,
+        "lastLapsYear": 2025,
+        "timesHeld": 17,
+        "lapRecord": {
+          "driver": "Lewis Hamilton",
+          "time": "1:33.808",
+          "year": 2025
+        }
+      }
+    },
+    {
+      "round": 18,
+      "slug": "united-states",
+      "name": "United States Grand Prix",
+      "country": "United States",
+      "location": "Austin",
+      "circuit": "Circuit of the Americas",
+      "date": "2026-10-25",
+      "raceStartUtc": "2026-10-25T20:00:00Z",
+      "status": "upcoming",
+      "laps": 56,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Bruce McLaren",
+          "year": 1959
+        },
+        "pastRaces": 46,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 56,
+        "lastLapsYear": 2025,
+        "timesHeld": 46,
+        "lapRecord": {
+          "driver": "Charles Leclerc",
+          "time": "1:36.169",
+          "year": 2019
+        }
+      }
+    },
+    {
+      "round": 19,
+      "slug": "mexico-city",
+      "name": "Mexico City Grand Prix",
+      "country": "Mexico",
+      "location": "Mexico City",
+      "circuit": "Autódromo Hermanos Rodríguez",
+      "date": "2026-11-01",
+      "raceStartUtc": "2026-11-01T20:00:00Z",
+      "status": "upcoming",
+      "laps": 71,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Jim Clark",
+          "year": 1963
+        },
+        "pastRaces": 25,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 71,
+        "lastLapsYear": 2025,
+        "timesHeld": 25,
+        "lapRecord": {
+          "driver": "Valtteri Bottas",
+          "time": "1:17.774",
+          "year": 2021
+        }
+      }
+    },
+    {
+      "round": 20,
+      "slug": "sao-paulo",
+      "name": "São Paulo Grand Prix",
+      "country": "Brazil",
+      "location": "São Paulo",
+      "circuit": "Autódromo José Carlos Pace",
+      "date": "2026-11-08",
+      "raceStartUtc": "2026-11-08T17:00:00Z",
+      "status": "upcoming",
+      "laps": 71,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Emerson Fittipaldi",
+          "year": 1973
+        },
+        "pastRaces": 52,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "lastLaps": 71,
+        "lastLapsYear": 2025,
+        "timesHeld": 52,
+        "lapRecord": {
+          "driver": "Valtteri Bottas",
+          "time": "1:10.540",
+          "year": 2018
+        }
+      }
+    },
+    {
+      "round": 21,
+      "slug": "las-vegas",
+      "name": "Las Vegas Grand Prix",
+      "country": "United States",
+      "location": "Las Vegas",
+      "circuit": "Las Vegas Strip Street Circuit",
+      "date": "2026-11-21",
+      "raceStartUtc": "2026-11-22T04:00:00Z",
+      "status": "upcoming",
+      "laps": 50,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Max Verstappen",
+          "year": 2023
+        },
+        "pastRaces": 3,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 50,
+        "lastLapsYear": 2025,
+        "timesHeld": 3,
+        "lapRecord": {
+          "driver": "Max Verstappen",
+          "time": "1:33.365",
+          "year": 2025
+        }
+      }
+    },
+    {
+      "round": 22,
+      "slug": "qatar",
+      "name": "Qatar Grand Prix",
+      "country": "Qatar",
+      "location": "Lusail",
+      "circuit": "Lusail International Circuit",
+      "date": "2026-11-29",
+      "raceStartUtc": "2026-11-29T16:00:00Z",
+      "status": "upcoming",
+      "laps": 57,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Lewis Hamilton",
+          "year": 2021
+        },
+        "pastRaces": 4,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 57,
+        "lastLapsYear": 2025,
+        "timesHeld": 4,
+        "lapRecord": {
+          "driver": "Lando Norris",
+          "time": "1:22.384",
+          "year": 2024
+        }
+      }
+    },
+    {
+      "round": 23,
+      "slug": "abu-dhabi",
+      "name": "Abu Dhabi Grand Prix",
+      "country": "United Arab Emirates",
+      "location": "Abu Dhabi",
+      "circuit": "Yas Marina Circuit",
+      "date": "2026-12-06",
+      "raceStartUtc": "2026-12-06T13:00:00Z",
+      "status": "upcoming",
+      "laps": 58,
+      "lapsFrom": 2025,
+      "result": null,
+      "history": {
+        "firstWinner": {
+          "driver": "Sebastian Vettel",
+          "year": 2009
+        },
+        "pastRaces": 17,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "lastLaps": 58,
+        "lastLapsYear": 2025,
+        "timesHeld": 17,
+        "lapRecord": {
+          "driver": "Kevin Magnussen",
+          "time": "1:25.637",
+          "year": 2024
+        }
+      }
+    }
+  ]
+}

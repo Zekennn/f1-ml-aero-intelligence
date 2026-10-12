@@ -8,8 +8,8 @@ import Gallery from "@/components/home/Gallery";
 import Insights from "@/components/home/Insights";
 import Newsletter from "@/components/home/Newsletter";
 
-// Re-render hourly so the calendar always shows the next three races
-export const revalidate = 3600;
+// Render on every request so the calendar always reflects today's date and the latest data
+export const dynamic = "force-dynamic";
 
 /** Home page – sections appear in this order. */
 export default function HomePage() {

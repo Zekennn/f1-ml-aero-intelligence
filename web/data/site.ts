@@ -21,7 +21,7 @@ export const NAV_MENUS: NavMenu[] = [
     items: [
       { label: "Teams", href: "/#teams", icon: "teams", description: "All eleven constructors and their 2026 cars" },
       { label: "Drivers", href: "/#drivers", icon: "drivers", description: "The full grid with numbers and teams" },
-      { label: "Calendar", href: "/calendar", icon: "calendar", description: "All 24 rounds, venues and dates" },
+      { label: "Calendar", href: "/#calendar", icon: "calendar", description: "Every round, results and track history" },
       { label: "Gallery", href: "/#gallery", icon: "gallery", description: "Moments from around the paddock" },
     ],
   },
@@ -43,10 +43,10 @@ export const NAV_SECONDARY: NavLink = { label: "Contact", href: "/#contact" };
 export const NAV_CTA: NavLink = { label: "Get Updates", href: "/#contact" };
 
 export const STATS = [
-  { value: "24", label: "Races per season" },
+  { value: "23", label: "Races in 2026" },
   { value: "11", label: "Teams" },
   { value: "22", label: "Drivers" },
-  { value: "21", label: "Countries" },
+  { value: "20", label: "Countries" },
 ];
 
 /** Gallery photos. Add a file named 6.png to /public/images to fill the last slot. */

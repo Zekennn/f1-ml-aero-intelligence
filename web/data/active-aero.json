@@ -1,0 +1,117 @@
+{
+  "australian": {
+    "grandPrix": "Australian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "chinese": {
+    "grandPrix": "Chinese Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "japanese": {
+    "grandPrix": "Japanese Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "miami": {
+    "grandPrix": "Miami Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "canadian": {
+    "grandPrix": "Canadian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "monaco": {
+    "grandPrix": "Monaco Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "barcelona": {
+    "grandPrix": "Barcelona Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "austrian": {
+    "grandPrix": "Austrian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "british": {
+    "grandPrix": "British Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "belgian": {
+    "grandPrix": "Belgian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "hungarian": {
+    "grandPrix": "Hungarian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "dutch": {
+    "grandPrix": "Dutch Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "italian": {
+    "grandPrix": "Italian Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "spanish": {
+    "grandPrix": "Spanish Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "azerbaijan": {
+    "grandPrix": "Azerbaijan Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "bahrain": {
+    "grandPrix": "Bahrain Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "singapore": {
+    "grandPrix": "Singapore Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "united-states": {
+    "grandPrix": "United States Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "mexico-city": {
+    "grandPrix": "Mexico City Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "sao-paulo": {
+    "grandPrix": "São Paulo Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "las-vegas": {
+    "grandPrix": "Las Vegas Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "qatar": {
+    "grandPrix": "Qatar Grand Prix",
+    "zones": null,
+    "note": ""
+  },
+  "abu-dhabi": {
+    "grandPrix": "Abu Dhabi Grand Prix",
+    "zones": null,
+    "note": ""
+  }
+}
