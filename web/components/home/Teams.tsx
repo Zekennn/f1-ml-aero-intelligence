@@ -1,6 +1,6 @@
 import Media from "../Media";
 import SectionHeader from "./SectionHeader";
-import { TEAMS } from "@/data/teams";
+import { TEAMS, teamCar, teamLogo } from "@/data/teams";
 
 export default function Teams() {
   return (
@@ -9,10 +9,17 @@ export default function Teams() {
         <SectionHeader eyebrow="Teams" title="The constructors" subtitle="Eleven teams, two cars each. Placeholder intro text you can edit." />
         <div className="card-grid card-grid--teams">
           {TEAMS.map((team) => (
-            <article key={team.name} className="card team-card" style={{ "--team-colour": team.colour } as React.CSSProperties}>
-              <Media src={team.image} alt={`${team.name} team`} label="team image" className="card__media" sizes="(max-width: 600px) 100vw, 300px" />
+            <article key={team.slug} className="card team-card" style={{ "--team-colour": team.colour } as React.CSSProperties}>
+              {/* Car on a light background tinted with the team colour */}
+              <div className="team-card__stage">
+                <Media src={teamCar(team)} alt={`${team.name} car`} label="car image" className="team-card__car" sizes="(max-width: 600px) 90vw, 280px" />
+              </div>
               <div className="card__body">
-                <h3 className="card__title">{team.name}</h3>
+                <div className="team-card__head">
+                  {/* White logo needs a dark badge to stay visible on any team colour */}
+                  <Media src={teamLogo(team)} alt={`${team.name} logo`} label="" className="team-logo" sizes="40px" />
+                  <h3 className="card__title">{team.name}</h3>
+                </div>
                 <p className="card__meta">{team.text}</p>
               </div>
             </article>

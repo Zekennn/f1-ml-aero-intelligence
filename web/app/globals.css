@@ -351,6 +351,44 @@ button { font: inherit; cursor: pointer; }
 .team-card { border-top: 4px solid var(--team-colour, var(--blue)); }
 .team-card .card__meta { margin-top: 0.35rem; }
 
+/* Car "stage": soft team-colour wash behind a transparent side-on car image */
+.team-card__stage {
+  display: flex;
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  padding: 0 14px;
+  background:
+    radial-gradient(120% 80% at 50% 100%, color-mix(in srgb, var(--team-colour) 22%, transparent), transparent 70%),
+    var(--ash-light);
+}
+.team-card__car {
+  width: 100%;
+  aspect-ratio: 1018 / 224;
+  background: transparent;
+  transition: transform 0.3s ease;
+}
+.team-card__car img { object-fit: contain; }
+.team-card:hover .team-card__car { transform: translateX(4px); }
+
+.team-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.team-card__head .card__title { margin: 0; }
+
+/* Small dark badge holding a white team logo (used on team and driver cards) */
+.team-logo {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--dark-blue);
+}
+.team-logo img { object-fit: contain; padding: 6px; }
+.team-logo--sm { width: 22px; height: 22px; border-radius: 5px; }
+.team-logo--sm img { padding: 3px; }
+
 .card-grid--drivers { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
 
 .driver-card .card__media {
@@ -364,6 +402,11 @@ button { font: inherit; cursor: pointer; }
   align-items: flex-start;
   justify-content: space-between;
   gap: 0.75rem;
+}
+.driver-card__team {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
 }
 .driver-card__number {
   flex-shrink: 0;
