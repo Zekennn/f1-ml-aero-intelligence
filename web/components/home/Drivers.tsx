@@ -18,10 +18,10 @@ export default function Drivers() {
                 <div className="card__body">
                   <div>
                     <h3 className="card__title">{d.name}</h3>
-                    <p className="card__meta driver-card__team">
+                    <div className="card__meta driver-card__team">
                       {team && <Media src={teamLogo(team)} alt="" className="team-logo team-logo--sm" sizes="22px" />}
                       {d.team}
-                    </p>
+                    </div>
                   </div>
                   <span className="driver-card__number" aria-label="Car number">{d.number}</span>
                 </div>
