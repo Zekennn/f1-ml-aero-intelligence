@@ -377,3 +377,5 @@ body:has(.race-detail[open]) { overflow: hidden; }
   .podium__team { margin-left: auto; }
   .countdown__value { font-size: 1.35rem; }
 }
+
+.race-detail__source { margin: 16px 0 0; padding-top: 12px; border-top: 1px solid var(--ash); font-size: 0.78rem; color: var(--ash-text); }

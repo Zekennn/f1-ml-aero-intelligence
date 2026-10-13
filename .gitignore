@@ -13,3 +13,6 @@ node_modules/
 # Next.js
 .next/
 *.tsbuildinfo
+
+# Raw data repos (TracingInsights) - local only, never published
+data/sources/

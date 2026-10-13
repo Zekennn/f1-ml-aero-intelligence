@@ -1,0 +1,78 @@
+/* =========================================================
+   Standings (/standings) and Pit stops (/pitstops)
+   ========================================================= */
+.ins { display: flex; flex-direction: column; gap: 16px; }
+.ins-card { padding: 18px 20px; background: var(--white); border: 1px solid var(--ash); border-radius: 12px; min-width: 0; }
+.ins-card__title { font-size: 1.05rem; margin-bottom: 10px; }
+.ins-card__sub { margin: -6px 0 12px; font-size: 0.8rem; color: var(--ash-text); }
+.ins-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; }
+.ins-source { margin: 0; font-size: 0.78rem; color: var(--ash-text); }
+
+/* Tables: right-aligned, fixed-width numbers */
+.ins-table-wrap { overflow-x: auto; }
+.ins-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.ins-table th, .ins-table td { padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--ash-light); text-align: left; white-space: nowrap; }
+.ins-table thead th { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ash-text); border-bottom-color: var(--ash); }
+.ins-table tbody th { font-weight: 600; color: var(--dark-blue); }
+.ins-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+.ins-table .strong { font-weight: 700; color: var(--dark-blue); }
+.ins-table .muted { color: var(--ash-text); }
+.ins-table tbody tr:hover { background: var(--ash-light); }
+
+/* Points chart */
+.ins-chart { margin: 0; }
+.ins-chart__plot { position: relative; }
+.ins-chart svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+.ins-gridline { stroke: var(--ash); stroke-width: 1; }
+.ins-tick { font-size: 11px; fill: var(--ash-text); font-variant-numeric: tabular-nums; }
+.ins-end { font-size: 11px; font-weight: 600; fill: var(--text); font-variant-numeric: tabular-nums; }
+.ins-cross { stroke: var(--ash-text); stroke-width: 1; }
+.ins-tip {
+  position: absolute;
+  top: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 0.5rem 0.65rem;
+  border: 1px solid var(--ash);
+  border-radius: 8px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(10px);
+  font-variant-numeric: tabular-nums;
+}
+.ins-tip--left { transform: translateX(calc(-100% - 10px)); }
+.ins-tip strong { color: var(--dark-blue); }
+.ins-tip span { display: flex; align-items: center; gap: 6px; }
+.ins-tip b { margin-left: auto; padding-left: 12px; color: var(--dark-blue); }
+.ins-tip i, .ins-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; }
+.ins-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 8px; font-size: 0.8rem; color: var(--text); }
+.ins-legend span { display: inline-flex; align-items: center; gap: 6px; }
+
+/* Pit stops */
+.ins-filter { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.ins-filter label { display: flex; flex-direction: column; gap: 4px; font-size: 0.8rem; font-weight: 600; color: var(--dark-blue); }
+.ins-filter p { margin: 0; font-size: 0.85rem; color: var(--ash-text); font-variant-numeric: tabular-nums; }
+.ins-bars { position: relative; display: flex; flex-direction: column; gap: 8px; padding-top: 22px; }
+.ins-bars__axis { position: absolute; top: 0; left: 120px; right: 64px; height: 100%; pointer-events: none; }
+.ins-bars__axis span { position: absolute; top: 0; transform: translateX(-50%); font-size: 0.7rem; color: var(--ash-text); font-variant-numeric: tabular-nums; }
+.ins-bar { position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr) 56px; align-items: center; gap: 8px; font-size: 0.85rem; }
+.ins-bar__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--dark-blue); font-weight: 600; }
+.ins-bar__track { position: relative; height: 16px; }
+.ins-bar__fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; background: #8FB0FF; }
+.ins-bar__fill--best { background: var(--blue); }
+.ins-bar__value { text-align: right; font-weight: 700; color: var(--dark-blue); font-variant-numeric: tabular-nums; }
+.ins-bar__value em { font-style: normal; font-weight: 500; color: var(--ash-text); font-size: 0.8em; }
+
+@media (max-width: 900px) {
+  .ins-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .ins-card { padding: 14px; }
+  .ins-bar { grid-template-columns: 90px minmax(0, 1fr) 52px; }
+  .ins-bars__axis { left: 98px; right: 60px; }
+}

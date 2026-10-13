@@ -29,6 +29,11 @@ export default function Footer() {
           <Link href={NAV_CTA.href} className="site-footer__cta">{NAV_CTA.label}</Link>
           <p className="site-footer__copyright">&copy; {new Date().getFullYear()} {SITE_NAME}. All rights reserved.</p>
           <p className="site-footer__note">{FOOTER.note}</p>
+          <p className="site-footer__note">
+            {FOOTER.credit.split("TracingInsights")[0]}
+            <a href="https://github.com/TracingInsights" rel="noopener noreferrer" target="_blank">TracingInsights</a>
+            {FOOTER.credit.split("TracingInsights")[1]}
+          </p>
         </section>
 
         {/* Link columns */}

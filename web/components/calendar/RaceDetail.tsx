@@ -63,6 +63,7 @@ export default function RaceDetail({ race, season, onClose }: { race: Race | nul
           <TrackImage race={race} size="medium" />
 
           <h2 id="race-detail-title" className="race-detail__title">{race.name}</h2>
+          {race.track.heldAt && <p className="race-detail__note">This year&apos;s event: {race.track.heldAt}.</p>}
           <dl className="race-detail__facts">
             <Fact label="Circuit">{race.circuit}</Fact>
             <Fact label="Country">{race.location && race.location !== race.country ? `${race.location}, ${race.country}` : race.country}</Fact>
@@ -117,20 +118,49 @@ export default function RaceDetail({ race, season, onClose }: { race: Race | nul
             <dl className="race-detail__facts">
               <Fact label="First winner">{history?.firstWinner && <>{history.firstWinner.driver} <span className="race-detail__muted">({history.firstWinner.year})</span></>}</Fact>
               <Fact label="Times held">{history?.timesHeld ?? undefined}</Fact>
-              <Fact label={`Previous winner (${year - 1})`}>{withTeam(history?.previousWinner)}</Fact>
-              <Fact label="Lap record">
+              <Fact label={`Previous winner (${year - 1})`}>
+                {history?.previousWinner && (
+                  <>
+                    {withTeam(history.previousWinner)}
+                    {history.previousWinner.event && <span className="race-detail__muted"> ({history.previousWinner.event})</span>}
+                  </>
+                )}
+              </Fact>
+              <Fact label="Most wins">
+                {history?.mostWins && <>{history.mostWins.drivers.join(", ")} <span className="race-detail__muted">· {history.mostWins.wins} {history.mostWins.wins === 1 ? "win" : "wins"}</span></>}
+              </Fact>
+              <Fact label="Race lap record">
                 {history?.lapRecord && <>{history.lapRecord.time} <span className="race-detail__muted">· {history.lapRecord.driver}, {history.lapRecord.year}</span></>}
               </Fact>
+              <Fact label="Fastest pit stop">
+                {race.track.fastestPitStop && (
+                  <>
+                    {race.track.fastestPitStop.time.toFixed(2)} s{" "}
+                    <span className="race-detail__muted">· {race.track.fastestPitStop.team} ({race.track.fastestPitStop.driver}), {race.track.fastestPitStop.year}</span>
+                  </>
+                )}
+              </Fact>
+              <Fact label="Pit lane time loss">{race.track.pitLoss != null ? `${race.track.pitLoss.toFixed(1)} s` : undefined}</Fact>
             </dl>
           </section>
 
           <section className="race-detail__section">
             <h3>Active aero</h3>
             <dl className="race-detail__facts">
-              <Fact label="Active aero zones">{race.aero.zones ?? undefined}</Fact>
+              <Fact label="Active aero zones">
+                {race.aero.zones ?? (race.track.aeroZonesDerived != null ? (
+                  <>{race.track.aeroZonesDerived} <span className="race-detail__muted">(derived from 2026 telemetry)</span></>
+                ) : undefined)}
+              </Fact>
             </dl>
             <p className="race-detail__note">{race.aero.note || "No notes for this track yet."}</p>
           </section>
+
+          <p className="race-detail__source">
+            Data source: {race.track.dataSeason ? `${race.track.dataSeason} season telemetry` : "no telemetry yet"}
+            {race.track.dataSeason && race.track.dataSeason < year ? " (this year's race isn't in the data yet)" : ""} · history from{" "}
+            {race.track.historySource}. The lap record counts race laps on the current layout (approximate).
+          </p>
         </div>
       )}
     </dialog>

@@ -14,7 +14,7 @@ export default function PhysicsInfo() {
           <div><dt>Drag power</dt><dd>P = D × v</dd></div>
           <div><dt>Downforce as car weights</dt><dd>L ÷ (m × 9.81) <span>(m = {CAR.massKg} kg)</span></dd></div>
           <div><dt>Aero efficiency</dt><dd>L ÷ D</dd></div>
-          <div><dt>Top speed (simplified)</dt><dd>v = (2P ÷ (ρ × CdA))<sup>1/3</sup> <span>(P ≈ {POWER.totalKw} kW; ignores rolling resistance and energy deployment limits)</span></dd></div>
+          <div><dt>Top speed (simplified)</dt><dd>v = (2P ÷ (ρ × CdA))<sup>1/3</sup> <span>(P = {POWER.topSpeedKw} kW effective power at top speed, calibrated to real 2026 top speeds; ignores rolling resistance)</span></dd></div>
           <div><dt>Air density</dt><dd>p = {AIR.seaLevelPressurePa.toLocaleString()} × (1 − 2.25577×10⁻⁵ × h)<sup>5.25588</sup>, ρ = p ÷ ({AIR.gasConstant} × T) <span>(standard atmosphere + ideal gas law, T in kelvin)</span></dd></div>
         </dl>
         <p className="physics__note">

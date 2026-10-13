@@ -9,6 +9,8 @@ const PATHS: Record<IconName, React.ReactNode> = {
   live: <path d="M3 12h4l3-8 4 16 3-8h4" />,
   trophy: <><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z" /><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3" /></>,
   wind: <path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8" />,
+  standings: <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" />,
+  pit: <><circle cx="12" cy="13" r="8" /><path d="M12 9v4l3 2M10 2h4" /></>,
 };
 
 export default function NavIcon({ name }: { name: IconName }) {

@@ -42,9 +42,10 @@ export function flapAngles(setup: SetupId, mode: ModeId) {
 
 /**
  * Top speed where drag power equals the available power: v = (2P / (ρ·CdA))^(1/3).
- * Simplified: ignores rolling resistance and energy deployment limits.
+ * Simplified (ignores rolling resistance); P is the effective power at top speed calibrated
+ * against real 2026 top speeds, which already accounts for energy deployment running out.
  */
-export function topSpeedKmh(rho: number, CdA: number, powerKw = POWER.totalKw): number {
+export function topSpeedKmh(rho: number, CdA: number, powerKw = POWER.topSpeedKw): number {
   return Math.cbrt((2 * powerKw * 1000) / (rho * CdA)) * 3.6;
 }
 

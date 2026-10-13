@@ -57,3 +57,37 @@ The calendar and driver standings come from FastF1 and are saved to
 
 The website calls the API through `/backend/*`, which Next.js forwards to
 FastAPI (see `web/next.config.mjs`). Set `BACKEND_URL` to point it elsewhere.
+
+## TracingInsights data (telemetry, history, pit stops, models)
+
+The live telemetry simulator, track history, standings, pit stops and the lap time model are built from
+four TracingInsights repos, kept in `data/sources/` (git-ignored, never published):
+
+| Repo | Licence | How it is fetched |
+|---|---|---|
+| [TracingInsights-Archive/Stats](https://github.com/TracingInsights-Archive/Stats) | MIT | `git clone --depth 1` (sparse: lap times only from 2018) |
+| [TracingInsights-Archive/PitStops](https://github.com/TracingInsights-Archive/PitStops) | MIT | `git clone --depth 1` |
+| [TracingInsights/2026](https://github.com/TracingInsights/2026) | Apache-2.0 | only the Race files the site uses (~3 MB per race; the repo is 4 GB) |
+| [TracingInsights/2025](https://github.com/TracingInsights/2025) | Apache-2.0 | same, for tracks whose 2026 race hasn't happened (the repo is 15 GB) |
+
+**Refresh everything after a race weekend** (from the project root, in PowerShell):
+
+```powershell
+.\update.ps1                # pull repos, rebuild site data, retrain models, print what changed
+.\update.ps1 -WithFastF1    # also refresh the FastF1 calendar fallback first
+.\update.ps1 -NoTrain       # data only, skip retraining
+```
+
+Then refresh the website. The pieces can also run on their own:
+
+```powershell
+cd backend\pipeline
+..\..\venv\Scripts\python.exe build_site_data.py --refresh   # site data + data report
+..\..\venv\Scripts\python.exe train_models.py                # lap time model + aero calibration
+```
+
+- Outputs: `web/data/{circuits,standings,pitstops,aero-calibration}.json`, `web/public/data/circuits/*.json`
+  (one file per circuit, under 300 KB) and `web/public/data/models/laptime.json`.
+- Model accuracy, data used and limitations: `models/MODEL_REPORT.md`.
+- Tyre temperatures are **estimated** (the repos have no tyre temperature data): `web/lib/tyreModel.ts`.
+- The old neural-network aero model and `/predict` endpoint are kept but disconnected (`web/lib/mlAeroModel.ts`).

@@ -144,8 +144,9 @@ export default function AeroCalculator() {
             <div className="metric__value">{fmt(r.topSpeedKmh)}<span className="metric__unit">km/h</span></div>
           </div>
           <p className="card__meta">
-            * Simplified: where drag power equals ~{POWER.totalKw} kW (approx. {POWER.combustionKw} kW combustion + {POWER.electricKw} kW
-            electric). Ignores rolling resistance and energy deployment limits, so it reads higher than real top speeds.
+            * Simplified: where drag power equals the effective power at top speed, {POWER.topSpeedKw} kW. Calibrated to real 2026
+            top speeds in the TracingInsights telemetry (±{POWER.calibrationMaeKmh} km/h); peak power is about {POWER.totalKw} kW
+            ({POWER.combustionKw} kW combustion + {POWER.electricKw} kW electric) but deployment runs out on long straights.
           </p>
         </div>
       </div>

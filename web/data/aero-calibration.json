@@ -1,0 +1,173 @@
+{
+  "effectivePowerKw": 283,
+  "maeKmh": 10.4,
+  "maeKmhBefore": 115.9,
+  "circuits": [
+    {
+      "slug": "australian",
+      "rho": 1.186,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 323,
+      "predicted": 310,
+      "error": -13
+    },
+    {
+      "slug": "chinese",
+      "rho": 1.236,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 321,
+      "predicted": 306,
+      "error": -15
+    },
+    {
+      "slug": "japanese",
+      "rho": 1.208,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 322,
+      "predicted": 308,
+      "error": -14
+    },
+    {
+      "slug": "miami",
+      "rho": 1.178,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 331,
+      "predicted": 310,
+      "error": -21
+    },
+    {
+      "slug": "canadian",
+      "rho": 1.248,
+      "setup": "low",
+      "cda": 0.6375,
+      "real": 327,
+      "predicted": 322,
+      "error": -5
+    },
+    {
+      "slug": "monaco",
+      "rho": 1.199,
+      "setup": "high",
+      "cda": 0.8624999999999999,
+      "real": 278,
+      "predicted": 295,
+      "error": 17
+    },
+    {
+      "slug": "barcelona",
+      "rho": 1.148,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 327,
+      "predicted": 313,
+      "error": -14
+    },
+    {
+      "slug": "austrian",
+      "rho": 1.066,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 321,
+      "predicted": 321,
+      "error": 0
+    },
+    {
+      "slug": "british",
+      "rho": 1.177,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 302,
+      "predicted": 311,
+      "error": 9
+    },
+    {
+      "slug": "belgian",
+      "rho": 1.164,
+      "setup": "low",
+      "cda": 0.6375,
+      "real": 326,
+      "predicted": 329,
+      "error": 3
+    },
+    {
+      "slug": "hungarian",
+      "rho": 1.123,
+      "setup": "high",
+      "cda": 0.8624999999999999,
+      "real": 286,
+      "predicted": 301,
+      "error": 15
+    },
+    {
+      "slug": "dutch",
+      "rho": 1.224,
+      "setup": "high",
+      "cda": 0.8624999999999999,
+      "real": 319,
+      "predicted": 293,
+      "error": -26
+    },
+    {
+      "slug": "italian",
+      "rho": 1.141,
+      "setup": "low",
+      "cda": 0.6375,
+      "real": 330,
+      "predicted": 331,
+      "error": 1
+    },
+    {
+      "slug": "spanish",
+      "rho": 1.084,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 330,
+      "predicted": 319,
+      "error": -11
+    },
+    {
+      "slug": "azerbaijan",
+      "rho": 1.19,
+      "setup": "low",
+      "cda": 0.6375,
+      "real": 326,
+      "predicted": 327,
+      "error": 1
+    },
+    {
+      "slug": "bahrain",
+      "rho": 1.169,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 306,
+      "predicted": 311,
+      "error": 5
+    },
+    {
+      "slug": "singapore",
+      "rho": 1.16,
+      "setup": "high",
+      "cda": 0.8624999999999999,
+      "real": 291,
+      "predicted": 298,
+      "error": 7
+    }
+  ],
+  "setupBySlug": {
+    "azerbaijan": "low",
+    "las-vegas": "low",
+    "italian": "low",
+    "canadian": "low",
+    "belgian": "low",
+    "monaco": "high",
+    "dutch": "high",
+    "singapore": "high",
+    "mexico-city": "high",
+    "hungarian": "high"
+  },
+  "calibratedAt": "2026-10-13T05:34:57Z"
+}

@@ -1,0 +1,2137 @@
+{
+  "season": 2026,
+  "circuits": {
+    "australian": {
+      "round": 1,
+      "name": "Australian Grand Prix",
+      "laps": 58,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5235,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 24.2,
+        "track": 36.1,
+        "pressure": 1012.6,
+        "humidity": 54.0,
+        "rain": false
+      },
+      "pitLoss": 23.3,
+      "aeroZones": 3,
+      "topSpeed": 323,
+      "speedTrapMedian": 290,
+      "fastestLap": {
+        "driver": "VER",
+        "team": "Red Bull",
+        "time": 82.091,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Keke Rosberg",
+          "team": "Williams",
+          "year": 1985
+        },
+        "timesHeld": 40,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Michael Schumacher"
+          ],
+          "wins": 4
+        },
+        "lapRecord": {
+          "time": "1:19.813",
+          "seconds": 79.813,
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "year": 2024,
+          "since": 2022
+        },
+        "result2026": {
+          "winner": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull",
+            "time": "1:22.091"
+          }
+        },
+        "circuitId": "albert_park",
+        "statsEvent": "Australian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Perez",
+        "time": 2.1,
+        "year": 2024
+      },
+      "pitLossEstimated": false
+    },
+    "chinese": {
+      "round": 2,
+      "name": "Chinese Grand Prix",
+      "laps": 56,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5388,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 15.6,
+        "track": 22.6,
+        "pressure": 1024.5,
+        "humidity": 55.0,
+        "rain": false
+      },
+      "pitLoss": 26.8,
+      "aeroZones": 5,
+      "topSpeed": 321,
+      "speedTrapMedian": 313,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 95.275,
+        "compound": "HARD"
+      },
+      "proxies": {
+        "McLaren": "Aston Martin"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Rubens Barrichello",
+          "team": "Ferrari",
+          "year": 2004
+        },
+        "timesHeld": 19,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Logan Sargeant",
+          "team": "Williams",
+          "year": 2024,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:35.275"
+          }
+        },
+        "circuitId": "shanghai",
+        "statsEvent": "Chinese Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.9,
+        "year": 2024
+      },
+      "pitLossEstimated": false
+    },
+    "japanese": {
+      "round": 3,
+      "name": "Japanese Grand Prix",
+      "laps": 53,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5763,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 18.6,
+        "track": 34.1,
+        "pressure": 1011.8,
+        "humidity": 52.5,
+        "rain": false
+      },
+      "pitLoss": 24.7,
+      "aeroZones": 2,
+      "topSpeed": 322,
+      "speedTrapMedian": 285,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 92.432,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Mario Andretti",
+          "team": "Team Lotus",
+          "year": 1976
+        },
+        "timesHeld": 40,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Michael Schumacher"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Pascal Wehrlein",
+          "team": "Manor Marussia",
+          "year": 2016,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Oscar Piastri",
+              "team": "McLaren"
+            },
+            {
+              "position": 3,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:32.432"
+          }
+        },
+        "circuitId": "suzuka",
+        "statsEvent": "Japanese Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Ferrari",
+        "driver": "Hamilton",
+        "time": 2.0,
+        "year": 2026
+      },
+      "pitLossEstimated": false
+    },
+    "miami": {
+      "round": 4,
+      "name": "Miami Grand Prix",
+      "laps": 57,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5330,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 27.1,
+        "track": 37.0,
+        "pressure": 1015.6,
+        "humidity": 70.4,
+        "rain": true
+      },
+      "pitLoss": 19.5,
+      "aeroZones": 5,
+      "topSpeed": 331,
+      "speedTrapMedian": 310,
+      "fastestLap": {
+        "driver": "NOR",
+        "team": "McLaren",
+        "time": 91.869,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2022
+        },
+        "timesHeld": 5,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen"
+          ],
+          "wins": 2
+        },
+        "lapRecord": {
+          "time": "1:29.708",
+          "seconds": 89.708,
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2023,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Lando Norris",
+              "team": "McLaren"
+            },
+            {
+              "position": 3,
+              "driver": "Oscar Piastri",
+              "team": "McLaren"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Lando Norris",
+            "team": "McLaren",
+            "time": "1:31.869"
+          }
+        },
+        "circuitId": "miami",
+        "statsEvent": "Miami Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Ferrari",
+        "driver": "Leclerc",
+        "time": 1.94,
+        "year": 2024
+      },
+      "pitLossEstimated": false
+    },
+    "canadian": {
+      "round": 5,
+      "name": "Canadian Grand Prix",
+      "laps": 68,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4349,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 12.8,
+        "track": 17.8,
+        "pressure": 1024.2,
+        "humidity": 71.7,
+        "rain": false
+      },
+      "pitLoss": 28.9,
+      "aeroZones": 4,
+      "topSpeed": 327,
+      "speedTrapMedian": 305,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 74.21,
+        "compound": "MEDIUM"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Jack Brabham",
+          "team": "Brabham-Repco",
+          "year": 1967
+        },
+        "timesHeld": 55,
+        "previousWinner": {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton",
+            "Michael Schumacher"
+          ],
+          "wins": 7
+        },
+        "lapRecord": {
+          "time": "1:13.078",
+          "seconds": 73.078,
+          "driver": "Valtteri Bottas",
+          "team": "Mercedes",
+          "year": 2019,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:14.210"
+          }
+        },
+        "circuitId": "villeneuve",
+        "statsEvent": "Canadian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Williams",
+        "driver": "Kubica",
+        "time": 2.0,
+        "year": 2019
+      },
+      "pitLossEstimated": false
+    },
+    "monaco": {
+      "round": 6,
+      "name": "Monaco Grand Prix",
+      "laps": 78,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 3279,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 23.7,
+        "track": 38.0,
+        "pressure": 1021.4,
+        "humidity": 62.2,
+        "rain": false
+      },
+      "pitLoss": 22.5,
+      "aeroZones": 3,
+      "topSpeed": 278,
+      "speedTrapMedian": 270,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 73.481,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "team": "Alfa Romeo",
+          "year": 1950
+        },
+        "timesHeld": 72,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Ayrton Senna"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "1:12.909",
+          "seconds": 72.909,
+          "driver": "Lewis Hamilton",
+          "team": "Mercedes",
+          "year": 2021,
+          "since": 2015
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            },
+            {
+              "position": 3,
+              "driver": "Pierre Gasly",
+              "team": "Alpine F1 Team"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:13.481"
+          }
+        },
+        "circuitId": "monaco",
+        "statsEvent": "Monaco Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Ferrari",
+        "driver": "Leclerc",
+        "time": 2.0,
+        "year": 2025
+      },
+      "pitLossEstimated": false
+    },
+    "barcelona": {
+      "round": 7,
+      "name": "Barcelona Grand Prix",
+      "laps": 66,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4644,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 30.5,
+        "track": 50.3,
+        "pressure": 1000.5,
+        "humidity": 28.9,
+        "rain": false
+      },
+      "pitLoss": 25.1,
+      "aeroZones": 2,
+      "topSpeed": 327,
+      "speedTrapMedian": 332,
+      "fastestLap": {
+        "driver": "HAM",
+        "team": "Ferrari",
+        "time": 80.122,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "year": 2026
+        },
+        "timesHeld": 1,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025,
+          "event": "Spanish Grand Prix"
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 1
+        },
+        "lapRecord": {
+          "time": "1:15.743",
+          "seconds": 75.743,
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025,
+          "since": 2023
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari"
+          },
+          "pole": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "McLaren"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Lewis Hamilton",
+            "team": "Ferrari",
+            "time": "1:20.122"
+          }
+        },
+        "circuitId": "catalunya",
+        "statsEvent": "Barcelona Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "McLaren",
+        "driver": "Piastri",
+        "time": 2.13,
+        "year": 2026
+      },
+      "pitLossEstimated": false
+    },
+    "austrian": {
+      "round": 8,
+      "name": "Austrian Grand Prix",
+      "laps": 71,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4291,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 34.5,
+        "track": 50.2,
+        "pressure": 941.4,
+        "humidity": 29.8,
+        "rain": false
+      },
+      "pitLoss": 22.1,
+      "aeroZones": 4,
+      "topSpeed": 321,
+      "speedTrapMedian": 300,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 70.374,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Lorenzo Bandini",
+          "team": "Ferrari",
+          "year": 1964
+        },
+        "timesHeld": 39,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen"
+          ],
+          "wins": 4
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Lewis Hamilton",
+          "team": "Mercedes",
+          "year": 2022,
+          "since": 2014
+        },
+        "result2026": {
+          "winner": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 3,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:10.374"
+          }
+        },
+        "circuitId": "red_bull_ring",
+        "statsEvent": "Austrian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Ferrari",
+        "driver": "Leclerc",
+        "time": 1.95,
+        "year": 2024
+      },
+      "pitLossEstimated": false
+    },
+    "british": {
+      "round": 9,
+      "name": "British Grand Prix",
+      "laps": 52,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5817,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 24.8,
+        "track": 40.0,
+        "pressure": 1006.4,
+        "humidity": 49.9,
+        "rain": false
+      },
+      "pitLoss": 19.6,
+      "aeroZones": 6,
+      "topSpeed": 302,
+      "speedTrapMedian": 301,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 91.777,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Nino Farina",
+          "team": "Alfa Romeo",
+          "year": 1950
+        },
+        "timesHeld": 77,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 9
+        },
+        "lapRecord": {
+          "time": "1:27.097",
+          "seconds": 87.097,
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2020,
+          "since": 2011
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:31.777"
+          }
+        },
+        "circuitId": "silverstone",
+        "statsEvent": "British Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Gasly",
+        "time": 1.91,
+        "year": 2019
+      },
+      "pitLossEstimated": false
+    },
+    "belgian": {
+      "round": 10,
+      "name": "Belgian Grand Prix",
+      "laps": 44,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 6923,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 18.0,
+        "track": 31.0,
+        "pressure": 972.8,
+        "humidity": 48.8,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": 4,
+      "topSpeed": 326,
+      "speedTrapMedian": 300,
+      "fastestLap": {
+        "driver": "NOR",
+        "team": "McLaren",
+        "time": 108.89,
+        "compound": "MEDIUM"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "team": "Alfa Romeo",
+          "year": 1950
+        },
+        "timesHeld": 71,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Michael Schumacher"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Esteban Gutiérrez",
+          "team": "Sauber",
+          "year": 2014,
+          "since": 2007
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari"
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Lando Norris",
+            "team": "McLaren",
+            "time": "1:48.890"
+          }
+        },
+        "circuitId": "spa",
+        "statsEvent": "Belgian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Williams",
+        "driver": "Russell",
+        "time": 2.02,
+        "year": 2019
+      },
+      "pitLossEstimated": false
+    },
+    "hungarian": {
+      "round": 11,
+      "name": "Hungarian Grand Prix",
+      "laps": 70,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4095,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 30.8,
+        "track": 50.5,
+        "pressure": 980.0,
+        "humidity": 25.6,
+        "rain": false
+      },
+      "pitLoss": 22.5,
+      "aeroZones": 3,
+      "topSpeed": 286,
+      "speedTrapMedian": 322,
+      "fastestLap": {
+        "driver": "LEC",
+        "team": "Ferrari",
+        "time": 82.0,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Nelson Piquet",
+          "team": "Williams",
+          "year": 1986
+        },
+        "timesHeld": 41,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 8
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Carlos Sainz",
+          "team": "Ferrari",
+          "year": 2022,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          "pole": {
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "McLaren"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 3,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Charles Leclerc",
+            "team": "Ferrari",
+            "time": "1:22.000"
+          }
+        },
+        "circuitId": "hungaroring",
+        "statsEvent": "Hungarian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.88,
+        "year": 2021
+      },
+      "pitLossEstimated": false
+    },
+    "dutch": {
+      "round": 12,
+      "name": "Dutch Grand Prix",
+      "laps": 72,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4223,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 18.5,
+        "track": 32.1,
+        "pressure": 1024.6,
+        "humidity": 59.8,
+        "rain": true
+      },
+      "pitLoss": 19.7,
+      "aeroZones": 2,
+      "topSpeed": 319,
+      "speedTrapMedian": 303,
+      "fastestLap": {
+        "driver": "LEC",
+        "team": "Ferrari",
+        "time": 74.23,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Alberto Ascari",
+          "team": "Ferrari",
+          "year": 1952
+        },
+        "timesHeld": 36,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Jim Clark"
+          ],
+          "wins": 4
+        },
+        "lapRecord": {
+          "time": "1:11.097",
+          "seconds": 71.097,
+          "driver": "Lewis Hamilton",
+          "team": "Mercedes",
+          "year": 2021,
+          "since": 2021
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          "pole": {
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Lando Norris",
+              "team": "McLaren"
+            },
+            {
+              "position": 2,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Charles Leclerc",
+            "team": "Ferrari",
+            "time": "1:14.230"
+          }
+        },
+        "circuitId": "zandvoort",
+        "statsEvent": "Dutch Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 2.01,
+        "year": 2023
+      },
+      "pitLossEstimated": false
+    },
+    "italian": {
+      "round": 13,
+      "name": "Italian Grand Prix",
+      "laps": 53,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5758,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 32.2,
+        "track": 55.0,
+        "pressure": 1000.4,
+        "humidity": 37.7,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": 5,
+      "topSpeed": 330,
+      "speedTrapMedian": 312,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 83.504,
+        "compound": "MEDIUM"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Nino Farina",
+          "team": "Alfa Romeo",
+          "year": 1950
+        },
+        "timesHeld": 77,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton",
+            "Michael Schumacher"
+          ],
+          "wins": 5
+        },
+        "lapRecord": {
+          "time": "0:01.000",
+          "seconds": 1.0,
+          "driver": "Alexander Wurz",
+          "team": "Williams",
+          "year": 2007,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Pierre Gasly",
+            "team": "Alpine F1 Team"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes",
+            "time": "1:23.504"
+          }
+        },
+        "circuitId": "monza",
+        "statsEvent": "Italian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "McLaren",
+        "driver": "Piastri",
+        "time": 1.91,
+        "year": 2025
+      },
+      "pitLossEstimated": true
+    },
+    "spanish": {
+      "round": 14,
+      "name": "Spanish Grand Prix",
+      "laps": 57,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5328,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 30.6,
+        "track": 53.3,
+        "pressure": 945.2,
+        "humidity": 23.5,
+        "rain": false
+      },
+      "pitLoss": 25.9,
+      "aeroZones": 2,
+      "topSpeed": 330,
+      "speedTrapMedian": 288,
+      "fastestLap": {
+        "driver": "RUS",
+        "team": "Mercedes",
+        "time": 95.587,
+        "compound": "HARD"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Juan Fangio",
+          "team": "Alfa Romeo",
+          "year": 1951
+        },
+        "timesHeld": 56,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton",
+            "Michael Schumacher"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "1:35.587",
+          "seconds": 95.587,
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "year": 2026,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "Lando Norris",
+            "team": "McLaren"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 3,
+              "driver": "Lando Norris",
+              "team": "McLaren"
+            }
+          ],
+          "fastestLap": {
+            "driver": "George Russell",
+            "team": "Mercedes",
+            "time": "1:35.587"
+          }
+        },
+        "circuitId": "madring",
+        "statsEvent": "Spanish Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.9,
+        "year": 2020
+      },
+      "pitLossEstimated": false
+    },
+    "azerbaijan": {
+      "round": 15,
+      "name": "Azerbaijan Grand Prix",
+      "laps": 51,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5957,
+      "compounds": [
+        "SOFT",
+        "MEDIUM"
+      ],
+      "weather": {
+        "air": 26.3,
+        "track": 43.4,
+        "pressure": 1022.9,
+        "humidity": 56.5,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": 4,
+      "topSpeed": 326,
+      "speedTrapMedian": 328,
+      "fastestLap": {
+        "driver": "RUS",
+        "team": "Mercedes",
+        "time": 104.916,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Daniel Ricciardo",
+          "team": "Red Bull",
+          "year": 2017
+        },
+        "timesHeld": 9,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen",
+            "Sergio Pérez"
+          ],
+          "wins": 2
+        },
+        "lapRecord": {
+          "time": "1:43.009",
+          "seconds": 103.009,
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "year": 2019,
+          "since": 2016
+        },
+        "result2026": {
+          "winner": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "pole": {
+            "driver": "George Russell",
+            "team": "Mercedes"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "George Russell",
+              "team": "Mercedes"
+            },
+            {
+              "position": 2,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 3,
+              "driver": "Isack Hadjar",
+              "team": "Red Bull"
+            }
+          ],
+          "fastestLap": {
+            "driver": "George Russell",
+            "team": "Mercedes",
+            "time": "1:44.916"
+          }
+        },
+        "circuitId": "baku",
+        "statsEvent": "Azerbaijan Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.98,
+        "year": 2021
+      },
+      "pitLossEstimated": true
+    },
+    "bahrain": {
+      "round": 16,
+      "name": "Bahrain Grand Prix",
+      "laps": 55,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 5458,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 26.8,
+        "track": 34.4,
+        "pressure": 1006.8,
+        "humidity": 82.7,
+        "rain": true
+      },
+      "pitLoss": 26.4,
+      "aeroZones": 5,
+      "topSpeed": 306,
+      "speedTrapMedian": 303,
+      "fastestLap": {
+        "driver": "VER",
+        "team": "Red Bull",
+        "time": 98.22,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Michael Schumacher",
+          "team": "Ferrari",
+          "year": 2004
+        },
+        "timesHeld": 22,
+        "previousWinner": {
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 5
+        },
+        "lapRecord": {
+          "time": "1:34.080",
+          "seconds": 94.08,
+          "driver": "Sebastian Vettel",
+          "team": "Ferrari",
+          "year": 2017,
+          "since": 2004
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          "pole": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 2,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            },
+            {
+              "position": 3,
+              "driver": "Lewis Hamilton",
+              "team": "Ferrari"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull",
+            "time": "1:38.220"
+          }
+        },
+        "circuitId": "sepang",
+        "statsEvent": "Bahrain Grand Prix in Malaysia"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.93,
+        "year": 2021
+      },
+      "pitLossEstimated": false
+    },
+    "singapore": {
+      "round": 17,
+      "name": "Singapore Grand Prix",
+      "laps": 62,
+      "status": "completed",
+      "dataSeason": 2026,
+      "hasTelemetry": true,
+      "lapLength": 4892,
+      "compounds": [
+        "SOFT",
+        "MEDIUM"
+      ],
+      "weather": {
+        "air": 30.3,
+        "track": 42.5,
+        "pressure": 1010.2,
+        "humidity": 72.2,
+        "rain": false
+      },
+      "pitLoss": 24.1,
+      "aeroZones": 6,
+      "topSpeed": 291,
+      "speedTrapMedian": 285,
+      "fastestLap": {
+        "driver": "LEC",
+        "team": "Ferrari",
+        "time": 95.202,
+        "compound": "SOFT"
+      },
+      "proxies": {},
+      "history": {
+        "firstWinner": {
+          "driver": "Fernando Alonso",
+          "team": "Renault",
+          "year": 2008
+        },
+        "timesHeld": 17,
+        "previousWinner": {
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Sebastian Vettel"
+          ],
+          "wins": 5
+        },
+        "lapRecord": {
+          "time": "1:33.808",
+          "seconds": 93.808,
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "year": 2025,
+          "since": 2023
+        },
+        "result2026": {
+          "winner": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          "pole": {
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          },
+          "podium": [
+            {
+              "position": 1,
+              "driver": "Max Verstappen",
+              "team": "Red Bull"
+            },
+            {
+              "position": 2,
+              "driver": "Charles Leclerc",
+              "team": "Ferrari"
+            },
+            {
+              "position": 3,
+              "driver": "Andrea Kimi Antonelli",
+              "team": "Mercedes"
+            }
+          ],
+          "fastestLap": {
+            "driver": "Charles Leclerc",
+            "team": "Ferrari",
+            "time": "1:35.202"
+          }
+        },
+        "circuitId": "marina_bay",
+        "statsEvent": "Singapore Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Tsunoda",
+        "time": 2.05,
+        "year": 2025
+      },
+      "pitLossEstimated": false
+    },
+    "united-states": {
+      "round": 18,
+      "name": "United States Grand Prix",
+      "laps": 56,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 5447,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 28.3,
+        "track": 45.0,
+        "pressure": 1001.1,
+        "humidity": 22.5,
+        "rain": false
+      },
+      "pitLoss": 21.7,
+      "aeroZones": null,
+      "topSpeed": 311,
+      "speedTrapMedian": 307,
+      "fastestLap": {
+        "driver": "ANT",
+        "team": "Mercedes",
+        "time": 97.577,
+        "compound": "SOFT"
+      },
+      "proxies": {
+        "Cadillac": "Alpine"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Bruce McLaren",
+          "team": "Cooper-Climax",
+          "year": 1959
+        },
+        "timesHeld": 46,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "1:36.169",
+          "seconds": 96.169,
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "year": 2019,
+          "since": 2004
+        },
+        "result2026": null,
+        "circuitId": "americas",
+        "statsEvent": "United States Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Albon",
+        "time": 2.02,
+        "year": 2019
+      },
+      "pitLossEstimated": false
+    },
+    "mexico-city": {
+      "round": 19,
+      "name": "Mexico City Grand Prix",
+      "laps": 71,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 4240,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 26.4,
+        "track": 50.6,
+        "pressure": 780.9,
+        "humidity": 23.2,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": null,
+      "topSpeed": 330,
+      "speedTrapMedian": 328,
+      "fastestLap": {
+        "driver": "RUS",
+        "team": "Mercedes",
+        "time": 80.052,
+        "compound": "SOFT"
+      },
+      "proxies": {
+        "Cadillac": "Racing Bulls"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Jim Clark",
+          "team": "Lotus-Climax",
+          "year": 1963
+        },
+        "timesHeld": 25,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen"
+          ],
+          "wins": 5
+        },
+        "lapRecord": {
+          "time": "1:17.774",
+          "seconds": 77.774,
+          "driver": "Valtteri Bottas",
+          "team": "Mercedes",
+          "year": 2021,
+          "since": 2004
+        },
+        "result2026": null,
+        "circuitId": "rodriguez",
+        "statsEvent": "Mexico City Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "McLaren",
+        "driver": "Piastri",
+        "time": 1.9,
+        "year": 2024
+      },
+      "pitLossEstimated": false
+    },
+    "sao-paulo": {
+      "round": 20,
+      "name": "São Paulo Grand Prix",
+      "laps": 71,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 4232,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 17.3,
+        "track": 30.7,
+        "pressure": 929.7,
+        "humidity": 70.6,
+        "rain": false
+      },
+      "pitLoss": 22.9,
+      "aeroZones": null,
+      "topSpeed": 331,
+      "speedTrapMedian": 306,
+      "fastestLap": {
+        "driver": "ALB",
+        "team": "Williams",
+        "time": 72.4,
+        "compound": "MEDIUM"
+      },
+      "proxies": {
+        "Cadillac": "Ferrari"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Emerson Fittipaldi",
+          "team": "Team Lotus",
+          "year": 1973
+        },
+        "timesHeld": 52,
+        "previousWinner": {
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Alain Prost"
+          ],
+          "wins": 6
+        },
+        "lapRecord": {
+          "time": "1:10.540",
+          "seconds": 70.54,
+          "driver": "Valtteri Bottas",
+          "team": "Mercedes",
+          "year": 2018,
+          "since": 2004
+        },
+        "result2026": null,
+        "circuitId": "interlagos",
+        "statsEvent": "Brazilian Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Red Bull",
+        "driver": "Verstappen",
+        "time": 1.82,
+        "year": 2019
+      },
+      "pitLossEstimated": false
+    },
+    "las-vegas": {
+      "round": 21,
+      "name": "Las Vegas Grand Prix",
+      "laps": 50,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 6139,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 16.7,
+        "track": 19.5,
+        "pressure": 941.9,
+        "humidity": 37.8,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": null,
+      "topSpeed": 338,
+      "speedTrapMedian": 322,
+      "fastestLap": {
+        "driver": "VER",
+        "team": "Red Bull",
+        "time": 93.365,
+        "compound": "HARD"
+      },
+      "proxies": {
+        "Cadillac": "Alpine"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2023
+        },
+        "timesHeld": 3,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen"
+          ],
+          "wins": 2
+        },
+        "lapRecord": {
+          "time": "1:33.365",
+          "seconds": 93.365,
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025,
+          "since": 2004
+        },
+        "result2026": null,
+        "circuitId": "vegas",
+        "statsEvent": "Las Vegas Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "McLaren",
+        "driver": "Piastri",
+        "time": 1.99,
+        "year": 2023
+      },
+      "pitLossEstimated": false
+    },
+    "qatar": {
+      "round": 22,
+      "name": "Qatar Grand Prix",
+      "laps": 57,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 5395,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 22.6,
+        "track": 28.2,
+        "pressure": 1016.1,
+        "humidity": 69.0,
+        "rain": false
+      },
+      "pitLoss": 26.5,
+      "aeroZones": null,
+      "topSpeed": 310,
+      "speedTrapMedian": 311,
+      "fastestLap": {
+        "driver": "PIA",
+        "team": "McLaren",
+        "time": 82.996,
+        "compound": "HARD"
+      },
+      "proxies": {
+        "Cadillac": "Alpine"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Lewis Hamilton",
+          "team": "Mercedes",
+          "year": 2021
+        },
+        "timesHeld": 4,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Max Verstappen"
+          ],
+          "wins": 3
+        },
+        "lapRecord": {
+          "time": "1:22.384",
+          "seconds": 82.384,
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "year": 2024,
+          "since": 2004
+        },
+        "result2026": null,
+        "circuitId": "losail",
+        "statsEvent": "Qatar Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "McLaren",
+        "driver": "Norris",
+        "time": 1.8,
+        "year": 2023
+      },
+      "pitLossEstimated": false
+    },
+    "abu-dhabi": {
+      "round": 23,
+      "name": "Abu Dhabi Grand Prix",
+      "laps": 58,
+      "status": "upcoming",
+      "dataSeason": 2025,
+      "hasTelemetry": true,
+      "lapLength": 5214,
+      "compounds": [
+        "SOFT",
+        "MEDIUM",
+        "HARD"
+      ],
+      "weather": {
+        "air": 26.7,
+        "track": 31.1,
+        "pressure": 1016.7,
+        "humidity": 60.4,
+        "rain": false
+      },
+      "pitLoss": 22.8,
+      "aeroZones": null,
+      "topSpeed": 310,
+      "speedTrapMedian": 307,
+      "fastestLap": {
+        "driver": "LEC",
+        "team": "Ferrari",
+        "time": 86.725,
+        "compound": "MEDIUM"
+      },
+      "proxies": {
+        "Cadillac": "Racing Bulls"
+      },
+      "history": {
+        "firstWinner": {
+          "driver": "Sebastian Vettel",
+          "team": "Red Bull",
+          "year": 2009
+        },
+        "timesHeld": 17,
+        "previousWinner": {
+          "driver": "Max Verstappen",
+          "team": "Red Bull",
+          "year": 2025
+        },
+        "mostWins": {
+          "drivers": [
+            "Lewis Hamilton",
+            "Max Verstappen"
+          ],
+          "wins": 5
+        },
+        "lapRecord": {
+          "time": "1:25.637",
+          "seconds": 85.637,
+          "driver": "Kevin Magnussen",
+          "team": "Haas F1 Team",
+          "year": 2024,
+          "since": 2021
+        },
+        "result2026": null,
+        "circuitId": "yas_marina",
+        "statsEvent": "Abu Dhabi Grand Prix"
+      },
+      "fastestPitStop": {
+        "team": "Ferrari",
+        "driver": "Leclerc",
+        "time": 2.0,
+        "year": 2025
+      },
+      "pitLossEstimated": false
+    }
+  }
+}

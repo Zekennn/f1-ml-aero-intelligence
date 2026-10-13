@@ -9,7 +9,7 @@ export const SITE_NAME = "Fan Hub";
 export const LOGO = "/images/logo.png";          // white logo, for dark backgrounds (footer)
 export const LOGO_DARK = "/images/logo-red.png"; // red logo, for the light floating navbar
 
-export type NavIcon = "teams" | "drivers" | "calendar" | "gallery" | "live" | "trophy" | "wind";
+export type NavIcon = "teams" | "drivers" | "calendar" | "gallery" | "live" | "trophy" | "wind" | "standings" | "pit";
 export type NavItem = { label: string; href: string; description: string; icon: NavIcon; featured?: boolean };
 export type NavMenu = { label: string; items: NavItem[] };
 export type NavLink = { label: string; href: string };
@@ -22,15 +22,17 @@ export const NAV_MENUS: NavMenu[] = [
       { label: "Teams", href: "/#teams", icon: "teams", description: "All eleven constructors and their 2026 cars" },
       { label: "Drivers", href: "/#drivers", icon: "drivers", description: "The full grid with numbers and teams" },
       { label: "Calendar", href: "/#calendar", icon: "calendar", description: "Every round, results and track history" },
+      { label: "Standings", href: "/standings", icon: "standings", description: "2026 driver and constructor tables and the points race" },
       { label: "Gallery", href: "/#gallery", icon: "gallery", description: "Moments from around the paddock" },
     ],
   },
   {
     label: "Data",
     items: [
-      { label: "Live telemetry", href: "/live", icon: "live", featured: true, description: "Simulated lap with speed, gear, DRS, tyre temps and ML aero predictions" },
+      { label: "Live telemetry", href: "/live", icon: "live", featured: true, description: "Race any 2026 team on real reference laps, with pit stops and strategy" },
       { label: "2026 predictor", href: "/predictor", icon: "trophy", description: "Championship win probability for every driver" },
       { label: "Aero calculator", href: "/aero", icon: "wind", description: "2026 drag and downforce with active aero modes and a wind tunnel" },
+      { label: "Pit stops", href: "/pitstops", icon: "pit", description: "Fastest stops and team averages, 2018–2026" },
     ],
   },
 ];
@@ -67,6 +69,7 @@ export const FOOTER: {
   heading: string;
   summary: string;
   note: string;
+  credit: string;
   image: string;
   columns: FooterColumn[];
 } = {
@@ -74,6 +77,7 @@ export const FOOTER: {
   summary:
     "Placeholder text: team profiles, the driver line-up, the race calendar and machine-learning tools for fans who want to go deeper.",
   note: "Unofficial fan site. Not affiliated with any racing series, team or driver.",
+  credit: "Data: TracingInsights (Apache-2.0 / MIT). Tyre temperatures are estimated.",
   image: "/images/footer.jpg",
   columns: [
     {

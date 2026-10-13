@@ -1,0 +1,1797 @@
+{
+  "seasons": {
+    "2018": {
+      "races": 21,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 47,
+          "average": 2.552,
+          "median": 2.51,
+          "best": 2.08
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 51,
+          "average": 2.753,
+          "median": 2.61,
+          "best": 2.15
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 54,
+          "average": 2.894,
+          "median": 2.845,
+          "best": 1.97
+        },
+        {
+          "team": "Sauber",
+          "team2026": "Audi",
+          "stops": 49,
+          "average": 2.968,
+          "median": 2.96,
+          "best": 2.21
+        },
+        {
+          "team": "Toro Rosso",
+          "team2026": "Racing Bulls",
+          "stops": 50,
+          "average": 3.003,
+          "median": 3.0,
+          "best": 2.27
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 57,
+          "average": 3.127,
+          "median": 3.1,
+          "best": 2.29
+        },
+        {
+          "team": "Force India",
+          "team2026": "Aston Martin",
+          "stops": 50,
+          "average": 3.249,
+          "median": 3.205,
+          "best": 2.39
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 61,
+          "average": 3.272,
+          "median": 3.26,
+          "best": 2.1
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 57,
+          "average": 3.473,
+          "median": 3.27,
+          "best": 2.45
+        },
+        {
+          "team": "Renault",
+          "team2026": "Alpine",
+          "stops": 51,
+          "average": 3.473,
+          "median": 3.43,
+          "best": 2.68
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Ferrari",
+          "driver": "Vettel",
+          "gp": "Brazilian Grand Prix",
+          "lap": null,
+          "time": 1.97
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": null,
+          "time": 2.08
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Vettel",
+          "gp": "German Grand Prix",
+          "lap": null,
+          "time": 2.09
+        },
+        {
+          "team": "Williams",
+          "driver": "Sirotkin",
+          "gp": "Hungarian Grand Prix",
+          "lap": null,
+          "time": 2.1
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Australian Grand Prix",
+          "lap": null,
+          "time": 2.15
+        },
+        {
+          "team": "Mercedes",
+          "driver": "Bottas",
+          "gp": "Chinese Grand Prix",
+          "lap": null,
+          "time": 2.15
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Vettel",
+          "gp": "Mexican Grand Prix",
+          "lap": null,
+          "time": 2.15
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Ricciardo",
+          "gp": "Austrian Grand Prix",
+          "lap": null,
+          "time": 2.18
+        },
+        {
+          "team": "Williams",
+          "driver": "Stroll",
+          "gp": "Azerbaijan Grand Prix",
+          "lap": null,
+          "time": 2.18
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Räikkönen",
+          "gp": "Italian Grand Prix",
+          "lap": null,
+          "time": 2.2
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Räikkönen",
+          "gp": "Mexican Grand Prix",
+          "lap": null,
+          "time": 2.2
+        },
+        {
+          "team": "Williams",
+          "driver": "Stroll",
+          "gp": "Singapore Grand Prix",
+          "lap": null,
+          "time": 2.2
+        },
+        {
+          "team": "Sauber",
+          "driver": "Leclerc",
+          "gp": "Monaco Grand Prix",
+          "lap": null,
+          "time": 2.21
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Ricciardo",
+          "gp": "Hungarian Grand Prix",
+          "lap": null,
+          "time": 2.22
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Ricciardo",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": null,
+          "time": 2.24
+        }
+      ]
+    },
+    "2019": {
+      "races": 21,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 67,
+          "average": 2.534,
+          "median": 2.52,
+          "best": 1.82
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 74,
+          "average": 2.799,
+          "median": 2.705,
+          "best": 1.97
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 68,
+          "average": 2.806,
+          "median": 2.695,
+          "best": 2.11
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 75,
+          "average": 2.826,
+          "median": 2.73,
+          "best": 2.08
+        },
+        {
+          "team": "Renault",
+          "team2026": "Alpine",
+          "stops": 55,
+          "average": 2.964,
+          "median": 2.98,
+          "best": 2.31
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 59,
+          "average": 3.043,
+          "median": 2.89,
+          "best": 2.07
+        },
+        {
+          "team": "Toro Rosso",
+          "team2026": "Racing Bulls",
+          "stops": 60,
+          "average": 3.062,
+          "median": 3.025,
+          "best": 2.23
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 64,
+          "average": 3.253,
+          "median": 3.135,
+          "best": 2.5
+        },
+        {
+          "team": "Racing Point",
+          "team2026": "Aston Martin",
+          "stops": 61,
+          "average": 3.34,
+          "median": 3.11,
+          "best": 2.38
+        },
+        {
+          "team": "Alfa Romeo",
+          "team2026": "Audi",
+          "stops": 64,
+          "average": 3.393,
+          "median": 3.245,
+          "best": 2.47
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Brazilian Grand Prix",
+          "lap": 21,
+          "time": 1.82
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "German Grand Prix",
+          "lap": 46,
+          "time": 1.88
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Gasly",
+          "gp": "British Grand Prix",
+          "lap": 12,
+          "time": 1.91
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Mexican Grand Prix",
+          "lap": 44,
+          "time": 1.93
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "British Grand Prix",
+          "lap": 13,
+          "time": 1.96
+        },
+        {
+          "team": "Williams",
+          "driver": "Kubica",
+          "gp": "French Grand Prix",
+          "lap": 24,
+          "time": 1.97
+        },
+        {
+          "team": "Williams",
+          "driver": "Kubica",
+          "gp": "German Grand Prix",
+          "lap": 57,
+          "time": 1.99
+        },
+        {
+          "team": "Williams",
+          "driver": "Kubica",
+          "gp": "Canadian Grand Prix",
+          "lap": 38,
+          "time": 2.0
+        },
+        {
+          "team": "Williams",
+          "driver": "Kubica",
+          "gp": "Austrian Grand Prix",
+          "lap": 19,
+          "time": 2.02
+        },
+        {
+          "team": "Williams",
+          "driver": "Russell",
+          "gp": "Belgian Grand Prix",
+          "lap": 30,
+          "time": 2.02
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "United States Grand Prix",
+          "lap": 20,
+          "time": 2.02
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "German Grand Prix",
+          "lap": 25,
+          "time": 2.04
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": 25,
+          "time": 2.06
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "British Grand Prix",
+          "lap": 20,
+          "time": 2.06
+        },
+        {
+          "team": "Williams",
+          "driver": "Kubica",
+          "gp": "Monaco Grand Prix",
+          "lap": 21,
+          "time": 2.07
+        }
+      ]
+    },
+    "2020": {
+      "races": 17,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 53,
+          "average": 2.375,
+          "median": 2.19,
+          "best": 1.86
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 58,
+          "average": 2.823,
+          "median": 2.745,
+          "best": 2.22
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 57,
+          "average": 2.845,
+          "median": 2.82,
+          "best": 2.0
+        },
+        {
+          "team": "Alfa Romeo",
+          "team2026": "Audi",
+          "stops": 53,
+          "average": 2.982,
+          "median": 2.96,
+          "best": 2.18
+        },
+        {
+          "team": "AlphaTauri",
+          "team2026": "Racing Bulls",
+          "stops": 48,
+          "average": 2.982,
+          "median": 3.01,
+          "best": 2.33
+        },
+        {
+          "team": "Renault",
+          "team2026": "Alpine",
+          "stops": 41,
+          "average": 3.0,
+          "median": 2.89,
+          "best": 2.35
+        },
+        {
+          "team": "Racing Point",
+          "team2026": "Aston Martin",
+          "stops": 46,
+          "average": 3.0,
+          "median": 2.89,
+          "best": 2.3
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 49,
+          "average": 3.157,
+          "median": 3.15,
+          "best": 2.4
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 53,
+          "average": 3.177,
+          "median": 3.01,
+          "best": 2.41
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 49,
+          "average": 3.726,
+          "median": 3.63,
+          "best": 2.75
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Portuguese Grand Prix",
+          "lap": 46,
+          "time": 1.86
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Russian Grand Prix",
+          "lap": 25,
+          "time": 1.86
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Russian Grand Prix",
+          "lap": 1,
+          "time": 1.89
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Sakhir Grand Prix",
+          "lap": 62,
+          "time": 1.9
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Spanish Grand Prix",
+          "lap": 21,
+          "time": 1.9
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Eifel Grand Prix",
+          "lap": 16,
+          "time": 1.92
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Emilia Romagna Grand Prix",
+          "lap": 59,
+          "time": 1.93
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Styrian Grand Prix",
+          "lap": 24,
+          "time": 1.95
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Portuguese Grand Prix",
+          "lap": 23,
+          "time": 1.96
+        },
+        {
+          "team": "Williams",
+          "driver": "Russell",
+          "gp": "Russian Grand Prix",
+          "lap": 14,
+          "time": 2.0
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "Tuscan Grand Prix",
+          "lap": 32,
+          "time": 2.02
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Albon",
+          "gp": "70th Anniversary Grand Prix",
+          "lap": 30,
+          "time": 2.03
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Turkish Grand Prix",
+          "lap": 18,
+          "time": 2.03
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Hungarian Grand Prix",
+          "lap": 36,
+          "time": 2.04
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Spanish Grand Prix",
+          "lap": 41,
+          "time": 2.04
+        }
+      ]
+    },
+    "2021": {
+      "races": 21,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 69,
+          "average": 2.548,
+          "median": 2.43,
+          "best": 1.88
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 65,
+          "average": 2.704,
+          "median": 2.55,
+          "best": 2.18
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 53,
+          "average": 2.776,
+          "median": 2.73,
+          "best": 2.21
+        },
+        {
+          "team": "Alfa Romeo",
+          "team2026": "Audi",
+          "stops": 61,
+          "average": 2.825,
+          "median": 2.77,
+          "best": 2.13
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 58,
+          "average": 2.883,
+          "median": 2.82,
+          "best": 2.1
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 52,
+          "average": 2.894,
+          "median": 2.765,
+          "best": 2.19
+        },
+        {
+          "team": "AlphaTauri",
+          "team2026": "Racing Bulls",
+          "stops": 57,
+          "average": 2.9,
+          "median": 2.9,
+          "best": 2.21
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 57,
+          "average": 2.942,
+          "median": 2.92,
+          "best": 2.08
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 55,
+          "average": 2.967,
+          "median": 2.98,
+          "best": 2.29
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 60,
+          "average": 3.55,
+          "median": 3.425,
+          "best": 2.66
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Hungarian Grand Prix",
+          "lap": 40,
+          "time": 1.88
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Bahrain Grand Prix",
+          "lap": 39,
+          "time": 1.93
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Hungarian Grand Prix",
+          "lap": 20,
+          "time": 1.96
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Azerbaijan Grand Prix",
+          "lap": 12,
+          "time": 1.98
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Portuguese Grand Prix",
+          "lap": 64,
+          "time": 1.98
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Bahrain Grand Prix",
+          "lap": 2,
+          "time": 2.0
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Monaco Grand Prix",
+          "lap": 34,
+          "time": 2.02
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "French Grand Prix",
+          "lap": 24,
+          "time": 2.04
+        },
+        {
+          "team": "Aston Martin",
+          "driver": "Stroll",
+          "gp": "Portuguese Grand Prix",
+          "lap": 39,
+          "time": 2.08
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Styrian Grand Prix",
+          "lap": 29,
+          "time": 2.09
+        },
+        {
+          "team": "Williams",
+          "driver": "Latifi",
+          "gp": "British Grand Prix",
+          "lap": 19,
+          "time": 2.1
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": 13,
+          "time": 2.12
+        },
+        {
+          "team": "Alfa Romeo",
+          "driver": "Raikkonen",
+          "gp": "Azerbaijan Grand Prix",
+          "lap": 13,
+          "time": 2.13
+        },
+        {
+          "team": "Williams",
+          "driver": "Russell",
+          "gp": "Azerbaijan Grand Prix",
+          "lap": 34,
+          "time": 2.13
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "British Grand Prix",
+          "lap": 38,
+          "time": 2.14
+        }
+      ]
+    },
+    "2022": {
+      "races": 22,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 82,
+          "average": 2.793,
+          "median": 2.63,
+          "best": 2.04
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 72,
+          "average": 2.975,
+          "median": 2.77,
+          "best": 2.18
+        },
+        {
+          "team": "AlphaTauri",
+          "team2026": "Racing Bulls",
+          "stops": 81,
+          "average": 2.998,
+          "median": 2.78,
+          "best": 2.1
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 77,
+          "average": 3.004,
+          "median": 2.77,
+          "best": 1.98
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 73,
+          "average": 3.176,
+          "median": 3.02,
+          "best": 2.37
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 66,
+          "average": 3.245,
+          "median": 3.04,
+          "best": 2.22
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 75,
+          "average": 3.255,
+          "median": 3.17,
+          "best": 2.35
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 80,
+          "average": 3.285,
+          "median": 3.345,
+          "best": 2.38
+        },
+        {
+          "team": "Alfa Romeo",
+          "team2026": "Audi",
+          "stops": 60,
+          "average": 3.636,
+          "median": 3.385,
+          "best": 2.83
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 69,
+          "average": 3.946,
+          "median": 3.81,
+          "best": 3.01
+        }
+      ],
+      "fastest": [
+        {
+          "team": "McLaren",
+          "driver": "Ricciardo",
+          "gp": "Mexico City Grand Prix",
+          "lap": 44,
+          "time": 1.98
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "São Paulo Grand Prix",
+          "lap": 23,
+          "time": 2.04
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Dutch Grand Prix",
+          "lap": 14,
+          "time": 2.09
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Italian Grand Prix",
+          "lap": 42,
+          "time": 2.1
+        },
+        {
+          "team": "AlphaTauri",
+          "driver": "Tsunoda",
+          "gp": "São Paulo Grand Prix",
+          "lap": 54,
+          "time": 2.1
+        },
+        {
+          "team": "AlphaTauri",
+          "driver": "Tsunoda",
+          "gp": "São Paulo Grand Prix",
+          "lap": 40,
+          "time": 2.13
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "United States Grand Prix",
+          "lap": 14,
+          "time": 2.13
+        },
+        {
+          "team": "AlphaTauri",
+          "driver": "Tsunoda",
+          "gp": "United States Grand Prix",
+          "lap": 33,
+          "time": 2.14
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Italian Grand Prix",
+          "lap": 7,
+          "time": 2.17
+        },
+        {
+          "team": "AlphaTauri",
+          "driver": "Gasly",
+          "gp": "São Paulo Grand Prix",
+          "lap": 52,
+          "time": 2.17
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Sainz",
+          "gp": "São Paulo Grand Prix",
+          "lap": 36,
+          "time": 2.18
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Hungarian Grand Prix",
+          "lap": 42,
+          "time": 2.19
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Italian Grand Prix",
+          "lap": 12,
+          "time": 2.21
+        },
+        {
+          "team": "Alpine",
+          "driver": "Alonso",
+          "gp": "Belgian Grand Prix",
+          "lap": 11,
+          "time": 2.22
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Spanish Grand Prix",
+          "lap": 21,
+          "time": 2.23
+        }
+      ]
+    },
+    "2023": {
+      "races": 22,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 84,
+          "average": 2.571,
+          "median": 2.51,
+          "best": 1.98
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 66,
+          "average": 2.656,
+          "median": 2.59,
+          "best": 1.93
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 77,
+          "average": 2.784,
+          "median": 2.78,
+          "best": 1.8
+        },
+        {
+          "team": "AlphaTauri",
+          "team2026": "Racing Bulls",
+          "stops": 76,
+          "average": 2.784,
+          "median": 2.61,
+          "best": 2.19
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 75,
+          "average": 2.995,
+          "median": 2.89,
+          "best": 2.33
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 75,
+          "average": 3.074,
+          "median": 2.99,
+          "best": 2.4
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 70,
+          "average": 3.138,
+          "median": 2.975,
+          "best": 2.22
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 74,
+          "average": 3.33,
+          "median": 3.255,
+          "best": 2.45
+        },
+        {
+          "team": "Alfa Romeo",
+          "team2026": "Audi",
+          "stops": 84,
+          "average": 3.373,
+          "median": 3.36,
+          "best": 2.61
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 83,
+          "average": 3.583,
+          "median": 3.35,
+          "best": 2.6
+        }
+      ],
+      "fastest": [
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "Qatar Grand Prix",
+          "lap": 27,
+          "time": 1.8
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Qatar Grand Prix",
+          "lap": 43,
+          "time": 1.93
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Hungarian Grand Prix",
+          "lap": 42,
+          "time": 1.98
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Las Vegas Grand Prix",
+          "lap": 43,
+          "time": 1.99
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Qatar Grand Prix",
+          "lap": 43,
+          "time": 2.0
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Dutch Grand Prix",
+          "lap": 61,
+          "time": 2.01
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Hungarian Grand Prix",
+          "lap": 18,
+          "time": 2.01
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Spanish Grand Prix",
+          "lap": 27,
+          "time": 2.07
+        },
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "United States Grand Prix",
+          "lap": 34,
+          "time": 2.07
+        },
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "Austrian Grand Prix",
+          "lap": 14,
+          "time": 2.1
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Saudi Arabian Grand Prix",
+          "lap": 16,
+          "time": 2.1
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Australian Grand Prix",
+          "lap": 1,
+          "time": 2.11
+        },
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "Italian Grand Prix",
+          "lap": 22,
+          "time": 2.13
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Sainz",
+          "gp": "Hungarian Grand Prix",
+          "lap": 15,
+          "time": 2.14
+        },
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "Qatar Grand Prix",
+          "lap": 44,
+          "time": 2.14
+        }
+      ]
+    },
+    "2024": {
+      "races": 24,
+      "teams": [
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 76,
+          "average": 2.474,
+          "median": 2.43,
+          "best": 1.9
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 71,
+          "average": 2.573,
+          "median": 2.54,
+          "best": 1.94
+        },
+        {
+          "team": "RB",
+          "team2026": "Racing Bulls",
+          "stops": 69,
+          "average": 2.698,
+          "median": 2.59,
+          "best": 2.01
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 73,
+          "average": 2.698,
+          "median": 2.6,
+          "best": 2.12
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 73,
+          "average": 2.7,
+          "median": 2.6,
+          "best": 1.9
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 68,
+          "average": 2.824,
+          "median": 2.66,
+          "best": 2.01
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 80,
+          "average": 2.925,
+          "median": 2.72,
+          "best": 2.34
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 71,
+          "average": 3.199,
+          "median": 3.15,
+          "best": 2.39
+        },
+        {
+          "team": "Sauber",
+          "team2026": "Audi",
+          "stops": 77,
+          "average": 3.24,
+          "median": 3.03,
+          "best": 2.32
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 81,
+          "average": 3.241,
+          "median": 3.1,
+          "best": 2.51
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Chinese Grand Prix",
+          "lap": 23,
+          "time": 1.9
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Mexico City Grand Prix",
+          "lap": 39,
+          "time": 1.9
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Spanish Grand Prix",
+          "lap": 17,
+          "time": 1.92
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Miami Grand Prix",
+          "lap": 19,
+          "time": 1.94
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Austrian Grand Prix",
+          "lap": 51,
+          "time": 1.95
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Miami Grand Prix",
+          "lap": 17,
+          "time": 1.95
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "British Grand Prix",
+          "lap": 26,
+          "time": 1.99
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "British Grand Prix",
+          "lap": 19,
+          "time": 2.0
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Chinese Grand Prix",
+          "lap": 13,
+          "time": 2.0
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Spanish Grand Prix",
+          "lap": 31,
+          "time": 2.0
+        },
+        {
+          "team": "RB",
+          "driver": "Ricciardo",
+          "gp": "Hungarian Grand Prix",
+          "lap": 7,
+          "time": 2.01
+        },
+        {
+          "team": "Alpine",
+          "driver": "Ocon",
+          "gp": "Italian Grand Prix",
+          "lap": 31,
+          "time": 2.01
+        },
+        {
+          "team": "Alpine",
+          "driver": "Ocon",
+          "gp": "Spanish Grand Prix",
+          "lap": 13,
+          "time": 2.03
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Belgian Grand Prix",
+          "lap": 11,
+          "time": 2.05
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Perez",
+          "gp": "Chinese Grand Prix",
+          "lap": 23,
+          "time": 2.05
+        }
+      ]
+    },
+    "2025": {
+      "races": 24,
+      "teams": [
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 75,
+          "average": 2.471,
+          "median": 2.37,
+          "best": 2.0
+        },
+        {
+          "team": "Racing Bulls",
+          "team2026": "Racing Bulls",
+          "stops": 69,
+          "average": 2.557,
+          "median": 2.5,
+          "best": 2.04
+        },
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 75,
+          "average": 2.642,
+          "median": 2.46,
+          "best": 1.95
+        },
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 75,
+          "average": 2.738,
+          "median": 2.53,
+          "best": 2.08
+        },
+        {
+          "team": "Sauber",
+          "team2026": "Audi",
+          "stops": 67,
+          "average": 2.812,
+          "median": 2.65,
+          "best": 2.13
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 75,
+          "average": 2.839,
+          "median": 2.67,
+          "best": 1.91
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 75,
+          "average": 2.947,
+          "median": 2.87,
+          "best": 2.02
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 69,
+          "average": 2.956,
+          "median": 2.79,
+          "best": 2.3
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 72,
+          "average": 3.053,
+          "median": 2.99,
+          "best": 2.33
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 69,
+          "average": 3.108,
+          "median": 2.88,
+          "best": 2.15
+        }
+      ],
+      "fastest": [
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Italian Grand Prix",
+          "lap": 45,
+          "time": 1.91
+        },
+        {
+          "team": "McLaren",
+          "driver": "Norris",
+          "gp": "Hungarian Grand Prix",
+          "lap": 31,
+          "time": 1.94
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Hungarian Grand Prix",
+          "lap": 45,
+          "time": 1.94
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Tsunoda",
+          "gp": "São Paulo Grand Prix",
+          "lap": 2,
+          "time": 1.95
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Tsunoda",
+          "gp": "Hungarian Grand Prix",
+          "lap": 20,
+          "time": 1.97
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Tsunoda",
+          "gp": "Las Vegas Grand Prix",
+          "lap": 27,
+          "time": 1.99
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": 39,
+          "time": 2.0
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Monaco Grand Prix",
+          "lap": 22,
+          "time": 2.0
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Saudi Arabian Grand Prix",
+          "lap": 29,
+          "time": 2.0
+        },
+        {
+          "team": "Williams",
+          "driver": "Albon",
+          "gp": "Abu Dhabi Grand Prix",
+          "lap": 8,
+          "time": 2.02
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Emilia Romagna Grand Prix",
+          "lap": 10,
+          "time": 2.04
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Hungarian Grand Prix",
+          "lap": 40,
+          "time": 2.04
+        },
+        {
+          "team": "Racing Bulls",
+          "driver": "Lawson",
+          "gp": "São Paulo Grand Prix",
+          "lap": 19,
+          "time": 2.04
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Chinese Grand Prix",
+          "lap": 15,
+          "time": 2.05
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Tsunoda",
+          "gp": "Singapore Grand Prix",
+          "lap": 13,
+          "time": 2.05
+        }
+      ]
+    },
+    "2026": {
+      "races": 17,
+      "teams": [
+        {
+          "team": "Mercedes",
+          "team2026": "Mercedes",
+          "stops": 51,
+          "average": 2.592,
+          "median": 2.45,
+          "best": 2.08
+        },
+        {
+          "team": "Audi",
+          "team2026": "Audi",
+          "stops": 52,
+          "average": 2.712,
+          "median": 2.645,
+          "best": 2.15
+        },
+        {
+          "team": "Red Bull",
+          "team2026": "Red Bull",
+          "stops": 52,
+          "average": 2.765,
+          "median": 2.695,
+          "best": 2.09
+        },
+        {
+          "team": "Ferrari",
+          "team2026": "Ferrari",
+          "stops": 54,
+          "average": 2.786,
+          "median": 2.665,
+          "best": 2.0
+        },
+        {
+          "team": "Racing Bulls",
+          "team2026": "Racing Bulls",
+          "stops": 43,
+          "average": 2.828,
+          "median": 2.73,
+          "best": 1.99
+        },
+        {
+          "team": "Alpine",
+          "team2026": "Alpine",
+          "stops": 48,
+          "average": 2.893,
+          "median": 2.8,
+          "best": 2.13
+        },
+        {
+          "team": "McLaren",
+          "team2026": "McLaren",
+          "stops": 53,
+          "average": 2.961,
+          "median": 2.97,
+          "best": 2.13
+        },
+        {
+          "team": "Aston Martin",
+          "team2026": "Aston Martin",
+          "stops": 47,
+          "average": 3.014,
+          "median": 2.94,
+          "best": 2.15
+        },
+        {
+          "team": "Williams",
+          "team2026": "Williams",
+          "stops": 59,
+          "average": 3.173,
+          "median": 3.08,
+          "best": 2.16
+        },
+        {
+          "team": "Haas",
+          "team2026": "Haas",
+          "stops": 51,
+          "average": 3.593,
+          "median": 3.46,
+          "best": 2.58
+        },
+        {
+          "team": "Cadillac",
+          "team2026": "Cadillac",
+          "stops": 54,
+          "average": 4.103,
+          "median": 3.73,
+          "best": 2.73
+        }
+      ],
+      "fastest": [
+        {
+          "team": "Racing Bulls",
+          "driver": "Lindblad",
+          "gp": "Hungarian Grand Prix",
+          "lap": 20,
+          "time": 1.99
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Hamilton",
+          "gp": "Japanese Grand Prix",
+          "lap": 22,
+          "time": 2.0
+        },
+        {
+          "team": "Racing Bulls",
+          "driver": "Lindblad",
+          "gp": "Austrian Grand Prix",
+          "lap": 18,
+          "time": 2.03
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Hamilton",
+          "gp": "Austrian Grand Prix",
+          "lap": 25,
+          "time": 2.05
+        },
+        {
+          "team": "Mercedes",
+          "driver": "Antonelli",
+          "gp": "Hungarian Grand Prix",
+          "lap": 22,
+          "time": 2.08
+        },
+        {
+          "team": "Racing Bulls",
+          "driver": "Lindblad",
+          "gp": "Miami Grand Prix",
+          "lap": 28,
+          "time": 2.08
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Bahrain Grand Prix",
+          "lap": 9,
+          "time": 2.09
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Austrian Grand Prix",
+          "lap": 49,
+          "time": 2.13
+        },
+        {
+          "team": "Alpine",
+          "driver": "Colapinto",
+          "gp": "Bahrain Grand Prix",
+          "lap": 31,
+          "time": 2.13
+        },
+        {
+          "team": "Red Bull",
+          "driver": "Verstappen",
+          "gp": "Bahrain Grand Prix",
+          "lap": 43,
+          "time": 2.13
+        },
+        {
+          "team": "McLaren",
+          "driver": "Piastri",
+          "gp": "Barcelona Grand Prix",
+          "lap": 14,
+          "time": 2.13
+        },
+        {
+          "team": "Ferrari",
+          "driver": "Leclerc",
+          "gp": "Japanese Grand Prix",
+          "lap": 17,
+          "time": 2.13
+        },
+        {
+          "team": "Racing Bulls",
+          "driver": "Lawson",
+          "gp": "Hungarian Grand Prix",
+          "lap": 42,
+          "time": 2.14
+        },
+        {
+          "team": "Mercedes",
+          "driver": "Russell",
+          "gp": "Spanish Grand Prix",
+          "lap": 28,
+          "time": 2.14
+        },
+        {
+          "team": "Audi",
+          "driver": "Bortoleto",
+          "gp": "Bahrain Grand Prix",
+          "lap": 9,
+          "time": 2.15
+        }
+      ]
+    }
+  },
+  "teamStationary": {
+    "McLaren": {
+      "seconds": 2.96,
+      "season": 2026,
+      "stops": 53
+    },
+    "Mercedes": {
+      "seconds": 2.59,
+      "season": 2026,
+      "stops": 51
+    },
+    "Red Bull": {
+      "seconds": 2.77,
+      "season": 2026,
+      "stops": 52
+    },
+    "Ferrari": {
+      "seconds": 2.79,
+      "season": 2026,
+      "stops": 54
+    },
+    "Williams": {
+      "seconds": 3.17,
+      "season": 2026,
+      "stops": 59
+    },
+    "Racing Bulls": {
+      "seconds": 2.83,
+      "season": 2026,
+      "stops": 43
+    },
+    "Aston Martin": {
+      "seconds": 3.01,
+      "season": 2026,
+      "stops": 47
+    },
+    "Haas": {
+      "seconds": 3.59,
+      "season": 2026,
+      "stops": 51
+    },
+    "Audi": {
+      "seconds": 2.71,
+      "season": 2026,
+      "stops": 52
+    },
+    "Alpine": {
+      "seconds": 2.89,
+      "season": 2026,
+      "stops": 48
+    },
+    "Cadillac": {
+      "seconds": 4.1,
+      "season": 2026,
+      "stops": 54
+    }
+  }
+}

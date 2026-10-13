@@ -36,12 +36,19 @@ export const CAR = {
 // ---------------------------------------------------------------------------
 // Power unit (approximate)
 // ---------------------------------------------------------------------------
+// Effective power at top speed is CALIBRATED, not edited here: backend/pipeline/train_models.py fits it so
+// the top-speed formula matches real 2026 top speeds in the TracingInsights telemetry (data/aero-calibration.json).
+import calibration from "../data/aero-calibration.json";
+
 export const POWER = {
   combustionKw: 400,
   electricKw: 350,
   get totalKw() {
-    return this.combustionKw + this.electricKw; // ≈ 750 kW
+    return this.combustionKw + this.electricKw; // ≈ 750 kW peak
   },
+  /** Power actually left for top speed on a long straight (2026 cars run out of electrical deployment). */
+  topSpeedKw: calibration.effectivePowerKw as number,
+  calibrationMaeKmh: calibration.maeKmh as number,
 };
 
 // ---------------------------------------------------------------------------

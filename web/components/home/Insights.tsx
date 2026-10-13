@@ -5,7 +5,7 @@ import SectionHeader from "./SectionHeader";
 const TOOLS = [
   {
     title: "Live telemetry",
-    text: "Animated circuit map with speed, gear, DRS, throttle and brake, tyre temperatures and ML aero predictions.",
+    text: "Race any 2026 team around every circuit on real reference laps, with a lap time model, pit stops and estimated tyre temperatures.",
     href: "/live",
     cta: "Open dashboard",
     icon: <path d="M3 12h4l3-8 4 16 3-8h4" />,
