@@ -10,7 +10,7 @@ export default function AeroPage() {
       <PageHead
         eyebrow="Data & insights"
         title="Aero calculator"
-        text="Predict drag and downforce from speed, rear wing angle and DRS, using the trained neural network."
+        text="Drag and downforce for a 2026 Formula 1 car from real aerodynamic equations: pick a speed, active aero mode, track setup and air conditions."
       />
       <section className="page-body">
         <div className="container">

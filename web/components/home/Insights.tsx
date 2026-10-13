@@ -19,7 +19,7 @@ const TOOLS = [
   },
   {
     title: "Aero calculator",
-    text: "Enter speed, wing angle and DRS to get predicted drag and downforce from the neural network.",
+    text: "Pick a speed, 2026 active aero mode and track setup to get drag and downforce from real aerodynamic equations, with a live wind tunnel.",
     href: "/aero",
     cta: "Try it",
     icon: <path d="M2 12c4-4 8-4 12 0s6 4 8 2M2 7c4-3 8-3 12 0M2 17c4-3 8-3 12 0" />,

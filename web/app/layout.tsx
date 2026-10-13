@@ -6,6 +6,7 @@ import "./globals.css";
 import "./navbar.css";
 import "./footer.css";
 import "./calendar.css";
+import "./windtunnel.css";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-inter" });
 

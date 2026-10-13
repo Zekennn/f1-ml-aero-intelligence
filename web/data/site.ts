@@ -30,7 +30,7 @@ export const NAV_MENUS: NavMenu[] = [
     items: [
       { label: "Live telemetry", href: "/live", icon: "live", featured: true, description: "Simulated lap with speed, gear, DRS, tyre temps and ML aero predictions" },
       { label: "2026 predictor", href: "/predictor", icon: "trophy", description: "Championship win probability for every driver" },
-      { label: "Aero calculator", href: "/aero", icon: "wind", description: "Drag and downforce from speed, wing angle and DRS" },
+      { label: "Aero calculator", href: "/aero", icon: "wind", description: "2026 drag and downforce with active aero modes and a wind tunnel" },
     ],
   },
 ];

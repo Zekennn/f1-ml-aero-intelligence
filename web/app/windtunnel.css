@@ -1,0 +1,348 @@
+/* =========================================================
+   Wind tunnel simulator (Aero page)
+   ========================================================= */
+.wt {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--ash);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.wt__head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.wt__title { font-size: 1.35rem; }
+.wt__subtitle { margin: 4px 0 0; font-size: 0.9rem; color: var(--ash-text); }
+
+.wt-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--ash-light);
+  border: 1px solid var(--ash);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ash-text);
+}
+.wt-status__dot { width: 8px; height: 8px; border-radius: 50%; background: #9CA3AF; }
+.wt-status--on { color: var(--blue); border-color: rgba(30, 94, 255, 0.3); background: rgba(30, 94, 255, 0.06); }
+.wt-status--on .wt-status__dot { background: var(--blue); }
+
+/* Canvas (≈70%) + detail panel (≈30%). The panel is size-contained so the canvas sets the row height. */
+.wt__body {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 3fr);
+  gap: 16px;
+}
+
+.wt__stage {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 10px;
+  background: var(--dark-blue);
+}
+.wt__canvas { display: block; width: 100%; height: 100%; cursor: crosshair; }
+
+.wt__tip {
+  position: absolute;
+  z-index: 1;
+  transform: translate(12px, 12px);
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  white-space: nowrap;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.wt__tip--flip { transform: translate(calc(-100% - 12px), 12px); }
+
+/* Detail panel */
+.wt-panel {
+  contain: size;
+  overflow-y: auto;
+  padding: 4px 16px 12px;
+  border: 1px solid var(--ash);
+  border-radius: 10px;
+  /* Soft shadows at the top/bottom edge while there is more to scroll to */
+  background:
+    linear-gradient(var(--white) 30%, rgba(255, 255, 255, 0)) top / 100% 28px no-repeat local,
+    linear-gradient(rgba(255, 255, 255, 0), var(--white) 70%) bottom / 100% 28px no-repeat local,
+    radial-gradient(farthest-side at 50% 0, rgba(11, 31, 58, 0.14), transparent) top / 100% 10px no-repeat scroll,
+    radial-gradient(farthest-side at 50% 100%, rgba(11, 31, 58, 0.14), transparent) bottom / 100% 10px no-repeat scroll,
+    var(--white);
+}
+.wt-group { padding: 12px 0; border-bottom: 1px solid var(--ash); }
+.wt-group:last-child { border-bottom: 0; }
+.wt-group__title {
+  margin-bottom: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ash-text);
+}
+
+.wt-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 3px 0;
+  font-size: 0.85rem;
+}
+.wt-row__label { color: var(--text); }
+.wt-row__label small { display: block; font-size: 0.7rem; color: var(--ash-text); }
+.wt-row__value { font-weight: 700; color: var(--dark-blue); text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.wt-row__value--blue { color: var(--blue); }
+.wt-sub { font-weight: 500; color: var(--ash-text); }
+
+.wt-empty {
+  margin: 4px 0 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 6px;
+  background: var(--ash-light);
+  font-size: 0.85rem;
+  color: var(--ash-text);
+}
+.wt-empty strong { color: var(--dark-blue); }
+.wt-note { margin: 6px 0 0; font-size: 0.75rem; color: #92400E; }
+.wt-caption-sm { margin: 0 0 6px; font-size: 0.75rem; color: var(--ash-text); }
+
+.wt-compare { width: 100%; border-collapse: collapse; font-size: 0.8rem; font-variant-numeric: tabular-nums; }
+.wt-compare th,
+.wt-compare td { padding: 4px 0; text-align: right; }
+.wt-compare thead th { font-size: 0.7rem; font-weight: 600; color: var(--ash-text); }
+.wt-compare tbody th { text-align: left; font-weight: 500; color: var(--text); }
+.wt-compare td { font-weight: 600; color: var(--dark-blue); }
+.wt-compare td:last-child { color: var(--blue); }
+
+.wt-chart { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.wt-chart__group { display: flex; flex-direction: column; gap: 3px; }
+.wt-chart__label { font-size: 0.7rem; font-weight: 600; color: var(--ash-text); }
+.wt-chart__track { height: 8px; border-radius: 4px; background: var(--ash-light); overflow: hidden; }
+.wt-chart__fill { display: block; height: 100%; border-radius: 4px; background: var(--dark-blue); transition: width 0.45s ease; }
+.wt-chart__fill--open { background: var(--blue); }
+.wt-chart__legend { display: flex; gap: 14px; font-size: 0.7rem; color: var(--ash-text); }
+.wt-chart__legend span { display: inline-flex; align-items: center; gap: 5px; }
+.wt-swatch { width: 10px; height: 10px; border-radius: 2px; background: var(--dark-blue); }
+.wt-swatch--open { background: var(--blue); }
+
+/* Controls bar */
+.wt__controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding-top: 16px;
+  border-top: 1px solid var(--ash);
+}
+.wt__controls-end { display: flex; gap: 10px; margin-left: auto; }
+
+.wt-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--ash);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+  transition: border-color var(--transition), color var(--transition), background-color var(--transition);
+}
+.wt-btn:hover:not(:disabled) { border-color: var(--blue); color: var(--blue); }
+.wt-btn--primary { min-width: 96px; justify-content: center; border-color: var(--blue); background: var(--blue); color: var(--white); }
+.wt-btn--primary:hover:not(:disabled) { background: var(--blue-hover); color: var(--white); }
+.wt-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.wt-seg { display: inline-flex; padding: 3px; border-radius: 8px; background: var(--ash-light); border: 1px solid var(--ash); }
+.wt-seg__btn {
+  padding: 0.35rem 0.75rem;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ash-text);
+}
+.wt-seg__btn[aria-pressed="true"] { background: var(--white); color: var(--dark-blue); box-shadow: 0 1px 2px rgba(11, 31, 58, 0.12); }
+
+.wt-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--dark-blue);
+}
+.wt-switch__track { position: relative; width: 34px; height: 20px; border-radius: 10px; background: #D1D5DB; transition: background-color var(--transition); }
+.wt-switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition);
+}
+.wt-switch[aria-checked="true"] .wt-switch__track { background: var(--blue); }
+.wt-switch[aria-checked="true"] .wt-switch__thumb { transform: translateX(14px); }
+
+.wt-range { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: var(--dark-blue); }
+.wt-range input { width: 110px; accent-color: var(--blue); }
+.wt-range input:disabled { opacity: 0.4; }
+.wt-range output { min-width: 3ch; font-size: 0.8rem; color: var(--ash-text); font-variant-numeric: tabular-nums; }
+
+.wt-btn:focus-visible,
+.wt-seg__btn:focus-visible,
+.wt-switch:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.wt__caption { margin: 0; font-size: 0.8rem; color: var(--ash-text); }
+
+/* Fullscreen: native (:fullscreen) or the fixed-position fallback */
+.wt--full { margin: 0; border-radius: 0; border: 0; height: 100%; overflow: auto; }
+.wt--expanded { position: fixed; inset: 0; z-index: 1000; }
+.wt--full .wt__body { flex: 1; min-height: 0; grid-template-rows: minmax(0, 1fr); }
+.wt--full .wt__stage { aspect-ratio: auto; height: 100%; min-height: 320px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wt-chart__fill,
+  .wt-switch__thumb,
+  .wt-switch__track { transition: none; }
+}
+
+@media (max-width: 900px) {
+  .wt { padding: 16px; }
+  .wt__body { grid-template-columns: 1fr; }
+  .wt__stage { aspect-ratio: 16 / 11; }
+  .wt-panel { contain: none; overflow: visible; }
+  .wt--full .wt__body { grid-template-rows: auto auto; }
+  .wt--full .wt__stage { height: auto; aspect-ratio: 16 / 11; min-height: 0; }
+}
+@media (max-width: 600px) {
+  .wt__stage,
+  .wt--full .wt__stage { aspect-ratio: 1 / 1; } /* taller on phones so the force labels fit */
+  .wt__head { flex-direction: column; gap: 8px; }
+  .wt__controls-end { margin-left: 0; }
+}
+
+/* =========================================================
+   2026 aero calculator inputs, notes and physics section
+   ========================================================= */
+.aero-note {
+  max-width: 900px;
+  margin-bottom: 24px;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid rgba(30, 94, 255, 0.25);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  background: rgba(30, 94, 255, 0.05);
+  font-size: 0.9rem;
+  color: var(--dark-blue);
+}
+
+.aero-speed { display: flex; align-items: center; gap: 12px; }
+.aero-speed input[type="range"] { flex: 1; accent-color: var(--blue); }
+.aero-speed input[type="number"] { width: 88px; }
+
+.aero-mode { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.aero-mode__btn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--ash);
+  border-radius: 8px;
+  background: var(--white);
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--dark-blue);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+.aero-mode__btn small { font-size: 0.72rem; font-weight: 500; color: var(--ash-text); }
+.aero-mode__btn:hover { border-color: var(--blue); }
+.aero-mode__btn[aria-checked="true"] { border-color: var(--blue); background: rgba(30, 94, 255, 0.06); box-shadow: inset 0 0 0 1px var(--blue); }
+.aero-mode__btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.aero-readonly { margin: 0; font-size: 0.8rem; color: var(--ash-text); }
+.aero-readonly strong { color: var(--dark-blue); }
+
+.aero-air { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 12px 14px 14px; border: 1px solid var(--ash); border-radius: 8px; }
+.aero-air legend { padding: 0 6px; font-size: 0.8rem; font-weight: 600; color: var(--ash-text); }
+.aero-air__row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.aero-air .field input { width: 100%; }
+
+.physics { margin-top: 24px; border: 1px solid var(--ash); border-radius: 10px; background: var(--white); }
+.physics summary { padding: 0.9rem 1.15rem; font-weight: 600; color: var(--dark-blue); cursor: pointer; }
+.physics summary:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+.physics__body { padding: 0 1.15rem 1rem; }
+.physics__list { display: grid; gap: 6px; margin: 0 0 12px; }
+.physics__list div { display: grid; grid-template-columns: 200px 1fr; gap: 12px; font-size: 0.9rem; }
+.physics__list dt { color: var(--ash-text); }
+.physics__list dd { margin: 0; font-weight: 600; color: var(--dark-blue); }
+.physics__list dd span { font-weight: 400; color: var(--ash-text); }
+.physics__note { margin: 0; font-size: 0.8rem; color: var(--ash-text); }
+
+/* Drag and downforce vs speed chart (detail panel) */
+.wt-fchart { margin: 0; }
+.wt-fchart__plot { position: relative; }
+.wt-fchart svg { display: block; width: 100%; height: auto; overflow: visible; touch-action: pan-y; }
+.wt-fchart__grid { stroke: var(--ash); stroke-width: 1; }
+.wt-fchart__tick { font-size: 9px; fill: var(--ash-text); font-variant-numeric: tabular-nums; }
+.wt-fchart__end { font-size: 9px; font-weight: 600; fill: var(--text); }
+.wt-fchart__line { fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.wt-fchart__line--dash { stroke-dasharray: 5 4; }
+.wt-fchart__now { stroke: var(--dark-blue); stroke-width: 1; stroke-dasharray: 2 3; opacity: 0.5; }
+.wt-fchart__cross { stroke: var(--ash-text); stroke-width: 1; }
+.wt-fchart__tip {
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 0.4rem 0.55rem;
+  border: 1px solid var(--ash);
+  border-radius: 6px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  font-size: 0.7rem;
+  color: var(--text);
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(8px);
+  font-variant-numeric: tabular-nums;
+}
+.wt-fchart__tip--left { transform: translateX(calc(-100% - 8px)); }
+.wt-fchart__tip strong { color: var(--dark-blue); }
+.wt-fchart__tip span { display: inline-flex; align-items: center; gap: 5px; }
+.wt-fchart__legend { display: flex; flex-wrap: wrap; gap: 4px 12px; margin-top: 6px; font-size: 0.7rem; color: var(--ash-text); }
+.wt-fchart__legend span { display: inline-flex; align-items: center; gap: 5px; }
+.wt-key { display: inline-block; width: 16px; border-top: 2px solid; }
+.wt-key--dash { border-top-style: dashed; }
+.wt-key--plain { border-color: var(--ash-text); }
+
+@media (max-width: 600px) {
+  .aero-mode { grid-template-columns: 1fr; }
+  .physics__list div { grid-template-columns: 1fr; gap: 0; }
+}
+
+.badge--blue { background: var(--blue); }
