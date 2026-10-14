@@ -3,7 +3,7 @@
 import { RefObject, useEffect, useRef } from "react";
 import type { CircuitData, LapTelemetry } from "@/lib/circuitData";
 
-export const MAP_COLOURS = { full: "#16A34A", partial: "#1E5EFF", brake: "#DC2626" };
+export const MAP_COLOURS = { full: "#22e06b", partial: "#3d8bff", brake: "#ff3b4e" };
 
 type Props = {
   circuit: CircuitData | null;
@@ -49,7 +49,7 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
       // Wide pale track, then the coloured racing line
       g.lineCap = "round";
       g.lineJoin = "round";
-      g.strokeStyle = "#E5E7EB";
+      g.strokeStyle = "rgba(255,255,255,0.09)";
       g.lineWidth = 12 * dpr;
       g.beginPath();
       x.forEach((px, i) => {
@@ -63,7 +63,7 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
       g.lineWidth = 5 * dpr;
       for (let i = 0; i < x.length; i++) {
         const j = (i + 1) % x.length;
-        const colour = !tel ? "#9CA3AF" : tel.brake[i] ? MAP_COLOURS.brake : tel.throttle[i] >= 95 ? MAP_COLOURS.full : MAP_COLOURS.partial;
+        const colour = !tel ? "#56627a" : tel.brake[i] ? MAP_COLOURS.brake : tel.throttle[i] >= 95 ? MAP_COLOURS.full : MAP_COLOURS.partial;
         const [ax, ay] = toScreen(x[i], y[i]);
         const [bx, by] = toScreen(x[j], y[j]);
         g.strokeStyle = colour;
@@ -75,7 +75,7 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
 
       // Start/finish line
       const [sx, sy] = toScreen(x[0], y[0]);
-      g.fillStyle = "#0B1F3A";
+      g.fillStyle = "#FFFFFF";
       g.fillRect(sx - 3 * dpr, sy - 9 * dpr, 6 * dpr, 18 * dpr);
 
       // Corner numbers
@@ -84,11 +84,11 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
       g.textBaseline = "middle";
       for (const c of circuit.corners) {
         const [cx, cy] = toScreen(c.x, c.y);
-        g.fillStyle = "rgba(255,255,255,0.92)";
+        g.fillStyle = "rgba(10,18,34,0.92)";
         g.beginPath();
         g.arc(cx, cy, 8 * dpr, 0, Math.PI * 2);
         g.fill();
-        g.fillStyle = "#0B1F3A";
+        g.fillStyle = "#eaf0fc";
         g.fillText(String(c.n), cx, cy + 0.5 * dpr);
       }
       draw(last);
@@ -100,7 +100,7 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
       if (!pos || !circuit) return;
       const dpr = canvas.width / Math.max(1, wrap.getBoundingClientRect().width);
       const [px, py] = toScreen(pos[0], pos[1]);
-      ctx.fillStyle = "#0B1F3A";
+      ctx.fillStyle = "#ff2d55";
       ctx.strokeStyle = "#FFFFFF";
       ctx.lineWidth = 3 * dpr;
       ctx.beginPath();

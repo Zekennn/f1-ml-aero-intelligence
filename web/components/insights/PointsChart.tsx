@@ -5,7 +5,7 @@ import { PointerEvent, useState } from "react";
 export type Series = { name: string; code: string; values: number[] };
 
 // Validated categorical palette (dataviz skill), fixed order: P1 → P5
-export const SERIES_COLOURS = ["#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4"];
+export const SERIES_COLOURS = ["#3d8bff", "#ff7a3d", "#22e0a0", "#ffc23d", "#ff7ab0"];
 
 const W = 760;
 const H = 320;

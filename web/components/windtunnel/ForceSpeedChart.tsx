@@ -10,8 +10,8 @@ const W = 300;
 const H = 170;
 const PAD = { l: 38, r: 64, t: 10, b: 24 };
 
-const DOWNFORCE = "#1E5EFF";
-const DRAG = "#D97706";
+const DOWNFORCE = "#36e2ff";
+const DRAG = "#ffb12e";
 
 type Props = { setup: SetupId; rho: number; speedKmh: number };
 
@@ -81,7 +81,7 @@ export default function ForceSpeedChart({ setup, rho, speedKmh }: Props) {
             <g>
               <line x1={px(h.s)} x2={px(h.s)} y1={PAD.t} y2={H - PAD.b} className="wt-fchart__cross" />
               {([["dfC", DOWNFORCE], ["dfS", DOWNFORCE], ["dC", DRAG], ["dS", DRAG]] as const).map(([k, col]) => (
-                <circle key={k} cx={px(h.s)} cy={py(h[k])} r={3.5} fill={col} stroke="#fff" strokeWidth={2} />
+                <circle key={k} cx={px(h.s)} cy={py(h[k])} r={3.5} fill={col} stroke="#03070e" strokeWidth={2} />
               ))}
             </g>
           )}

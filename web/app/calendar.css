@@ -31,19 +31,19 @@
   padding: 8px 36px 8px 12px;
   border: 1px solid var(--ash);
   border-radius: 8px;
-  background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%236B7280' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 10px center / 16px;
+  background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='%23a8b3c7' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E") no-repeat right 10px center / 16px;
   color: var(--dark-blue);
   font: inherit;
   font-weight: 500;
   cursor: pointer;
   transition: border-color var(--transition);
 }
-.cal-toolbar__filter select:hover { border-color: #C7CCD4; }
+.cal-toolbar__filter select:hover { border-color: rgba(255, 255, 255, 0.22); }
 .cal-toolbar__filter select:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 .cal-empty {
   padding: 32px;
-  border: 1px dashed #D1D5DB;
+  border: 1px dashed var(--line-strong);
   border-radius: var(--radius);
   background: var(--white);
   color: var(--ash-text);
@@ -73,14 +73,14 @@
   cursor: pointer;
   transition: border-color var(--transition), box-shadow var(--transition);
 }
-.cal-card:hover { border-color: #C7CCD4; box-shadow: var(--shadow-hover); }
+.cal-card:hover { border-color: rgba(255, 255, 255, 0.22); box-shadow: var(--shadow-hover); }
 .cal-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
 /* Next upcoming race */
 .cal-card--next {
   border-color: var(--blue);
   box-shadow: 0 0 0 1px var(--blue);
-  background: #F7F9FF;
+  background: rgba(255, 45, 85, 0.07);
 }
 .cal-card--next:hover { border-color: var(--blue); box-shadow: 0 0 0 1px var(--blue), var(--shadow-hover); }
 
@@ -108,9 +108,9 @@
   letter-spacing: 0.01em;
   white-space: nowrap;
 }
-.cal-badge--upcoming { background: #EAF0FF; color: var(--blue); }
-.cal-badge--completed { background: var(--ash-light); color: #4B5563; }
-.cal-badge--next { background: var(--blue); color: var(--white); }
+.cal-badge--upcoming { background: rgba(255, 45, 85, 0.12); color: var(--blue); }
+.cal-badge--completed { background: var(--ash-light); color: var(--ash-text); }
+.cal-badge--next { background: var(--blue); color: var(--on-accent); }
 
 .cal-card__main {
   display: flex;
@@ -197,11 +197,11 @@
   border-radius: 14px;
   background: var(--white);
   color: var(--text);
-  box-shadow: 0 24px 64px rgba(11, 31, 58, 0.28);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
   overflow: auto;
   overscroll-behavior: contain;
 }
-.race-detail::backdrop { background: rgba(11, 31, 58, 0.55); }
+.race-detail::backdrop { background: rgba(2, 4, 9, 0.7); }
 body:has(.race-detail[open]) { overflow: hidden; }
 
 .race-detail__panel { padding: 22px 24px 28px; }
@@ -312,7 +312,7 @@ body:has(.race-detail[open]) { overflow: hidden; }
   border-radius: 8px;
   background: var(--ash-light);
 }
-.podium__step--p1 { border-color: var(--blue); background: #F7F9FF; }
+.podium__step--p1 { border-color: var(--blue); background: rgba(255, 45, 85, 0.07); }
 .podium__pos { font-size: 0.75rem; font-weight: 700; color: var(--blue); }
 .podium__driver { margin-top: 4px; font-size: 0.9rem; font-weight: 600; color: var(--dark-blue); }
 .podium__team { font-size: 0.8rem; color: var(--ash-text); }
@@ -330,8 +330,8 @@ body:has(.race-detail[open]) { overflow: hidden; }
   align-items: center;
   padding: 14px 6px;
   border-radius: 8px;
-  background: var(--dark-blue);
-  color: var(--white);
+  background: var(--chip);
+  color: var(--on-accent);
 }
 .countdown__value {
   font-size: 1.6rem;

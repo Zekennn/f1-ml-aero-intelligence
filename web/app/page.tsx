@@ -5,9 +5,7 @@ import LiveRefresh from "@/components/LiveRefresh";
 import AeroHero from "@/components/motion/AeroHero";
 import AeroStory from "@/components/motion/AeroStory";
 import ChampionshipRace from "@/components/motion/ChampionshipRace";
-import Chrome from "@/components/motion/Chrome";
 import Finale from "@/components/motion/Finale";
-import { display, mono } from "@/components/motion/fonts";
 import LightsOut from "@/components/motion/LightsOut";
 import NextRace from "@/components/motion/NextRace";
 import { Reveal } from "@/components/motion/primitives";
@@ -24,22 +22,17 @@ export const dynamic = "force-dynamic";
 /** Home page: the motion landing. Sections appear in this order. */
 export default async function HomePage() {
   const data = await getLandingData();
-  const leaderTeam = data.teams[0];
   const leader = data.drivers[0];
 
   return (
-    <div className={`landing ${display.variable} ${mono.variable}`}>
+    <div className="landing">
       <LiveRefresh />
       <LightsOut />
-      <Chrome />
 
       <AeroHero
         season={data.season}
         completed={data.completedRounds}
         total={data.totalRounds}
-        carSrc={`/images/teams/${leaderTeam?.slug ?? "mercedes"}-car.webp`}
-        teamName={leaderTeam?.name ?? "Mercedes"}
-        leader={leader?.code ?? null}
       />
       <Ticker
         drivers={data.drivers}

@@ -67,6 +67,31 @@ export default function Navbar() {
     };
   }, []);
 
+  // Darker, tighter bar once the page scrolls, plus a progress hairline
+  useEffect(() => {
+    const el = headerRef.current;
+    if (!el) return;
+    let raf = 0;
+    const update = () => {
+      raf = 0;
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      el.classList.toggle("is-scrolled", window.scrollY > 24);
+      el.style.setProperty("--nav-progress", String(max > 0 ? Math.min(1, window.scrollY / max) : 0));
+    };
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, [pathname]);
+
+  // The menu that contains the current page gets an active marker
+  const activeGroup = NAV_MENUS.find((m) => m.items.some((i) => !i.href.includes("#") && i.href === pathname))?.label;
+
   // Lock page scroll while the mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
@@ -88,7 +113,7 @@ export default function Navbar() {
                 <button
                   key={menu.label}
                   type="button"
-                  className="site-nav__link"
+                  className={`site-nav__link ${activeGroup === menu.label ? "is-current" : ""}`}
                   aria-expanded={activeMenu === menu.label}
                   aria-controls="site-nav-popup"
                   onMouseEnter={() => openMenu(menu.label)}
@@ -131,7 +156,7 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`nav-item ${item.featured ? "nav-item--featured" : ""}`}
+                      className={`nav-item ${item.featured ? "nav-item--featured" : ""} ${item.href === pathname ? "is-current" : ""}`}
                       onClick={closeAll}
                     >
                       <span className="nav-item__icon"><NavIcon name={item.icon} /></span>
@@ -172,7 +197,7 @@ export default function Navbar() {
                 <div key={menu.label} className="site-nav__m-group">
                   <p className="site-nav__m-label">{menu.label}</p>
                   {menu.items.map((item) => (
-                    <Link key={item.href} href={item.href} className="site-nav__m-item" onClick={closeAll}>
+                    <Link key={item.href} href={item.href} className={`site-nav__m-item ${item.href === pathname ? "is-current" : ""}`} onClick={closeAll}>
                       <NavIcon name={item.icon} />
                       {item.label}
                     </Link>

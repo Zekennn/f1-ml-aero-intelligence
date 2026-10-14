@@ -1,20 +1,21 @@
 /* =========================================================
    Floating navbar
-   A light, translucent bar centred near the top of the page.
+   A dark glass bar centred near the top of the page; it tightens
+   and darkens once the page scrolls (.is-scrolled, set in Navbar.tsx).
    Desktop: dropdown triggers open a panel of links below the bar.
    Mobile:  a full-width card that expands to show the menu.
    ========================================================= */
 :root {
-  --nav-surface: rgba(243, 244, 246, 0.9);   /* ash-light, slightly see-through */
-  --nav-hover: rgba(11, 31, 58, 0.06);
+  --nav-surface: rgba(9, 15, 28, 0.62);
+  --nav-surface-solid: rgba(7, 12, 23, 0.92);
+  --nav-hover: rgba(255, 255, 255, 0.07);
   --nav-shadow:
-    0 1px 1px 0 rgba(11, 31, 58, 0.10),
-    0 0 0 1px rgba(11, 31, 58, 0.05),
-    0 2px 12px -4px rgba(11, 31, 58, 0.18);
+    inset 0 1px 0 rgba(255, 255, 255, 0.07),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 14px 40px -12px rgba(0, 0, 0, 0.7);
   --nav-card-shadow:
-    0 1px 1px 0 rgba(11, 31, 58, 0.08),
-    0 4px 12px -6px rgba(11, 31, 58, 0.12),
-    0 0 0 1px rgba(11, 31, 58, 0.04);
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.07);
   --nav-ease: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
@@ -27,7 +28,9 @@
   left: 50%;
   transform: translateX(-50%);
   min-width: 660px;
+  transition: top 0.4s var(--nav-ease);
 }
+.site-nav.is-scrolled .site-nav__desktop { top: 12px; }
 .site-nav__bar {
   display: flex;
   align-items: center;
@@ -37,8 +40,29 @@
   border-radius: 16px;
   background: var(--nav-surface);
   box-shadow: var(--nav-shadow);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  backdrop-filter: blur(16px) saturate(1.4);
+  transition: background-color 0.4s ease, padding 0.4s var(--nav-ease), box-shadow 0.4s ease;
+}
+.site-nav.is-scrolled .site-nav__bar {
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background: var(--nav-surface-solid);
+}
+/* Scroll progress hairline along the bottom edge of the bar */
+.site-nav__bar { position: relative; }
+.site-nav__bar::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  height: 1.5px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--hot), var(--amber));
+  transform: scaleX(var(--nav-progress, 0));
+  transform-origin: left;
+  opacity: 0.85;
 }
 .site-nav__left,
 .site-nav__links,
@@ -82,19 +106,49 @@
 .site-nav__link[aria-expanded="true"] .site-nav__chevron { transform: rotate(180deg); }
 
 .site-nav__cta {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  padding: 6px 14px;
-  border-radius: 10px;
-  background: var(--blue);
-  color: var(--white);
+  overflow: hidden;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: var(--hot);
+  color: var(--on-accent);
   font-size: 13.5px;
   font-weight: 600;
   line-height: 24px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(30, 94, 255, 0.4);
-  transition: background-color 0.15s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 6px 20px -6px rgba(255, 45, 85, 0.8);
+  transition: background-color 0.2s ease, box-shadow 0.3s ease;
 }
-.site-nav__cta:hover { background: var(--blue-hover); }
+/* Light sweep across the CTA every few seconds */
+.site-nav__cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, transparent 30%, rgba(255, 255, 255, 0.45) 50%, transparent 70%);
+  transform: translateX(-120%);
+  animation: ctaSweep 4.5s ease-in-out infinite 2s;
+}
+@keyframes ctaSweep { 18%, 100% { transform: translateX(120%); } }
+.site-nav__cta:hover { background: var(--hot-hover); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 8px 26px -4px rgba(255, 45, 85, 0.95); }
+
+/* Current section: small red dot under the trigger */
+.site-nav__link.is-current { color: #fff; }
+.site-nav__link.is-current::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 1px;
+  width: 4px;
+  height: 4px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: var(--hot);
+  box-shadow: 0 0 8px var(--hot);
+}
+.site-nav__link { position: relative; }
+.nav-item.is-current .nav-item__title::after { content: " ●"; color: var(--hot); font-size: 9px; vertical-align: middle; }
+.site-nav__m-item.is-current { color: var(--hot); }
 
 /* ---------- Desktop dropdown panel ---------- */
 .site-nav__popup {
@@ -124,17 +178,17 @@
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   box-shadow:
-    0 24px 40px -20px rgba(11, 31, 58, 0.30),
-    0 10px 24px 0 rgba(11, 31, 58, 0.06),
-    0 1px 1px 0 rgba(11, 31, 58, 0.16),
-    0 0 0 1px rgba(11, 31, 58, 0.05);
+    0 24px 40px -20px rgba(0, 0, 0, 0.30),
+    0 10px 24px 0 rgba(0, 0, 0, 0.06),
+    0 1px 1px 0 rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
 }
 /* All panels share one grid cell so the card keeps a steady size while switching */
 .site-nav__popup-card {
   display: grid;
   overflow: hidden;
   border-radius: 12px;
-  background: var(--white);
+  background: var(--surface);
   box-shadow: var(--nav-card-shadow);
 }
 .site-nav__panel {
@@ -164,7 +218,7 @@
   color: var(--dark-blue);
   transition: background-color 0.15s ease;
 }
-.nav-item:hover { background: #FAFAFB; }
+.nav-item:hover { background: #111c31; }
 .nav-item__icon {
   display: flex;
   align-items: center;
@@ -173,11 +227,11 @@
   height: 32px;
   margin-bottom: 8px;
   border-radius: 8px;
-  background: rgba(30, 94, 255, 0.08);
+  background: rgba(255, 45, 85, 0.08);
   color: var(--blue);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
-.nav-item:hover .nav-item__icon { background: var(--blue); color: var(--white); }
+.nav-item:hover .nav-item__icon { background: var(--blue); color: var(--on-accent); }
 .nav-icon {
   width: 18px;
   height: 18px;
@@ -198,12 +252,12 @@
   min-height: 220px;
   overflow: hidden;
   background:
-    radial-gradient(circle at 72% 28%, rgba(30, 94, 255, 0.12) 0 40px, transparent 41px),
-    radial-gradient(circle at 72% 28%, transparent 0 70px, rgba(30, 94, 255, 0.12) 71px, transparent 72.5px),
-    radial-gradient(circle at 72% 28%, transparent 0 105px, rgba(30, 94, 255, 0.08) 106px, transparent 107.5px),
+    radial-gradient(circle at 72% 28%, rgba(255, 45, 85, 0.12) 0 40px, transparent 41px),
+    radial-gradient(circle at 72% 28%, transparent 0 70px, rgba(255, 45, 85, 0.12) 71px, transparent 72.5px),
+    radial-gradient(circle at 72% 28%, transparent 0 105px, rgba(255, 45, 85, 0.08) 106px, transparent 107.5px),
     var(--white);
 }
-.nav-item--featured:hover { background-color: #FAFAFB; }
+.nav-item--featured:hover { background-color: #111c31; }
 .nav-item--featured .nav-item__icon { width: 40px; height: 40px; }
 
 /* ---------- Mobile card ---------- */
@@ -261,7 +315,7 @@
     right: 12px;
     height: 1.75px;
     border-radius: 2px;
-    background: var(--dark-blue);
+    background: var(--chip);
     transition: transform 0.27s var(--nav-ease);
   }
   .site-nav__toggle span:first-child { top: 16px; }
@@ -308,7 +362,7 @@
     font-weight: 600;
   }
   .site-nav__m-secondary { background: var(--ash-light); color: var(--dark-blue); box-shadow: inset 0 0 0 1px var(--ash); }
-  .site-nav__m-primary { background: var(--blue); color: var(--white); }
+  .site-nav__m-primary { background: var(--blue); color: var(--on-accent); }
 }
 
 @keyframes navMenuIn {

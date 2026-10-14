@@ -9,22 +9,45 @@
 
 /* ---------- 1. Variables ---------- */
 :root {
-  --white: #FFFFFF;
-  --blue: #1E5EFF;
-  --blue-hover: #174BD1;
-  --ash: #E5E7EB;
-  --ash-light: #F3F4F6;
-  --ash-text: #6B7280;
-  --dark-blue: #0B1F3A;
-  --text: #1F2937;
+  /* Motion palette (shared by every page) */
+  --ink: #03070e;
+  --ink-2: #070d19;
+  --ink-3: #0b1322;
+  --surface: #0b1322;
+  --surface-2: #101a2d;
+  --line: rgba(255, 255, 255, 0.08);
+  --line-strong: rgba(255, 255, 255, 0.14);
+  --fg: #eaf0fc;
+  --fg-dim: rgba(234, 240, 252, 0.58);
+  --hot: #ff2d55;
+  --hot-hover: #e0164a;
+  --amber: #ffb12e;
+  --cyan: #36e2ff;
+  --on-accent: #ffffff;
+  --chip: #1b2740;
+  --display: var(--font-display), "Barlow Condensed", "Arial Narrow", sans-serif;
+  --mono: var(--font-mono), ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.77, 0, 0.18, 1);
+
+  /* Original token names, now mapped onto the dark theme */
+  --white: var(--surface);
+  --blue: var(--hot);
+  --blue-hover: var(--hot-hover);
+  --ash: var(--line);
+  --ash-light: var(--ink-2);
+  --ash-text: var(--fg-dim);
+  --dark-blue: var(--fg);
+  --text: #c6d0e2;
 
   --font: var(--font-inter), "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --radius: 10px;
-  --shadow: 0 1px 2px rgba(11, 31, 58, 0.06), 0 4px 12px rgba(11, 31, 58, 0.06);
-  --shadow-hover: 0 2px 4px rgba(11, 31, 58, 0.08), 0 12px 28px rgba(11, 31, 58, 0.12);
+  --radius: 14px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 0 0 1px rgba(255, 45, 85, 0.25), 0 18px 44px -12px rgba(0, 0, 0, 0.7);
   --container: 1200px;
   --nav-height: 96px; /* floating nav: 20px offset + bar + breathing room */
-  --transition: 0.2s ease;
+  --transition: 0.25s var(--ease-out);
+  color-scheme: dark;
 }
 
 /* ---------- 2. Base ---------- */
@@ -43,7 +66,7 @@ body {
   font-size: 16px;
   line-height: 1.6;
   color: var(--text);
-  background: var(--white);
+  background: var(--ink);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -84,7 +107,7 @@ button { font: inherit; cursor: pointer; }
   text-transform: uppercase;
   color: var(--blue);
 }
-.eyebrow--light { color: #9DB8FF; }
+.eyebrow--light { color: #ff8aa3; }
 
 .text-link { font-weight: 600; }
 .text-link:hover { text-decoration: underline; }
@@ -109,10 +132,10 @@ button { font: inherit; cursor: pointer; }
 }
 .btn--sm { padding: 0.6rem 1.1rem; font-size: 0.9rem; }
 
-.btn--primary { background: var(--blue); color: var(--white); }
+.btn--primary { background: var(--blue); color: var(--on-accent); }
 .btn--primary:hover { background: var(--blue-hover); }
 
-.btn--outline-light { border-color: var(--white); color: var(--white); }
+.btn--outline-light { border-color: var(--on-accent); color: var(--on-accent); }
 .btn--outline-light:hover { background: var(--white); color: var(--dark-blue); }
 
 /* ---------- 5. Image placeholders ----------
@@ -149,25 +172,25 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   min-height: min(92vh, 800px);
   padding: 140px 0 96px;
-  color: var(--white);
+  color: var(--on-accent);
   overflow: hidden;
 }
 .hero__media {
   position: absolute;
   inset: 0;
-  background: var(--dark-blue);
+  background: var(--chip);
 }
 .hero__media img { object-position: center 35%; }
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(11, 31, 58, 0.92) 0%, rgba(11, 31, 58, 0.75) 45%, rgba(11, 31, 58, 0.35) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.35) 100%);
 }
 .hero__content { position: relative; }
 .hero__title {
   margin-bottom: 1.25rem;
   font-size: clamp(2.25rem, 5vw, 3.75rem);
-  color: var(--white);
+  color: var(--on-accent);
   letter-spacing: -0.02em;
 }
 .hero__text {
@@ -309,7 +332,7 @@ button { font: inherit; cursor: pointer; }
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: var(--dark-blue);
+  background: var(--chip);
 }
 .team-logo img { object-fit: contain; padding: 6px; }
 .team-logo--sm { width: 22px; height: 22px; border-radius: 5px; }
@@ -343,7 +366,7 @@ button { font: inherit; cursor: pointer; }
   font-size: 0.8rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
-  box-shadow: 0 1px 2px rgba(11, 31, 58, 0.12);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
 .driver-card__stats {
   display: grid;
@@ -396,8 +419,8 @@ button { font: inherit; cursor: pointer; }
   min-width: 44px;
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  background: var(--dark-blue);
-  color: var(--white);
+  background: var(--chip);
+  color: var(--on-accent);
   font-weight: 700;
   font-size: 0.95rem;
   text-align: center;
@@ -431,7 +454,7 @@ button { font: inherit; cursor: pointer; }
   align-items: center;
   justify-content: center;
   padding: 64px 72px;
-  background: rgba(11, 31, 58, 0.94);
+  background: rgba(2, 4, 9, 0.94);
 }
 .lightbox[hidden] { display: none; }
 .lightbox__img {
@@ -451,7 +474,7 @@ button { font: inherit; cursor: pointer; }
   border: 0;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  color: var(--white);
+  color: var(--on-accent);
   font-size: 1.75rem;
   line-height: 1;
   transition: background-color var(--transition);
@@ -479,7 +502,7 @@ button { font: inherit; cursor: pointer; }
   flex: 1;
   min-width: 0;
   padding: 0.8rem 1rem;
-  border: 1px solid #D1D5DB;
+  border: 1px solid var(--line-strong);
   border-radius: 6px;
   background: var(--white);
   font: inherit;
@@ -489,16 +512,16 @@ button { font: inherit; cursor: pointer; }
 .newsletter__row input:focus {
   outline: none;
   border-color: var(--blue);
-  box-shadow: 0 0 0 3px rgba(30, 94, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.15);
 }
-.newsletter__row input.is-invalid { border-color: #DC2626; }
+.newsletter__row input.is-invalid { border-color: #ff3b4e; }
 .form-message {
   min-height: 1.4em;
   margin: 0.6rem 0 0;
   font-size: 0.9rem;
 }
-.form-message.is-error { color: #DC2626; }
-.form-message.is-success { color: #15803D; }
+.form-message.is-error { color: #ff3b4e; }
+.form-message.is-success { color: #3ee88a; }
 
 /* ---------- 15. Footer ---------- */
 /* Footer styles live in app/footer.css */
@@ -525,7 +548,7 @@ button { font: inherit; cursor: pointer; }
   .container { padding: 0 16px; }
   .section { padding: 64px 0; }
   .hero { padding: 112px 0 72px; min-height: 80vh; }
-  .hero__overlay { background: rgba(11, 31, 58, 0.78); }
+  .hero__overlay { background: rgba(0, 0, 0, 0.78); }
   .hero__actions .btn { flex: 1; }
   .stat { padding: 1.75rem 0.5rem; }
   .stat__value { font-size: 2rem; }
@@ -536,7 +559,6 @@ button { font: inherit; cursor: pointer; }
   .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
   .newsletter__row { flex-direction: column; }
   .lightbox { padding: 56px 12px; }
-  .page-head { padding-top: 104px; }
   .lightbox__nav { top: auto; bottom: 12px; transform: none; }
 }
 
@@ -565,7 +587,7 @@ button { font: inherit; cursor: pointer; }
   height: 44px;
   margin-bottom: 1.25rem;
   border-radius: 8px;
-  background: rgba(30, 94, 255, 0.1);
+  background: rgba(255, 45, 85, 0.1);
   color: var(--blue);
 }
 .insight-card__icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
@@ -573,29 +595,17 @@ button { font: inherit; cursor: pointer; }
 .insight-card__link { margin-top: auto; font-weight: 600; color: var(--blue); }
 
 /* =========================================================
-   19. Data pages – shared header band
+   19. Data pages – body (the header band is components/PageHead.tsx, styled in theme.css)
    ========================================================= */
-.page-head {
-  padding: 128px 0 40px;
-  background: var(--dark-blue);
-  color: rgba(255, 255, 255, 0.75);
-}
-.page-head h1 {
-  margin-bottom: 0.5rem;
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  color: var(--white);
-  letter-spacing: -0.015em;
-}
-.page-head p { max-width: 60ch; margin: 0; }
 .page-body { padding: 40px 0 80px; background: var(--ash-light); min-height: 50vh; }
 
 .notice {
   margin-bottom: 24px;
   padding: 1rem 1.25rem;
-  border: 1px solid #FCD34D;
+  border: 1px solid rgba(255, 177, 46, 0.35);
   border-radius: 8px;
-  background: #FFFBEB;
-  color: #92400E;
+  background: rgba(255, 177, 46, 0.08);
+  color: #ffc56b;
   font-size: 0.95rem;
 }
 .notice code { font-size: 0.85rem; background: rgba(0, 0, 0, 0.06); padding: 0.1rem 0.35rem; border-radius: 4px; }
@@ -603,7 +613,7 @@ button { font: inherit; cursor: pointer; }
 .select,
 .field input {
   padding: 0.6rem 0.85rem;
-  border: 1px solid #D1D5DB;
+  border: 1px solid var(--line-strong);
   border-radius: 6px;
   background: var(--white);
   font: inherit;
@@ -611,7 +621,7 @@ button { font: inherit; cursor: pointer; }
   color: var(--text);
 }
 .select:focus,
-.field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(30, 94, 255, 0.15); }
+.field input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 3px rgba(255, 45, 85, 0.15); }
 
 /* =========================================================
    20. Live telemetry dashboard
@@ -654,8 +664,8 @@ button { font: inherit; cursor: pointer; }
 .badge {
   padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  background: var(--dark-blue);
-  color: var(--white);
+  background: var(--chip);
+  color: var(--on-accent);
   font-size: 0.75rem;
   letter-spacing: 0.02em;
 }
@@ -664,7 +674,7 @@ button { font: inherit; cursor: pointer; }
   width: 100%;
   min-height: 0;
   border-radius: 8px;
-  background: var(--dark-blue);
+  background: var(--ink);
 }
 .metric { margin-bottom: 1rem; }
 .metric__label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ash-text); }
@@ -676,11 +686,11 @@ button { font: inherit; cursor: pointer; }
 
 .bar { height: 8px; margin-top: 6px; border-radius: 4px; background: var(--ash); overflow: hidden; }
 .bar__fill { height: 100%; border-radius: 4px; background: var(--blue); transition: width 0.1s linear; }
-.bar__fill--brake { background: #DC2626; }
-.bar__fill--rpm { background: linear-gradient(90deg, #22C55E, #EAB308, #DC2626); }
+.bar__fill--brake { background: #ff3b4e; }
+.bar__fill--rpm { background: linear-gradient(90deg, #22e06b, #ffc23d, #ff3b4e); }
 
 .pill { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
-.pill--on { background: #DCFCE7; color: #15803D; }
+.pill--on { background: rgba(34, 224, 107, 0.12); color: #3ee88a; }
 .pill--off { background: var(--ash); color: var(--ash-text); }
 
 .tyre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }

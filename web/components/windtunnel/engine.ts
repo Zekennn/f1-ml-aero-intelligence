@@ -30,7 +30,7 @@ const STREAM_STEP = 0.02; // streamline integration step (m of free-stream trave
 const DOT_SPACING = 50; // streamline steps between moving dots
 const LABEL_H = 22; // force label height, CSS px
 
-const BG = "#0B1F3A";
+const BG = "#050b16";
 
 type Streamline = { xs: Float32Array; ys: Float32Array; n: number; b: Uint8Array };
 
@@ -380,7 +380,7 @@ export class TunnelEngine {
     // Downforce pushes each axle into the road.
     const front = clamp(shown.front * M_PER_N, 0.15, maxLen);
     const fTip = 2 * FRONT_RADIUS + 0.06;
-    this.arrow(sx(FRONT_AXLE_X), sy(fTip + front), sx(FRONT_AXLE_X), sy(fTip), "#1E5EFF", "#FFFFFF");
+    this.arrow(sx(FRONT_AXLE_X), sy(fTip + front), sx(FRONT_AXLE_X), sy(fTip), "#36e2ff", "#FFFFFF");
     // Phones: centre each label above its own arrow so neighbouring labels can't overlap
     const above = (yTail: number) => sy(yTail) - (LABEL_H + 6) * dpr;
     if (this.compact) this.label(fmt(forces.front), sx(FRONT_AXLE_X), above(fTip + front), "center");
@@ -388,7 +388,7 @@ export class TunnelEngine {
 
     const rear = clamp(shown.rear * M_PER_N, 0.15, maxLen);
     const rTip = 2 * REAR_RADIUS + 0.06;
-    this.arrow(sx(REAR_AXLE_X), sy(rTip + rear), sx(REAR_AXLE_X), sy(rTip), "#1E5EFF", "#FFFFFF");
+    this.arrow(sx(REAR_AXLE_X), sy(rTip + rear), sx(REAR_AXLE_X), sy(rTip), "#36e2ff", "#FFFFFF");
     if (this.compact) this.label(fmt(forces.rear), sx(REAR_AXLE_X), above(rTip + rear), "center");
     else this.label(`Rear ${fmt(forces.rear)}`, sx(REAR_AXLE_X) - 10 * dpr, sy(rTip + rear), "right");
 
@@ -396,7 +396,7 @@ export class TunnelEngine {
     const gx = REAR_AXLE_X + 0.9;
     const gy = 0.5;
     const drag = clamp(shown.drag * M_PER_N, 0.15, Math.max(0.2, this.x1 - gx - 0.15));
-    this.arrow(sx(gx), sy(gy), sx(gx + drag), sy(gy), "#E5E7EB", BG);
+    this.arrow(sx(gx), sy(gy), sx(gx + drag), sy(gy), "#ffb12e", BG);
     // Below the arrow if it fits above the road, otherwise above it.
     const below = sy(gy) + 14 * dpr;
     const labelY = below + LABEL_H * dpr > oy - 4 * dpr ? sy(gy) - (LABEL_H + 12) * dpr : below;
@@ -431,13 +431,13 @@ export class TunnelEngine {
       const x0 = ox + it.at[0] * k;
       const y0 = oy - it.at[1] * k;
       const { x1, y1 } = it;
-      c.strokeStyle = "rgba(30,94,255,0.9)";
+      c.strokeStyle = "rgba(54,226,255,0.9)";
       c.lineWidth = 1.5 * dpr;
       c.beginPath();
       c.moveTo(x0, y0);
       c.lineTo(x1, y1);
       c.stroke();
-      c.fillStyle = "#1E5EFF";
+      c.fillStyle = "#36e2ff";
       c.beginPath();
       c.arc(x0, y0, 2.5 * dpr, 0, Math.PI * 2);
       c.fill();
@@ -521,7 +521,7 @@ export class TunnelEngine {
       g.stroke();
     }
 
-    g.fillStyle = "#071629";
+    g.fillStyle = "#08111f";
     g.fillRect(0, oy, w, h - oy);
     g.strokeStyle = "rgba(255,255,255,0.22)";
     g.beginPath();
@@ -541,7 +541,7 @@ export class TunnelEngine {
     if (this.cssW < 640) g.scale(0.8, 0.8);
     const lx = 12 * d;
     const ly = 12 * d;
-    g.fillStyle = "rgba(11,31,58,0.82)";
+    g.fillStyle = "rgba(5,11,22,0.85)";
     g.strokeStyle = "rgba(255,255,255,0.14)";
     g.lineWidth = d;
     g.beginPath();

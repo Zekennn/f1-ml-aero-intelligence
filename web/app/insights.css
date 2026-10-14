@@ -63,7 +63,7 @@
 .ins-bar { position: relative; display: grid; grid-template-columns: 112px minmax(0, 1fr) 56px; align-items: center; gap: 8px; font-size: 0.85rem; }
 .ins-bar__label { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--dark-blue); font-weight: 600; }
 .ins-bar__track { position: relative; height: 16px; }
-.ins-bar__fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; background: #8FB0FF; }
+.ins-bar__fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 0 4px 4px 0; background: #3a4a68; }
 .ins-bar__fill--best { background: var(--blue); }
 .ins-bar__value { text-align: right; font-weight: 700; color: var(--dark-blue); font-variant-numeric: tabular-nums; }
 .ins-bar__value em { font-style: normal; font-weight: 500; color: var(--ash-text); font-size: 0.8em; }

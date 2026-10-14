@@ -1,13 +1,13 @@
 /* =========================================================
    Footer
-   Light background with a brand column and link columns,
+   Dark background with a brand column and link columns,
    then a full-width photo that fades in from the background
    and a giant wordmark across the bottom.
    Edit the text and photo in data/site.ts (FOOTER).
    ========================================================= */
 :root {
-  --footer-bg: #EEF0F3;
-  --footer-text: #374151;
+  --footer-bg: var(--ink);
+  --footer-text: #aab5c9;
 }
 
 .site-footer {
@@ -15,6 +15,18 @@
   overflow: hidden;
   background: var(--footer-bg);
   color: var(--footer-text);
+}
+/* Glowing seam along the top edge */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--hot) 30%, var(--amber) 70%, transparent);
+  opacity: 0.7;
 }
 
 /* ---------- Content ---------- */
@@ -46,9 +58,12 @@
 
 .site-footer__heading {
   margin-top: 24px;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: -0.025em;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 800;
+  font-size: 34px;
+  line-height: 0.95;
+  text-transform: uppercase;
   color: var(--dark-blue);
 }
 .site-footer__summary {
@@ -60,15 +75,16 @@
 .site-footer__cta {
   display: inline-flex;
   align-items: center;
-  padding: 9px 16px;
-  border-radius: 8px;
-  background: var(--dark-blue);
-  color: var(--white);
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: var(--hot);
+  color: var(--on-accent);
   font-size: 13.5px;
   font-weight: 600;
-  transition: background-color 0.15s ease;
+  box-shadow: 0 10px 28px -10px rgba(255, 45, 85, 0.8);
+  transition: background-color 0.2s ease, transform 0.3s var(--ease-out);
 }
-.site-footer__cta:hover { background: var(--blue); }
+.site-footer__cta:hover { background: var(--hot-hover); transform: translateY(-2px); }
 .site-footer__copyright {
   margin: 26px 0 8px;
   font-size: 13px;
@@ -82,18 +98,35 @@
 
 .site-footer__col-title {
   margin: 4px 0 18px;
-  font-size: 16px;
+  font-family: var(--mono);
+  font-size: 11px;
   font-weight: 600;
-  letter-spacing: -0.025em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--dark-blue);
 }
 .site-footer__col li + li { margin-top: 14px; }
 .site-footer__col a {
+  position: relative;
+  display: inline-block;
   color: var(--footer-text);
   font-size: 14.5px;
-  transition: color 0.15s ease;
+  transition: color 0.2s ease, transform 0.3s var(--ease-out);
 }
-.site-footer__col a:hover { color: var(--blue); }
+.site-footer__col a:hover { color: #fff; transform: translateX(4px); }
+.site-footer__col a::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  width: 6px;
+  height: 1.5px;
+  background: var(--hot);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s var(--ease-out);
+}
+.site-footer__col a:hover::before { transform: scaleX(1); }
 
 /* ---------- Photo scene ---------- */
 .site-footer__scene {
@@ -104,6 +137,7 @@
 .site-footer__photo {
   object-fit: cover;
   object-position: center 40%;
+  filter: saturate(0.85) contrast(1.05) brightness(0.8);
 }
 
 /* Gradients blend the photo into the background colour */
@@ -116,12 +150,12 @@
 .site-footer__fade--top {
   top: 0;
   height: 55%;
-  background: linear-gradient(to bottom, var(--footer-bg) 0%, rgba(238, 240, 243, 0.85) 30%, rgba(238, 240, 243, 0) 100%);
+  background: linear-gradient(to bottom, var(--footer-bg) 0%, rgba(3, 7, 14, 0.85) 30%, rgba(3, 7, 14, 0) 100%);
 }
 .site-footer__fade--bottom {
   bottom: 0;
   height: 30%;
-  background: linear-gradient(to top, rgba(238, 240, 243, 0.35), rgba(238, 240, 243, 0));
+  background: linear-gradient(to top, rgba(3, 7, 14, 0.35), rgba(3, 7, 14, 0));
 }
 
 .site-footer__wordmark {
@@ -134,10 +168,15 @@
   overflow: visible;
 }
 .site-footer__wordmark text {
-  font-family: var(--font);
-  font-size: 200px;
-  font-weight: 700;
+  font-family: var(--display);
+  font-style: italic;
+  font-size: 220px;
+  font-weight: 800;
+  text-transform: uppercase;
   fill: var(--footer-bg);
+  stroke: rgba(255, 45, 85, 0.55);
+  stroke-width: 1.2px;
+  paint-order: stroke;
 }
 
 /* ---------- Responsive ---------- */
