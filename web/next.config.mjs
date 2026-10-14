@@ -16,8 +16,11 @@ const nextConfig = {
   // serverless functions, which only contain files the build can trace, so list them explicitly.
   // (public/ images are served by the CDN; lib/media.ts finds their names via data/media-manifest.json.)
   outputFileTracingIncludes: {
-    "/": ["./data/*.json", "./public/data/circuits/*.json"],
-    "/*": ["./data/*.json", "./public/data/circuits/*.json"],
+    "**": ["./data/*.json", "./public/data/circuits/*.json"],
+  },
+  // ...but not the photos: the CDN serves them, and ~55 MB in every function would slow cold starts
+  outputFileTracingExcludes: {
+    "**": ["./public/img/**/*", "./public/images/**/*"],
   },
 
   // Every request to /backend/* is forwarded to FastAPI, so the browser
