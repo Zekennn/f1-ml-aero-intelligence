@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/build-media-manifest.mjs",
     "build": "next build",
     "start": "next start"
   },
@@ -17,5 +18,8 @@
     "@types/react": "19.1.13",
     "@types/react-dom": "19.1.9",
     "typescript": "5.9.2"
+  },
+  "engines": {
+    "node": ">=18.18"
   }
 }

@@ -1,8 +1,8 @@
 // Server-only (reads files). Client components may only `import type` from here.
-import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { TEAMS, type Team } from "@/data/teams";
+import { listPublic } from "./media";
 
 /*
  * Reads the driver standings for the website.
@@ -34,13 +34,12 @@ export type Driver = SavedDriver & {
 
 export type DriverStandings = { season: number | null; updated: string | null; afterRound: number | null; drivers: Driver[] };
 
-const PHOTOS_DIR = path.join(process.cwd(), "public", "images", "drivers");
 const IMAGE_TYPES = ["png", "webp", "jpg", "jpeg"];
 
-function findPhoto(code: string | null) {
+function findPhoto(code: string | null, files: Set<string>) {
   if (!code) return null;
   const name = code.toLowerCase();
-  const type = IMAGE_TYPES.find((ext) => existsSync(path.join(PHOTOS_DIR, `${name}.${ext}`)));
+  const type = IMAGE_TYPES.find((ext) => files.has(`${name}.${ext}`));
   return type ? `/images/drivers/${name}.${type}` : null;
 }
 
@@ -52,9 +51,10 @@ export async function getDrivers(): Promise<DriverStandings> {
     // no data yet: the section shows a message
   }
 
+  const photos = new Set(listPublic("images/drivers"));
   const drivers = (saved.drivers ?? []).map((d) => ({
     ...d,
-    image: findPhoto(d.code),
+    image: findPhoto(d.code, photos),
     siteTeam: TEAMS.find((t) => t.ergastId === d.teamId) ?? null,
   }));
 

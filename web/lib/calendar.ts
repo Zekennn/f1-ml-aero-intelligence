@@ -1,8 +1,8 @@
 // Server-only (reads files). Client components may only `import type` from here.
-import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import type { CircuitIndex } from "./circuitData";
+import { listPublic } from "./media";
 
 /*
  * Reads the race calendar for the website.
@@ -71,7 +71,6 @@ export type Race = SavedRace & {
 export type Calendar = { season: number | null; updated: string | null; races: Race[] };
 
 const DATA_DIR = path.join(process.cwd(), "data");
-const TRACKS_DIR = path.join(process.cwd(), "public", "images", "tracks");
 const IMAGE_TYPES = ["jpg", "jpeg", "png", "webp"];
 
 // A race shows as completed this long after lights out, even before the data is refreshed
@@ -85,8 +84,8 @@ async function readJson<T>(file: string, fallback: T): Promise<T> {
   }
 }
 
-function findTrackImage(slug: string) {
-  const type = IMAGE_TYPES.find((ext) => existsSync(path.join(TRACKS_DIR, `${slug}.${ext}`)));
+function findTrackImage(slug: string, files: Set<string>) {
+  const type = IMAGE_TYPES.find((ext) => files.has(`${slug}.${ext}`));
   return type ? `/images/tracks/${slug}.${type}` : null;
 }
 
@@ -94,6 +93,7 @@ export async function getCalendar(): Promise<Calendar> {
   const saved = await readJson<{ season?: number; updated?: string; races?: SavedRace[] }>("calendar.json", {});
   const aero = await readJson<Record<string, Partial<ActiveAero>>>("active-aero.json", {});
   const index = await readJson<CircuitIndex>("circuits.json", { season: 0, circuits: {} });
+  const trackImages = new Set(listPublic("images/tracks"));
   const now = Date.now();
 
   const races: Race[] = (saved.races ?? []).map((race) => {
@@ -133,7 +133,7 @@ export async function getCalendar(): Promise<Calendar> {
         heldAt: h?.statsEvent && h.statsEvent !== race.name ? h.statsEvent : null,
       },
       status: race.status === "completed" || started + RACE_LENGTH_MS < now ? "completed" : "upcoming",
-      image: findTrackImage(race.slug),
+      image: findTrackImage(race.slug, trackImages),
       aero: { zones: typeof zones === "number" ? zones : null, note: aero[race.slug]?.note?.trim() ?? "" },
       isNext: false,
     };

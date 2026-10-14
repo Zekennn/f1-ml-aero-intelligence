@@ -44,12 +44,6 @@ export const NAV_LINKS: NavLink[] = [{ label: "About", href: "/#about" }];
 export const NAV_SECONDARY: NavLink = { label: "Contact", href: "/#contact" };
 export const NAV_CTA: NavLink = { label: "Get Updates", href: "/#contact" };
 
-export const STATS = [
-  { value: "23", label: "Races in 2026" },
-  { value: "11", label: "Teams" },
-  { value: "22", label: "Drivers" },
-  { value: "20", label: "Countries" },
-];
 
 /* Gallery photos: every image in /public/img appears in the home page gallery (lib/gallery.ts). */
 
