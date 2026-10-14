@@ -16,12 +16,12 @@ except ImportError:
 
 # FastF1 calendar + driver data, refreshed in the background (see live_data.py)
 try:
-    from . import live_data, model_refresh
+    from . import live_data, race_refresh
     from .update_calendar import CALENDAR_FILE
     from .update_drivers import DRIVERS_FILE
 except ImportError:
     import live_data
-    import model_refresh
+    import race_refresh
     from update_calendar import CALENDAR_FILE
     from update_drivers import DRIVERS_FILE
 
@@ -97,7 +97,7 @@ def drivers_champ_data():
 @app.on_event("startup")
 def start_live_data():
     live_data.start()
-    model_refresh.start()  # retrains the race winner model once a new result reaches the Stats archive
+    race_refresh.start()  # rebuilds site data + models once a new race reaches the TracingInsights archives
 
 def _read_json(path):
     try:
@@ -126,15 +126,15 @@ def live_data_refresh():
     live_data.request_refresh()
     return {"requested": True}
 
-@app.get("/api/model-refresh")
-def model_refresh_status():
-    """Which round the race winner model covers, and when it last checked for a new race."""
-    return model_refresh.status()
+@app.get("/api/race-refresh")
+def race_refresh_status():
+    """Which round the site data and models cover, and when the archives were last checked."""
+    return race_refresh.status()
 
-@app.post("/api/model-refresh/check")
-def model_refresh_check():
-    """Check for a new race in the archive now instead of waiting for the next scheduled check."""
-    model_refresh.request_check()
+@app.post("/api/race-refresh/check")
+def race_refresh_check():
+    """Check the archives for a new race now (runs the update in the background if there is one)."""
+    race_refresh.check_now()
     return {"requested": True}
 
 @app.post("/set_track")

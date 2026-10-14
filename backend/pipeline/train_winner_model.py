@@ -22,7 +22,7 @@ Differences from the presentation:
 Writes web/data/winner-model.json and adds a section to models/MODEL_REPORT.md.
 Run:  venv\\Scripts\\python.exe backend\\pipeline\\train_winner_model.py
       add --auto to pull the Stats repo first and retrain only if it has a race the model hasn't seen
-      (used by backend/model_refresh.py after each race; exit code 0 = retrained, 10 = nothing new).
+      (exit code 0 = retrained, 10 = nothing new; the backend runs the full update_all.py --auto instead).
 """
 from __future__ import annotations
 

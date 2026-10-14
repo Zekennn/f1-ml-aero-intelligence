@@ -40,13 +40,17 @@ The calendar and driver standings come from FastF1 and are saved to
   - Status: http://127.0.0.1:8000/api/live-data
   - Refresh now: `Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/live-data/refresh`
   - Switch off: `$env:LIVE_DATA = "0"` before starting the backend
-- **Race winner model:** the backend also retrains the 2026 winner predictor after each race
-  (`backend/model_refresh.py`). Once FastF1 shows a complete result it pulls the Stats archive and
-  retrains when the archive has the new race; the archive publishes later than FastF1, so it checks
-  again every 30 minutes until it does. The predictor page shows the new odds on its next load.
-  - Status: http://127.0.0.1:8000/api/model-refresh
-  - Check now: `Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/model-refresh/check`
-  - Switch off: `$env:MODEL_REFRESH = "0"` before starting the backend
+- **Everything else after a race:** the backend also runs the full update automatically
+  (`backend/race_refresh.py` → `update_all.py --auto`): standings, circuit history and records,
+  pit stops, the lap time model, the aero calibration and the 2026 winner predictor. Once FastF1
+  shows a complete result it pulls the TracingInsights archives and updates as soon as they contain
+  the new race (they publish later than FastF1, so it checks every 30 minutes until then), and keeps
+  checking every 2 hours for 4 days to pick up late telemetry and penalties.
+  - Status: http://127.0.0.1:8000/api/race-refresh
+  - Check now: `Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/race-refresh/check`
+  - Switch off: `$env:RACE_REFRESH = "0"` before starting the backend
+  - The aero calibration is bundled into the website, so a production build (`npm run build`)
+    needs rebuilding to show it; everything else appears on the next page load.
 - **By hand:**
 
   ```powershell

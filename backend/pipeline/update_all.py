@@ -9,6 +9,9 @@ One command after a race weekend:
 Run from the project root:   .\\update.ps1            (or)   venv\\Scripts\\python.exe backend\\pipeline\\update_all.py
 Options:  --with-fastf1   also refresh calendar.json / drivers.json from FastF1 first (backend/update_data.py)
           --no-train      rebuild the data only
+          --auto          pull the repos, then run the update only if there is something new: a race result
+                          the site doesn't have yet, or 2026 telemetry for a circuit still shown with 2025 data.
+                          Used by backend/race_refresh.py after each race. Exit code 0 = updated, 10 = nothing new.
 """
 from __future__ import annotations
 
@@ -20,7 +23,9 @@ import time
 import build_site_data
 import train_models
 import train_winner_model
-from common import MODELS_DIR, PUBLIC_DATA, ROOT, WEB_DATA, log, read_json, sync_git_repos
+from common import MODELS_DIR, PUBLIC_DATA, ROOT, SEASON, WEB_DATA, list_repo_grands_prix, log, read_json, slugify, sync_git_repos
+
+NOTHING_NEW = 10  # exit code for --auto when there is nothing to update
 
 
 def snapshot() -> dict:
@@ -79,16 +84,44 @@ def report(before: dict, after: dict, heads: dict, seconds: float) -> None:
     log(f"Done in {seconds:.0f} s. Restart or refresh the website to see the new data.")
 
 
+def whats_new() -> list[str]:
+    """Reasons to rebuild (empty = nothing new). Call after the repos have been pulled."""
+    reasons = []
+    archive = train_winner_model.archive_round()
+    site = int((read_json(WEB_DATA / "standings.json") or {}).get("afterRound") or 0)
+    model = train_winner_model.model_round()
+    if archive > site:
+        reasons.append(f"new race results (archive round {archive}, site round {site})")
+    elif archive > model:
+        reasons.append(f"winner model behind (archive round {archive}, model round {model})")
+    # Telemetry is published separately from results: pick it up for circuits still on older data
+    circuits = (read_json(WEB_DATA / "circuits.json") or {}).get("circuits", {})
+    stale = {slugify(c.get("name") or ""): c.get("name") for c in circuits.values() if c.get("dataSeason") != SEASON}
+    if stale:
+        published = {slugify(name) for name in list_repo_grands_prix(SEASON)}
+        fresh = [name for slug, name in stale.items() if slug in published]
+        if fresh:
+            reasons.append(f"new {SEASON} telemetry for " + ", ".join(fresh))
+    return reasons
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--with-fastf1", action="store_true", help="refresh calendar.json / drivers.json from FastF1 first")
     ap.add_argument("--no-train", action="store_true", help="skip retraining the models")
+    ap.add_argument("--auto", action="store_true", help="only update when there is a new race result or new telemetry")
     args = ap.parse_args()
     start = time.time()
 
     before = snapshot()
     log("Step 1/4  Pulling Stats and PitStops...")
     heads = sync_git_repos()
+    if args.auto:
+        reasons = whats_new()
+        if not reasons:
+            log("Nothing new in the archives yet.")
+            sys.exit(NOTHING_NEW)
+        log("Updating: " + "; ".join(reasons))
     if args.with_fastf1:
         log("Step 1b   Refreshing the FastF1 calendar (fallback data)...")
         subprocess.run([sys.executable, str(ROOT / "backend" / "update_data.py")], check=False)
