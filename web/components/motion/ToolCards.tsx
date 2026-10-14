@@ -78,8 +78,8 @@ export default function ToolCards({ drivers }: { drivers: LandingDriver[] }) {
               ))}
               <span className="tool__chip">Points so far</span>
             </div>
-            <h3>2026 championship predictor</h3>
-            <p>Title probability for every driver, from a model trained on 2021–2025 results.</p>
+            <h3>2026 winner predictor</h3>
+            <p>Next-race win odds and title chances, from a race-by-race model trained on our own 2006–2026 results.</p>
             <span className="tool__cta">View predictions →</span>
           </TiltCard>
 

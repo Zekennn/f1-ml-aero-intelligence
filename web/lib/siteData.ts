@@ -42,3 +42,27 @@ export const getCircuitIndex = () => readJson<CircuitIndex>("circuits.json", { s
 export const getStandings = () => readJson<Standings | null>("standings.json", null);
 export const getPitStops = () => readJson<PitStopData | null>("pitstops.json", null);
 export const getAeroCalibration = () => readJson<AeroCalibration>("aero-calibration.json", { effectivePowerKw: 283, maeKmh: 0, setupBySlug: {} });
+
+/* ---------- Race winner model (backend/pipeline/train_winner_model.py) ---------- */
+export type WmDriver = { code: string; name: string; team: string };
+export type WmScore = { races: number; winner: number; podium: number; probOnWinner: number };
+export type WmPick = WmDriver & { prob: number; winnerProb: number; winnerRank: number; correct: boolean };
+export type WinnerModel = {
+  generated: string;
+  season: number;
+  afterRound: number;
+  roundsTotal: number;
+  simulations: number;
+  data: { races: number; trainRows: number; firstSeason: number; firstTrainSeason: number };
+  features: { preRace: string[]; withQuali: string[] };
+  validation: { season: number; races: number; preRace: WmScore; withQuali: WmScore; preRaceLogReg: number; withQualiLogReg: number; pole: number; leader: number }[];
+  season2026: { preRace: WmScore; withQuali: WmScore; pole: number; leader: number };
+  importance: { feature: string; label: string; value: number }[];
+  backtest: { round: number; name: string; slug: string; winner: WmDriver & { grid: number }; preRace: WmPick; withQuali: WmPick }[];
+  nextRace: { round: number; name: string; slug: string; date: string; sprint: boolean; drivers: (WmDriver & { win: number; podium: number })[] } | null;
+  remaining: { round: number; name: string; slug: string; date: string; sprint: boolean; top: (WmDriver & { win: number })[] }[];
+  championship: (WmDriver & { points: number; title: number; expected: number; p10: number; p90: number })[];
+  teams: { team: string; points: number; expected: number }[];
+};
+
+export const getWinnerModel = () => readJson<WinnerModel | null>("winner-model.json", null);

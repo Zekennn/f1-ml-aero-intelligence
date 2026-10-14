@@ -11,8 +11,8 @@ const TOOLS = [
     icon: <path d="M3 12h4l3-8 4 16 3-8h4" />,
   },
   {
-    title: "2026 championship predictor",
-    text: "Win probability for every driver, from a model trained on 2021–2025 results.",
+    title: "2026 winner predictor",
+    text: "Next-race win odds and title chances, from a race-by-race model trained on our own 2006–2026 results.",
     href: "/predictor",
     cta: "View predictions",
     icon: <><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z" /><path d="M17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3" /></>,

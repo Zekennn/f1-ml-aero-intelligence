@@ -17,6 +17,8 @@ from datetime import datetime, timedelta, timezone
 from update_calendar import CALENDAR_FILE, RECHECK_FOR, result_is_complete
 from update_data import refresh_all
 
+import model_refresh
+
 NORMAL_INTERVAL = timedelta(minutes=30)
 RACE_INTERVAL = timedelta(minutes=5)
 FIRST_RUN_DELAY = 5  # seconds, so the server finishes starting first
@@ -77,6 +79,9 @@ def _loop() -> None:
         _wake.clear()
         print("[live data] refreshing calendar and drivers from FastF1...", flush=True)
         run_once()
+        # A new complete result: tell the winner model checker straight away instead of in up to 30 min
+        if model_refresh.calendar_round() > model_refresh.model_round():
+            model_refresh.request_check()
         now = datetime.now(timezone.utc)
         wait = _interval(now)
         _status["nextRun"] = _iso(now + wait)

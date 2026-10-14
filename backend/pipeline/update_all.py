@@ -3,7 +3,7 @@ One command after a race weekend:
   1. pull the Stats and PitStops repos (clone them the first time),
   2. download any new race files from the 2026 telemetry repo (2025 files are cached),
   3. rebuild the website data (circuits, history, standings, pit stops),
-  4. retrain the lap time model and recalibrate the aero model,
+  4. retrain the lap time model, recalibrate the aero model and retrain the race winner model,
   5. print what changed: new races, new records, model accuracy.
 
 Run from the project root:   .\\update.ps1            (or)   venv\\Scripts\\python.exe backend\\pipeline\\update_all.py
@@ -19,6 +19,7 @@ import time
 
 import build_site_data
 import train_models
+import train_winner_model
 from common import MODELS_DIR, PUBLIC_DATA, ROOT, WEB_DATA, log, read_json, sync_git_repos
 
 
@@ -96,6 +97,7 @@ def main() -> None:
     if not args.no_train:
         log("Step 3/4  Training models...")
         train_models.main()
+        train_winner_model.main()
     else:
         log("Step 3/4  Skipped (--no-train)")
     log("Step 4/4  Comparing with the previous data...")

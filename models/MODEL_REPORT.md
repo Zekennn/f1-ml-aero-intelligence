@@ -71,3 +71,35 @@ speed, lateral and longitudinal G, braking, compound and track temperature. It i
 `web/lib/strategy.ts` sums predicted lap times over the race for every 1-stop and 2-stop plan (at least two dry compounds),
 adding the circuit's real pit lane loss (in-lap + out-lap vs normal laps, telemetry repos) and the team's average
 2026 stationary time (DHL, PitStops repo). No safety cars, traffic or tyre warm-up.
+
+## Race winner model
+
+Method from *Formula One Race Prediction Model* (Spencer Staub, GWU, 2022): one row per driver per race,
+binary target “won the race”, history-only features, gradient-boosted trees (scikit-learn
+`HistGradientBoostingClassifier`), drivers ranked by win probability inside each race. Written by
+`backend/pipeline/train_winner_model.py` to `web/data/winner-model.json`.
+
+**Data:** local Stats archive only, 520 races 2000–2026; 8,704 training rows from 2006.
+
+**Validation** (train on all earlier seasons, test on the next; winner accuracy = top-ranked driver won)
+
+| Season | Races | Pre-race | With qualifying | Pre-race (logistic) | Pole sitter | Championship leader |
+|---|---:|---:|---:|---:|---:|---:|
+| 2022 | 22 | 59% | 41% | 64% | 45% | 55% |
+| 2023 | 22 | 86% | 86% | 86% | 64% | 86% |
+| 2024 | 24 | 38% | 46% | 38% | 46% | 38% |
+| 2025 | 24 | 33% | 67% | 25% | 71% | 25% |
+| 2026 (walk-forward) | 17 | 41% | 71% | – | 71% | 35% |
+
+Podium accuracy 2026 (share of the real top 3 found in the predicted top 3): pre-race 51%, with qualifying 67%.
+
+**Most important features** (permutation importance, pre-race model, 2025): Avg finish, last 10 (0.005), Last year's points (share of champion) (0.005), Last grid position (0.003), Last year's position (0.002), Avg finish at this circuit (0.002), Podiums, last 10 (0.001).
+
+**Forward look:** win probabilities for the remaining 6 rounds; championship from 20,000 simulated finishes (Plackett–Luce order, retirement chance from recent reliability).
+
+**Tuning:** shallow regularised trees (depth 3, ≥120 rows per leaf) lifted mean 2022–26 pre-race winner accuracy
+from 34% to 52%. Class balancing (the presentation's oversampling) ranked ~2 more races right out of ~105 but
+flattened the probabilities (winner log-loss 1.51 → 1.72), so the calibrated model is used.
+
+**Limitations:** results-only data (no practice pace, upgrades or weather); new 2026 regulations mean history
+matters less than this season's form; the remaining-season simulation assumes form stays as it is now.

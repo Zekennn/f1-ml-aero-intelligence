@@ -1,0 +1,142 @@
+/* =========================================================
+   2026 winner predictor (components/insights/WinnerPredictor.tsx)
+   Uses the shared .ins-card / .ins-table surfaces from insights.css + theme.css.
+   ========================================================= */
+.wp { display: flex; flex-direction: column; gap: 24px; }
+.wp .ins-card { padding: 24px 26px; }
+
+.wp-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 32px; margin-bottom: 22px; }
+.wp-head .eyebrow-x { margin-bottom: 10px; }
+.wp-title {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(30px, 3.4vw, 50px);
+  line-height: 0.95;
+  text-transform: uppercase;
+  color: var(--fg);
+}
+.wp-note { max-width: 46ch; margin: 0; font-size: 0.9rem; color: var(--fg-dim); }
+.wp-dot { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--c); box-shadow: 0 0 8px var(--c); vertical-align: middle; }
+
+.wp-avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border: 2px solid var(--c);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--c) 35%, #0a1222);
+}
+.wp-avatar img { object-fit: cover; object-position: center top; transform: scale(1.5) translateY(14%); }
+.wp-avatar i { display: grid; place-items: center; height: 100%; font-style: normal; font-weight: 700; color: #fff; }
+
+/* Next race odds */
+.wp-odds { display: flex; flex-direction: column; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.wp-odds li {
+  display: grid;
+  grid-template-columns: 26px 42px minmax(150px, 1.1fr) 2fr 76px 120px;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  transition: background-color 0.25s, border-color 0.25s;
+}
+.wp-odds li:hover { background: rgba(255, 255, 255, 0.03); border-color: var(--line); }
+.wp-odds li.is-fav { background: color-mix(in srgb, var(--c) 10%, transparent); border-color: color-mix(in srgb, var(--c) 45%, transparent); }
+.wp-odds__rank { font-family: var(--mono); font-size: 12px; text-align: right; color: var(--fg-dim); }
+.wp-odds li.is-fav .wp-odds__rank { color: var(--hot); }
+.wp-odds__who { display: flex; flex-direction: column; min-width: 0; }
+.wp-odds__who b { overflow: hidden; font-weight: 600; white-space: nowrap; text-overflow: ellipsis; color: var(--fg); }
+.wp-odds__who small { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--fg-dim); }
+.wp-odds__bar { height: 10px; overflow: hidden; border-radius: 6px; background: rgba(255, 255, 255, 0.06); }
+.wp-odds__bar i {
+  display: block;
+  width: calc(var(--w) * 100%);
+  height: 100%;
+  border-radius: 6px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--c) 45%, transparent), var(--c));
+  box-shadow: 0 0 14px color-mix(in srgb, var(--c) 55%, transparent);
+  transform-origin: left;
+  animation: wpGrow 1.2s var(--ease-out) 0.2s both;
+}
+@keyframes wpGrow { from { transform: scaleX(0); } }
+.wp-odds__win { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 26px; text-align: right; color: var(--fg); font-variant-numeric: tabular-nums; }
+.wp-odds__pod { display: flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 11px; color: var(--fg-dim); }
+.wp-odds__pod i { position: relative; width: 34px; height: 4px; overflow: hidden; border-radius: 4px; background: rgba(255, 255, 255, 0.08); }
+.wp-odds__pod i::after { content: ""; position: absolute; top: 0; bottom: 0; left: 0; width: calc(var(--p) * 100%); background: var(--amber); }
+
+/* Championship */
+.wp-champ { display: flex; align-items: center; gap: 14px; padding: 10px 16px 10px 10px; border: 1px solid rgba(255, 45, 85, 0.35); border-radius: 999px; background: rgba(255, 45, 85, 0.08); }
+.wp-champ b { display: block; color: #fff; }
+.wp-champ span { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.06em; color: var(--hot); }
+.wp-table td, .wp-table th { vertical-align: middle; }
+.wp-range { position: relative; display: inline-block; width: calc(100% - 70px); min-width: 120px; height: 8px; margin-right: 10px; border-radius: 6px; background: rgba(255, 255, 255, 0.05); vertical-align: middle; }
+.wp-range i { position: absolute; top: 0; bottom: 0; border-radius: 6px; background: color-mix(in srgb, var(--c) 55%, transparent); }
+.wp-range b { position: absolute; top: -3px; width: 3px; height: 14px; margin-left: -1.5px; border-radius: 2px; background: #fff; }
+.wp-range__lbl { font-family: var(--mono); font-size: 11px; color: var(--fg-dim); }
+
+/* Scorecard */
+.wp-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 22px; }
+.wp-stat { display: flex; flex-direction: column; gap: 6px; padding: 18px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255, 255, 255, 0.02); }
+.wp-stat__val { font-family: var(--display); font-style: italic; font-weight: 800; font-size: 54px; line-height: 0.9; color: var(--fg); }
+.wp-stat__lbl { font-size: 0.9rem; color: var(--fg); }
+.wp-stat__vs { font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--fg-dim); }
+
+/* Backtest */
+.wp-back { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 440px), 1fr)); gap: 8px; margin: 0; padding: 0; list-style: none; }
+.wp-back li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr) 58px 96px 96px;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--c);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  font-size: 0.85rem;
+}
+.wp-back__round { font-family: var(--mono); font-size: 11px; color: var(--fg-dim); }
+.wp-back__race { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: var(--fg); }
+.wp-back__winner { font-weight: 700; color: #fff; }
+.wp-back__pick { font-family: var(--mono); font-size: 12px; white-space: nowrap; color: #ff6b7a; }
+.wp-back__pick.is-hit { color: #3ee88a; }
+.wp-back__pick small { font-size: 10.5px; color: var(--fg-dim); }
+.wp-legend { display: flex; justify-content: flex-end; gap: 22px; margin: 14px 0 0; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-dim); }
+
+/* Rest of season + importance */
+.wp-rest, .wp-imp { display: flex; flex-direction: column; margin: 0; padding: 0; list-style: none; }
+.wp-rest li { display: grid; grid-template-columns: 34px 1fr auto; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.wp-rest__race { color: var(--fg); }
+.wp-rest__race em { margin-left: 8px; padding: 2px 7px; border-radius: 999px; background: rgba(255, 177, 46, 0.14); font-family: var(--mono); font-size: 9.5px; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--amber); }
+.wp-rest__top { display: flex; gap: 14px; font-family: var(--mono); font-size: 12px; color: var(--fg); }
+.wp-rest__top small { color: var(--fg-dim); }
+.wp-imp li { display: grid; grid-template-columns: minmax(0, 1fr) 40%; align-items: center; gap: 14px; padding: 8px 0; font-size: 0.88rem; color: var(--fg); }
+.wp-imp__bar { height: 8px; overflow: hidden; border-radius: 6px; background: rgba(255, 255, 255, 0.05); }
+.wp-imp__bar i { display: block; width: calc(var(--w) * 100%); height: 100%; border-radius: 6px; background: linear-gradient(90deg, var(--cyan), var(--hot)); }
+
+/* Method */
+.wp-method__body { padding: 0 1.15rem 1.2rem; font-size: 0.92rem; color: var(--text); }
+.wp-method__body ul { display: flex; flex-direction: column; gap: 8px; padding-left: 18px; list-style: disc; }
+.wp-method__body b { color: var(--fg); }
+
+@media (max-width: 900px) {
+  .wp-odds li { grid-template-columns: 22px 38px 1fr 64px; }
+  .wp-odds__bar { grid-column: 2 / -1; grid-row: 2; }
+  .wp-odds__pod { grid-column: 2 / -1; grid-row: 3; }
+  .wp-stats { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .wp .ins-card { padding: 18px 16px; }
+  .wp-back { grid-template-columns: 1fr; }
+  .wp-back li { grid-template-columns: 34px minmax(0, 1fr) 46px 78px 78px; font-size: 0.8rem; }
+  .wp-rest__top { flex-direction: column; gap: 2px; }
+  .wp-range { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wp-odds__bar i { animation: none; }
+}

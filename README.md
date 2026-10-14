@@ -1,7 +1,7 @@
 # F1 ML Aero Intelligence
 
 A racing fan website with machine-learning tools: live telemetry simulation,
-a 2026 championship predictor and an aerodynamics (drag/downforce) calculator.
+a 2026 race winner predictor and an aerodynamics (drag/downforce) calculator.
 
 ## Project structure
 
@@ -40,6 +40,13 @@ The calendar and driver standings come from FastF1 and are saved to
   - Status: http://127.0.0.1:8000/api/live-data
   - Refresh now: `Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/live-data/refresh`
   - Switch off: `$env:LIVE_DATA = "0"` before starting the backend
+- **Race winner model:** the backend also retrains the 2026 winner predictor after each race
+  (`backend/model_refresh.py`). Once FastF1 shows a complete result it pulls the Stats archive and
+  retrains when the archive has the new race; the archive publishes later than FastF1, so it checks
+  again every 30 minutes until it does. The predictor page shows the new odds on its next load.
+  - Status: http://127.0.0.1:8000/api/model-refresh
+  - Check now: `Invoke-RestMethod -Method Post http://127.0.0.1:8000/api/model-refresh/check`
+  - Switch off: `$env:MODEL_REFRESH = "0"` before starting the backend
 - **By hand:**
 
   ```powershell

@@ -16,11 +16,12 @@ except ImportError:
 
 # FastF1 calendar + driver data, refreshed in the background (see live_data.py)
 try:
-    from . import live_data
+    from . import live_data, model_refresh
     from .update_calendar import CALENDAR_FILE
     from .update_drivers import DRIVERS_FILE
 except ImportError:
     import live_data
+    import model_refresh
     from update_calendar import CALENDAR_FILE
     from update_drivers import DRIVERS_FILE
 
@@ -96,6 +97,7 @@ def drivers_champ_data():
 @app.on_event("startup")
 def start_live_data():
     live_data.start()
+    model_refresh.start()  # retrains the race winner model once a new result reaches the Stats archive
 
 def _read_json(path):
     try:
@@ -122,6 +124,17 @@ def live_data_status():
 def live_data_refresh():
     """Refresh the FastF1 data now instead of waiting for the next scheduled run."""
     live_data.request_refresh()
+    return {"requested": True}
+
+@app.get("/api/model-refresh")
+def model_refresh_status():
+    """Which round the race winner model covers, and when it last checked for a new race."""
+    return model_refresh.status()
+
+@app.post("/api/model-refresh/check")
+def model_refresh_check():
+    """Check for a new race in the archive now instead of waiting for the next scheduled check."""
+    model_refresh.request_check()
     return {"requested": True}
 
 @app.post("/set_track")

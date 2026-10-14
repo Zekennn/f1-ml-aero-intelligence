@@ -30,7 +30,7 @@ export const NAV_MENUS: NavMenu[] = [
     label: "Data",
     items: [
       { label: "Live telemetry", href: "/live", icon: "live", featured: true, description: "Race any 2026 team on real reference laps, with pit stops and strategy" },
-      { label: "2026 predictor", href: "/predictor", icon: "trophy", description: "Championship win probability for every driver" },
+      { label: "2026 predictor", href: "/predictor", icon: "trophy", description: "Next-race winner odds and title chances" },
       { label: "Aero calculator", href: "/aero", icon: "wind", description: "2026 drag and downforce with active aero modes and a wind tunnel" },
       { label: "Pit stops", href: "/pitstops", icon: "pit", description: "Fastest stops and team averages, 2018–2026" },
     ],
