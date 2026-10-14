@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 /** Shared shell for every page: navbar on top, footer at the bottom. */
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
       <body>
         <Navbar />
         <main>{children}</main>
