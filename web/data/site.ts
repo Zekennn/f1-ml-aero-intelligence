@@ -51,15 +51,7 @@ export const STATS = [
   { value: "20", label: "Countries" },
 ];
 
-/** Gallery photos. Add a file named 6.png to /public/images to fill the last slot. */
-export const GALLERY = [
-  { src: "/images/1.png", alt: "Close-up of a driver's eyes through the helmet visor" },
-  { src: "/images/2.png", alt: "Driver in the cockpit in the garage" },
-  { src: "/images/3.png", alt: "Driver celebrating on the grid with a trophy" },
-  { src: "/images/4.png", alt: "Team member celebrating under a water spray" },
-  { src: "/images/5.png", alt: "Driver spraying champagne on the podium" },
-  { src: "/images/6.png", alt: "Gallery image 6" },
-];
+/* Gallery photos: every image in /public/img appears in the home page gallery (lib/gallery.ts). */
 
 /* ---------- Footer ---------- */
 type FooterColumn = { title: string; links: NavLink[] };

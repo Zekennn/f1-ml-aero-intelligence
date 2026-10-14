@@ -1021,7 +1021,7 @@ html:not([data-intro="playing"]) .hx-in {
 .nr__dot { opacity: 0; }
 .nr__dot circle { fill: #fff; }
 
-/* ---------- 11. Calendar + gallery reveal ---------- */
+/* ---------- 11. Calendar reveal + gallery ---------- */
 .reveal-up:not(.is-in) { clip-path: inset(8% 5% 0 5% round 36px); }
 .reveal-up.is-in { animation: wipe 1.2s var(--ease-io); }
 @keyframes wipe {
@@ -1032,14 +1032,146 @@ html:not([data-intro="playing"]) .hx-in {
 .reveal-up.is-in .section-header > * { animation: fadeUp 0.9s var(--ease-out) both; }
 .reveal-up.is-in .section-header > :nth-child(2) { animation-delay: 0.1s; }
 .reveal-up.is-in .section-header > :nth-child(3) { animation-delay: 0.2s; }
-.reveal-up .gallery__item { opacity: 0; transform: scale(0.92); }
-.reveal-up.is-in .gallery__item { animation: popIn 0.9s var(--ease-out) both; }
-.reveal-up.is-in .gallery__item:nth-child(2) { animation-delay: 0.08s; }
-.reveal-up.is-in .gallery__item:nth-child(3) { animation-delay: 0.16s; }
-.reveal-up.is-in .gallery__item:nth-child(4) { animation-delay: 0.24s; }
-.reveal-up.is-in .gallery__item:nth-child(5) { animation-delay: 0.32s; }
-.reveal-up.is-in .gallery__item:nth-child(6) { animation-delay: 0.4s; }
-@keyframes popIn { from { opacity: 0; transform: scale(0.92); } to { opacity: 1; transform: none; } }
+
+/* Endless drag-anywhere gallery (components/motion/InfiniteGallery.tsx) */
+.ig {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  background: var(--ink);
+  isolation: isolate;
+}
+.ig__view {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  touch-action: pan-y; /* phones: vertical swipes still scroll the page */
+  user-select: none;
+  -webkit-user-select: none;
+}
+.ig__view.is-dragging { cursor: grabbing; }
+.ig__view:focus-visible { outline: 2px solid var(--hot); outline-offset: -6px; }
+.ig__tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+}
+.ig__card {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+  background: var(--ink-3);
+  box-shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.9);
+  cursor: inherit;
+  opacity: 0;
+  transform: scale(0.6);
+  transition: box-shadow 0.4s;
+}
+.ig.is-in .ig__card { animation: igIn 1.1s var(--ease-out) both; animation-delay: var(--delay); }
+@keyframes igIn {
+  from { opacity: 0; transform: scale(0.6); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+.ig__card img {
+  object-fit: cover;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.9s var(--ease-out), filter 0.5s;
+  filter: saturate(0.92) brightness(0.92);
+}
+.ig__card img.is-loaded { opacity: 1; }
+.ig__view:not(.is-dragging) .ig__card:hover img { transform: scale(1.08); filter: saturate(1.1) brightness(1.02); }
+.ig__view:not(.is-dragging) .ig__card:hover { box-shadow: 0 0 0 1.5px var(--hot), 0 30px 60px -20px rgba(255, 45, 85, 0.45); }
+.ig__card:focus-visible { outline: 2px solid var(--hot); outline-offset: 3px; }
+
+/* Soft fade into the sections above and below */
+.ig__overlay { position: absolute; inset: 0; z-index: 300; pointer-events: none; }
+.ig__shade { position: absolute; left: 0; right: 0; height: 18%; }
+.ig__shade--top { top: 0; background: linear-gradient(var(--ink), transparent); }
+.ig__shade--bottom { bottom: 0; background: linear-gradient(transparent, var(--ink)); }
+
+/* Fixed title in the middle; it inverts over the photos */
+.ig__title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+}
+.ig__title .eyebrow-x { margin-bottom: 14px; color: #fff; }
+.ig__title .eyebrow-x span { color: #fff; }
+.ig__title h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-style: italic;
+  font-weight: 800;
+  font-size: clamp(64px, 11vw, 190px);
+  line-height: 0.82;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: #fff;
+}
+.ig__hint {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 22px 0 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.ig__hint svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; animation: igNudge 2.4s var(--ease-io) infinite; }
+@keyframes igNudge { 50% { transform: translateX(-6px) rotate(-8deg); } }
+.ig__hint-touch { display: none; }
+@media (pointer: coarse) {
+  .ig__hint-mouse { display: none; }
+  .ig__hint-touch { display: inline; }
+}
+.ig.is-in .ig__title > * { animation: fadeUp 1s var(--ease-out) both; }
+.ig.is-in .ig__title h2 { animation-delay: 0.1s; }
+.ig.is-in .ig__title .ig__hint { animation-delay: 0.25s; }
+
+/* Full-screen viewer */
+.ig-box { z-index: 2600; }
+.ig-box .lightbox__frame { position: relative; width: 100%; height: 100%; }
+.ig-box__img { object-fit: contain; animation: igZoom 0.5s var(--ease-out); }
+@keyframes igZoom { from { opacity: 0; transform: scale(0.94); } }
+.ig-box__count {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  margin: 0;
+  transform: translateX(-50%);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 700px) {
+  .ig { min-height: 560px; }
+  .ig__title h2 { font-size: clamp(54px, 17vw, 90px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ig__card { opacity: 1; transform: none; }
+  .ig.is-in .ig__card { animation: none; }
+  .ig__hint svg { animation: none; }
+}
 
 /* ---------- 12. Tools ---------- */
 .tools { padding: 130px 0; background: var(--ink); }

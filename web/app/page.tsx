@@ -1,10 +1,10 @@
 import Calendar from "@/components/home/Calendar";
-import Gallery from "@/components/home/Gallery";
 import Newsletter from "@/components/home/Newsletter";
 import LiveRefresh from "@/components/LiveRefresh";
 import AeroHero from "@/components/motion/AeroHero";
 import AeroStory from "@/components/motion/AeroStory";
 import ChampionshipRace from "@/components/motion/ChampionshipRace";
+import InfiniteGallery from "@/components/motion/InfiniteGallery";
 import Finale from "@/components/motion/Finale";
 import LightsOut from "@/components/motion/LightsOut";
 import NextRace from "@/components/motion/NextRace";
@@ -13,6 +13,7 @@ import SeasonStats from "@/components/motion/SeasonStats";
 import TeamRail from "@/components/motion/TeamRail";
 import Ticker from "@/components/motion/Ticker";
 import ToolCards from "@/components/motion/ToolCards";
+import { getGalleryPhotos } from "@/lib/gallery";
 import { getLandingData } from "@/lib/landing";
 import "./motion.css";
 
@@ -21,7 +22,7 @@ export const dynamic = "force-dynamic";
 
 /** Home page: the motion landing. Sections appear in this order. */
 export default async function HomePage() {
-  const data = await getLandingData();
+  const [data, photos] = await Promise.all([getLandingData(), getGalleryPhotos()]);
   const leader = data.drivers[0];
 
   return (
@@ -55,9 +56,7 @@ export default async function HomePage() {
         <Calendar />
       </Reveal>
       <ToolCards drivers={data.drivers} />
-      <Reveal className="reveal-up">
-        <Gallery />
-      </Reveal>
+      {photos.length > 0 && <InfiniteGallery photos={photos} />}
       <Finale />
       <Newsletter />
     </div>
