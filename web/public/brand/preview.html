@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fan Hub logo concepts</title>
+<style>
+  :root { --navy: #0B1F3A; --blue: #1E5EFF; --ash: #E5E7EB; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Inter, system-ui, sans-serif; color: var(--navy); background: #fff; }
+  header { padding: 40px 32px 8px; max-width: 1280px; margin: 0 auto; }
+  h1 { margin: 0 0 6px; font-size: 24px; font-weight: 600; }
+  header p { margin: 0; color: #4B5563; font-size: 14px; }
+  section { padding: 32px; }
+  section.dark { background: var(--navy); color: #fff; }
+  section.dark .meta { color: #A9B4C6; border-color: rgba(255,255,255,.12); }
+  h2 { max-width: 1280px; margin: 0 auto 20px; font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+  .grid { max-width: 1280px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+  .card { border: 1px solid var(--ash); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 24px; }
+  .dark .card { border-color: rgba(255,255,255,.12); }
+  .card h3 { margin: 0; font-size: 15px; font-weight: 600; }
+  .large img { width: 160px; height: 160px; display: block; }
+  .nav img { height: 32px; display: block; }
+  .fav { display: flex; align-items: center; gap: 20px; }
+  .fav img { display: block; }
+  .meta { font-size: 12px; color: #6B7280; border-top: 1px solid var(--ash); padding-top: 8px; margin: -16px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Fan Hub logo concepts</h1>
+  <p>Three directions, shown on white and on dark blue at large, navbar (32 px) and favicon (16 px and 32 px) sizes.</p>
+</header>
+
+<section>
+  <h2>On white</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1 · Airflow</h3>
+      <div class="large"><img src="concepts/airflow/icon-light.svg" alt="Airflow icon"></div>
+      <div class="nav"><img src="concepts/airflow/logo-light.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/airflow/icon-light.svg" width="16" height="16" alt=""><img src="concepts/airflow/icon-light.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+    <div class="card">
+      <h3>2 · Wing profile</h3>
+      <div class="large"><img src="concepts/wing/icon-light.svg" alt="Wing profile icon"></div>
+      <div class="nav"><img src="concepts/wing/logo-light.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/wing/icon-light.svg" width="16" height="16" alt=""><img src="concepts/wing/icon-light.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+    <div class="card">
+      <h3>3 · Racing line</h3>
+      <div class="large"><img src="concepts/line/icon-light.svg" alt="Racing line icon"></div>
+      <div class="nav"><img src="concepts/line/logo-light.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/line/icon-light.svg" width="16" height="16" alt=""><img src="concepts/line/icon-light.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <h2>On dark blue</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1 · Airflow</h3>
+      <div class="large"><img src="concepts/airflow/icon-dark.svg" alt="Airflow icon"></div>
+      <div class="nav"><img src="concepts/airflow/logo-dark.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/airflow/icon-dark.svg" width="16" height="16" alt=""><img src="concepts/airflow/icon-dark.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+    <div class="card">
+      <h3>2 · Wing profile</h3>
+      <div class="large"><img src="concepts/wing/icon-dark.svg" alt="Wing profile icon"></div>
+      <div class="nav"><img src="concepts/wing/logo-dark.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/wing/icon-dark.svg" width="16" height="16" alt=""><img src="concepts/wing/icon-dark.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+    <div class="card">
+      <h3>3 · Racing line</h3>
+      <div class="large"><img src="concepts/line/icon-dark.svg" alt="Racing line icon"></div>
+      <div class="nav"><img src="concepts/line/logo-dark.svg" alt="Fan Hub"></div>
+      <p class="meta">Navbar, 32 px tall</p>
+      <div class="fav"><img src="concepts/line/icon-dark.svg" width="16" height="16" alt=""><img src="concepts/line/icon-dark.svg" width="32" height="32" alt=""></div>
+      <p class="meta">Favicon, 16 px and 32 px</p>
+    </div>
+  </div>
+</section>
+</body>
+</html>
