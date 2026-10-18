@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FOOTER, LOGO_DARK, NAV_CTA, NAV_MENUS, SITE_NAME } from "@/data/site";
+import { FOOTER, LOGO_ICON, NAV_CTA, NAV_MENUS, SITE_NAME } from "@/data/site";
 
 /**
  * Site footer.
@@ -21,7 +21,7 @@ export default function Footer() {
         {/* Brand column */}
         <section className="site-footer__brand" aria-labelledby="footer-brand-heading">
           <Link href="/#home" className="site-footer__logo" aria-label={`${SITE_NAME} home`}>
-            <span className="site-footer__logo-mark"><Image src={LOGO_DARK} alt="" fill sizes="44px" /></span>
+            <span className="site-footer__logo-mark"><Image src={LOGO_ICON} alt="" fill sizes="40px" /></span>
             {SITE_NAME}
           </Link>
           <h2 id="footer-brand-heading" className="site-footer__heading">{FOOTER.heading}</h2>

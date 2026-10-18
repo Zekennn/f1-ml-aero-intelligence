@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import NavIcon from "./NavIcon";
-import { LOGO_DARK, NAV_CTA, NAV_LINKS, NAV_MENUS, NAV_SECONDARY, SITE_NAME } from "@/data/site";
+import { LOGO_ICON, NAV_CTA, NAV_LINKS, NAV_MENUS, NAV_SECONDARY, SITE_NAME } from "@/data/site";
 
 /** Small down-arrow shown next to dropdown triggers. */
 function Chevron() {
@@ -105,7 +105,7 @@ export default function Navbar() {
         <nav className="site-nav__bar" aria-label="Primary">
           <div className="site-nav__left">
             <Link href="/#home" className="site-nav__logo" aria-label={`${SITE_NAME} home`} onClick={closeAll}>
-              <Image src={LOGO_DARK} alt="" fill sizes="44px" priority />
+              <Image src={LOGO_ICON} alt={SITE_NAME} fill sizes="38px" priority />
             </Link>
 
             <div className="site-nav__links">
@@ -175,9 +175,8 @@ export default function Navbar() {
       <div className="site-nav__mobile">
         <div className="site-nav__m-card">
           <div className="site-nav__m-bar">
-            <Link href="/#home" className="site-nav__m-brand" onClick={closeAll}>
-              <span className="site-nav__logo"><Image src={LOGO_DARK} alt="" fill sizes="44px" /></span>
-              {SITE_NAME}
+            <Link href="/#home" className="site-nav__m-brand" aria-label={`${SITE_NAME} home`} onClick={closeAll}>
+              <span className="site-nav__logo"><Image src={LOGO_ICON} alt={SITE_NAME} fill sizes="38px" /></span>
             </Link>
             <button
               type="button"

@@ -6,8 +6,8 @@
    ========================================================= */
 
 export const SITE_NAME = "Fan Hub";
-export const LOGO = "/images/logo.png";          // white logo, for dark backgrounds (footer)
-export const LOGO_DARK = "/images/logo-red.png"; // red logo, for the light floating navbar
+export const LOGO = "/images/logo.png";           // full "Fan Hub" wordmark (white + red wing), for dark backgrounds
+export const LOGO_ICON = "/images/logo-icon.png"; // wing mark on its own, shown next to the site name
 
 export type NavIcon = "teams" | "drivers" | "calendar" | "gallery" | "live" | "trophy" | "wind" | "standings" | "pit";
 export type NavItem = { label: string; href: string; description: string; icon: NavIcon; featured?: boolean };

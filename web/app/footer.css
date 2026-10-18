@@ -51,8 +51,8 @@
 }
 .site-footer__logo-mark {
   position: relative;
-  width: 44px;
-  height: 22px;
+  width: 40px;
+  height: 40px;
 }
 .site-footer__logo-mark img { object-fit: contain; }
 
