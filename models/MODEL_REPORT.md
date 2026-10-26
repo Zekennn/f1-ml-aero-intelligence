@@ -1,6 +1,6 @@
 # Model report
 
-Generated 2026-10-14T08:48:04Z by `backend/pipeline/train_models.py`.
+Generated 2026-10-26T05:33:29Z by `backend/pipeline/train_models.py`.
 
 ## Lap time model
 
@@ -35,29 +35,30 @@ rely on the estimated lap length; 2018–2024 laps have no compound or track tem
 ## Aero model
 
 Physics, not a neural network: q = ½ρv², D = q·CdA, L = q·ClA with the estimated 2026 coefficients in `web/lib/car2026.ts`.
-Calibrated against real 2026 top speeds (fastest race lap, 17 circuits, air density from each race's weather):
-effective power at top speed **283 kW** (2026 cars run out of electrical deployment on long straights).
-Top speed error 10.4 km/h MAE, compared with 115.9 km/h using the nominal 750 kW.
+Calibrated against real 2026 top speeds (fastest race lap, 18 circuits, air density from each race's weather):
+effective power at top speed **291 kW** (2026 cars run out of electrical deployment on long straights).
+Top speed error 10.4 km/h MAE, compared with 115.5 km/h using the nominal 750 kW.
 
 | Circuit | Setup | ρ (kg/m³) | Real (km/h) | Predicted (km/h) |
 |---|---|---:|---:|---:|
-| australian | medium | 1.186 | 323 | 310 |
-| austrian | medium | 1.066 | 321 | 321 |
-| azerbaijan | low | 1.190 | 326 | 327 |
-| bahrain | medium | 1.169 | 306 | 311 |
-| barcelona | medium | 1.148 | 327 | 313 |
-| belgian | low | 1.164 | 326 | 329 |
-| british | medium | 1.177 | 302 | 311 |
-| canadian | low | 1.248 | 327 | 322 |
-| chinese | medium | 1.236 | 321 | 306 |
-| dutch | high | 1.224 | 319 | 293 |
-| hungarian | high | 1.123 | 286 | 301 |
-| italian | low | 1.141 | 330 | 331 |
-| japanese | medium | 1.208 | 322 | 308 |
-| miami | medium | 1.178 | 331 | 310 |
-| monaco | high | 1.199 | 278 | 295 |
-| singapore | high | 1.160 | 291 | 298 |
-| spanish | medium | 1.084 | 330 | 319 |
+| australian | medium | 1.186 | 323 | 312 |
+| austrian | medium | 1.066 | 321 | 324 |
+| azerbaijan | low | 1.190 | 326 | 329 |
+| bahrain | medium | 1.169 | 306 | 314 |
+| barcelona | medium | 1.148 | 327 | 316 |
+| belgian | low | 1.164 | 326 | 332 |
+| british | medium | 1.177 | 302 | 313 |
+| canadian | low | 1.248 | 327 | 324 |
+| chinese | medium | 1.236 | 321 | 308 |
+| dutch | high | 1.224 | 319 | 295 |
+| hungarian | high | 1.123 | 286 | 304 |
+| italian | low | 1.141 | 330 | 334 |
+| japanese | medium | 1.208 | 322 | 311 |
+| miami | medium | 1.178 | 331 | 313 |
+| monaco | high | 1.199 | 278 | 297 |
+| singapore | high | 1.160 | 291 | 300 |
+| spanish | medium | 1.084 | 330 | 322 |
+| united-states | medium | 1.166 | 322 | 314 |
 
 **Limitations:** coefficients are estimates (teams do not publish them); one effective power for every track; slipstream ignored.
 
@@ -79,7 +80,7 @@ binary target “won the race”, history-only features, gradient-boosted trees 
 `HistGradientBoostingClassifier`), drivers ranked by win probability inside each race. Written by
 `backend/pipeline/train_winner_model.py` to `web/data/winner-model.json`.
 
-**Data:** local Stats archive only, 520 races 2000–2026; 8,704 training rows from 2006.
+**Data:** local Stats archive only, 521 races 2000–2026; 8,726 training rows from 2006.
 
 **Validation** (train on all earlier seasons, test on the next; winner accuracy = top-ranked driver won)
 
@@ -89,13 +90,13 @@ binary target “won the race”, history-only features, gradient-boosted trees 
 | 2023 | 22 | 86% | 86% | 86% | 64% | 86% |
 | 2024 | 24 | 38% | 46% | 38% | 46% | 38% |
 | 2025 | 24 | 33% | 67% | 25% | 71% | 25% |
-| 2026 (walk-forward) | 17 | 41% | 71% | – | 71% | 35% |
+| 2026 (walk-forward) | 18 | 39% | 72% | – | 72% | 39% |
 
-Podium accuracy 2026 (share of the real top 3 found in the predicted top 3): pre-race 51%, with qualifying 67%.
+Podium accuracy 2026 (share of the real top 3 found in the predicted top 3): pre-race 52%, with qualifying 67%.
 
 **Most important features** (permutation importance, pre-race model, 2025): Avg finish, last 10 (0.005), Last year's points (share of champion) (0.005), Last grid position (0.003), Last year's position (0.002), Avg finish at this circuit (0.002), Podiums, last 10 (0.001).
 
-**Forward look:** win probabilities for the remaining 6 rounds; championship from 20,000 simulated finishes (Plackett–Luce order, retirement chance from recent reliability).
+**Forward look:** win probabilities for the remaining 5 rounds; championship from 20,000 simulated finishes (Plackett–Luce order, retirement chance from recent reliability).
 
 **Tuning:** shallow regularised trees (depth 3, ≥120 rows per leaf) lifted mean 2022–26 pre-race winner accuracy
 from 34% to 52%. Class balancing (the presentation's oversampling) ranked ~2 more races right out of ~105 but

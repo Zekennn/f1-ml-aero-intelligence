@@ -217,7 +217,9 @@ export default function TelemetrySimulator({ circuits, stationary, medianStation
   const forces = s && option ? aeroForces(s.speed, rho, coefficients(option.setup, straight ? "straight" : "corner")) : null;
   const is2025 = circuit?.season === 2025;
   const ref = circuit && team ? circuit.teams[team] : null;
-  const lapLabel = simRef.current ? `LAP ${Math.min(display.lap, totalLaps)} / ${totalLaps}` : totalLaps ? `LAP – / ${totalLaps}` : "LAP – / –";
+  // eslint-disable-next-line react-hooks/refs
+  const isRunning = !!simRef.current;
+  const lapLabel = isRunning ? `LAP ${Math.min(display.lap, totalLaps)} / ${totalLaps}` : totalLaps ? `LAP – / ${totalLaps}` : "LAP – / –";
   const statusText = loadError ?? (missing.length ? `Please select a ${missing[0]}.` : pitError ?? (!circuit || !model ? "Loading data…" : null));
 
   return (
@@ -268,7 +270,7 @@ export default function TelemetrySimulator({ circuits, stationary, medianStation
             aria-keyshortcuts="Space" title={ready ? "Space" : statusText ?? undefined}>
             {playing ? "Pause" : finished ? "Replay" : "Play"}
           </button>
-          <button type="button" className="tl-btn" onClick={restart} disabled={!simRef.current}>Restart</button>
+          <button type="button" className="tl-btn" onClick={restart} disabled={!isRunning}>Restart</button>
           <div className="tl-seg" role="group" aria-label="Playback speed">
             {SPEEDS.map((v) => (
               <button key={v} type="button" aria-pressed={speed === v} onClick={() => setSpeed(v)}>{v}x</button>
@@ -347,7 +349,7 @@ export default function TelemetrySimulator({ circuits, stationary, medianStation
               })}
             </div>
             <p className="tl-card__foot">
-              {COMPOUND_LABEL[display.compound || compound] ?? "–"} · tyre age {simRef.current ? display.tyreAge : 0} {display.tyreAge === 1 ? "lap" : "laps"}
+              {COMPOUND_LABEL[display.compound || compound] ?? "–"} · tyre age {isRunning ? display.tyreAge : 0} {display.tyreAge === 1 ? "lap" : "laps"}
               {(display.compound || compound) && <> · window {TYRE_WINDOWS[display.compound || compound][0]}–{TYRE_WINDOWS[display.compound || compound][1]} °C</>}
             </p>
           </section>
@@ -355,10 +357,10 @@ export default function TelemetrySimulator({ circuits, stationary, medianStation
           <section className="tl-card" aria-label="Lap times">
             <h3 className="tl-card__label">Timing</h3>
             <dl className="tl-dl">
-              <div><dt>Predicted this lap</dt><dd>{simRef.current ? formatLap(display.lapTime) : "–"}</dd></div>
+              <div><dt>Predicted this lap</dt><dd>{isRunning ? formatLap(display.lapTime) : "–"}</dd></div>
               <div><dt>Real reference lap</dt><dd>{ref ? formatLap(ref.time) : "–"}</dd></div>
               <div><dt>Last lap</dt><dd>{formatLap(display.lastLap)}</dd></div>
-              <div><dt>Race time</dt><dd>{simRef.current ? formatDuration(display.raceTime) : "–"}</dd></div>
+              <div><dt>Race time</dt><dd>{isRunning ? formatDuration(display.raceTime) : "–"}</dd></div>
               <div><dt>Pit stop cost</dt><dd>{team && option ? `${fmt(pitStop, 1)} s` : "–"}</dd></div>
             </dl>
           </section>

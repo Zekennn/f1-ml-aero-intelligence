@@ -1,7 +1,7 @@
 {
-  "effectivePowerKw": 283,
+  "effectivePowerKw": 291,
   "maeKmh": 10.4,
-  "maeKmhBefore": 115.9,
+  "maeKmhBefore": 115.5,
   "circuits": [
     {
       "slug": "australian",
@@ -9,8 +9,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 323,
-      "predicted": 310,
-      "error": -13
+      "predicted": 312,
+      "error": -11
     },
     {
       "slug": "chinese",
@@ -18,8 +18,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 321,
-      "predicted": 306,
-      "error": -15
+      "predicted": 308,
+      "error": -13
     },
     {
       "slug": "japanese",
@@ -27,8 +27,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 322,
-      "predicted": 308,
-      "error": -14
+      "predicted": 311,
+      "error": -11
     },
     {
       "slug": "miami",
@@ -36,8 +36,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 331,
-      "predicted": 310,
-      "error": -21
+      "predicted": 313,
+      "error": -18
     },
     {
       "slug": "canadian",
@@ -45,8 +45,8 @@
       "setup": "low",
       "cda": 0.6375,
       "real": 327,
-      "predicted": 322,
-      "error": -5
+      "predicted": 324,
+      "error": -3
     },
     {
       "slug": "monaco",
@@ -54,8 +54,8 @@
       "setup": "high",
       "cda": 0.8624999999999999,
       "real": 278,
-      "predicted": 295,
-      "error": 17
+      "predicted": 297,
+      "error": 19
     },
     {
       "slug": "barcelona",
@@ -63,8 +63,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 327,
-      "predicted": 313,
-      "error": -14
+      "predicted": 316,
+      "error": -11
     },
     {
       "slug": "austrian",
@@ -72,8 +72,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 321,
-      "predicted": 321,
-      "error": 0
+      "predicted": 324,
+      "error": 3
     },
     {
       "slug": "british",
@@ -81,8 +81,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 302,
-      "predicted": 311,
-      "error": 9
+      "predicted": 313,
+      "error": 11
     },
     {
       "slug": "belgian",
@@ -90,8 +90,8 @@
       "setup": "low",
       "cda": 0.6375,
       "real": 326,
-      "predicted": 329,
-      "error": 3
+      "predicted": 332,
+      "error": 6
     },
     {
       "slug": "hungarian",
@@ -99,8 +99,8 @@
       "setup": "high",
       "cda": 0.8624999999999999,
       "real": 286,
-      "predicted": 301,
-      "error": 15
+      "predicted": 304,
+      "error": 18
     },
     {
       "slug": "dutch",
@@ -108,8 +108,8 @@
       "setup": "high",
       "cda": 0.8624999999999999,
       "real": 319,
-      "predicted": 293,
-      "error": -26
+      "predicted": 295,
+      "error": -24
     },
     {
       "slug": "italian",
@@ -117,8 +117,8 @@
       "setup": "low",
       "cda": 0.6375,
       "real": 330,
-      "predicted": 331,
-      "error": 1
+      "predicted": 334,
+      "error": 4
     },
     {
       "slug": "spanish",
@@ -126,8 +126,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 330,
-      "predicted": 319,
-      "error": -11
+      "predicted": 322,
+      "error": -8
     },
     {
       "slug": "azerbaijan",
@@ -135,8 +135,8 @@
       "setup": "low",
       "cda": 0.6375,
       "real": 326,
-      "predicted": 327,
-      "error": 1
+      "predicted": 329,
+      "error": 3
     },
     {
       "slug": "bahrain",
@@ -144,8 +144,8 @@
       "setup": "medium",
       "cda": 0.75,
       "real": 306,
-      "predicted": 311,
-      "error": 5
+      "predicted": 314,
+      "error": 8
     },
     {
       "slug": "singapore",
@@ -153,21 +153,30 @@
       "setup": "high",
       "cda": 0.8624999999999999,
       "real": 291,
-      "predicted": 298,
-      "error": 7
+      "predicted": 300,
+      "error": 9
+    },
+    {
+      "slug": "united-states",
+      "rho": 1.166,
+      "setup": "medium",
+      "cda": 0.75,
+      "real": 322,
+      "predicted": 314,
+      "error": -8
     }
   ],
   "setupBySlug": {
+    "italian": "low",
+    "belgian": "low",
     "canadian": "low",
     "azerbaijan": "low",
-    "belgian": "low",
     "las-vegas": "low",
-    "italian": "low",
-    "singapore": "high",
-    "monaco": "high",
     "mexico-city": "high",
     "dutch": "high",
+    "singapore": "high",
+    "monaco": "high",
     "hungarian": "high"
   },
-  "calibratedAt": "2026-10-14T08:48:04Z"
+  "calibratedAt": "2026-10-26T05:33:29Z"
 }

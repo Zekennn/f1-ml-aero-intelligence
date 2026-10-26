@@ -23,6 +23,7 @@ export default function StrategyPanel({ model, slug, team, totalLaps, compounds,
   const [plans, setPlans] = useState<{ oneStop: Plan | null; twoStop: Plan | null } | null>(null);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPlans(null);
     // Let the page paint first; the search takes a few tens of milliseconds
     const id = window.setTimeout(() => {

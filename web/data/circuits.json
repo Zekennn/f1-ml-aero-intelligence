@@ -1710,35 +1710,33 @@
       "round": 18,
       "name": "United States Grand Prix",
       "laps": 56,
-      "status": "upcoming",
-      "dataSeason": 2025,
+      "status": "completed",
+      "dataSeason": 2026,
       "hasTelemetry": true,
-      "lapLength": 5447,
+      "lapLength": 5434,
       "compounds": [
         "SOFT",
         "MEDIUM",
         "HARD"
       ],
       "weather": {
-        "air": 28.3,
-        "track": 45.0,
-        "pressure": 1001.1,
-        "humidity": 22.5,
+        "air": 27.0,
+        "track": 36.3,
+        "pressure": 1004.4,
+        "humidity": 42.1,
         "rain": false
       },
-      "pitLoss": 21.7,
-      "aeroZones": null,
-      "topSpeed": 311,
-      "speedTrapMedian": 307,
+      "pitLoss": 22.0,
+      "aeroZones": 3,
+      "topSpeed": 322,
+      "speedTrapMedian": 316,
       "fastestLap": {
-        "driver": "ANT",
-        "team": "Mercedes",
-        "time": 97.577,
-        "compound": "SOFT"
+        "driver": "LEC",
+        "team": "Ferrari",
+        "time": 97.976,
+        "compound": "HARD"
       },
-      "proxies": {
-        "Cadillac": "Alpine"
-      },
+      "proxies": {},
       "history": {
         "firstWinner": {
           "driver": "Bruce McLaren",

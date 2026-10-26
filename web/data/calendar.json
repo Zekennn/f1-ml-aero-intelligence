@@ -1,6 +1,6 @@
 {
   "season": 2026,
-  "updated": "2026-10-12T09:56:44Z",
+  "updated": "2026-10-26T05:30:06Z",
   "races": [
     {
       "round": 1,
@@ -1108,10 +1108,41 @@
       "circuit": "Circuit of the Americas",
       "date": "2026-10-25",
       "raceStartUtc": "2026-10-25T20:00:00Z",
-      "status": "upcoming",
+      "status": "completed",
       "laps": 56,
-      "lapsFrom": 2025,
-      "result": null,
+      "lapsFrom": 2026,
+      "result": {
+        "winner": {
+          "position": 1,
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "pole": {
+          "driver": "Andrea Kimi Antonelli",
+          "team": "Mercedes"
+        },
+        "fastestLap": {
+          "driver": "Charles Leclerc",
+          "time": "1:37.976"
+        },
+        "podium": [
+          {
+            "position": 1,
+            "driver": "Andrea Kimi Antonelli",
+            "team": "Mercedes"
+          },
+          {
+            "position": 2,
+            "driver": "Charles Leclerc",
+            "team": "Ferrari"
+          },
+          {
+            "position": 3,
+            "driver": "Max Verstappen",
+            "team": "Red Bull"
+          }
+        ]
+      },
       "history": {
         "firstWinner": {
           "driver": "Bruce McLaren",
@@ -1125,7 +1156,7 @@
         },
         "lastLaps": 56,
         "lastLapsYear": 2025,
-        "timesHeld": 46,
+        "timesHeld": 47,
         "lapRecord": {
           "driver": "Charles Leclerc",
           "time": "1:36.169",

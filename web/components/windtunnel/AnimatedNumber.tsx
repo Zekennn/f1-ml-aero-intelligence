@@ -10,6 +10,7 @@ export default function AnimatedNumber({ value, decimals = 0, instant = false }:
   useEffect(() => {
     if (instant || !Number.isFinite(value)) {
       current.current = value;
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShown(value);
       return;
     }

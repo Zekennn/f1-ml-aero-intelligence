@@ -51,6 +51,7 @@ export default function Navbar() {
   };
 
   // Close menus after navigating to another page
+  // eslint-disable-next-line react-hooks/set-state-in-effect
   useEffect(closeAll, [pathname]);
 
   // Escape closes; clicking anywhere outside the navbar closes

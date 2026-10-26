@@ -109,6 +109,7 @@ export default function TrackMap({ circuit, tel, drawDot, label }: Props) {
       ctx.stroke();
     };
 
+    // eslint-disable-next-line react-hooks/immutability
     drawDot.current = (x, y) => {
       last = [x, y];
       draw(last);
